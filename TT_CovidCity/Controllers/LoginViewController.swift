@@ -1,5 +1,5 @@
 //
-//  FourViewController.swift
+//  ThirdViewController.swift
 //  abc
 //
 //  Created by Trần Nhất Thống on 3/23/20.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-class FourthViewController: UIViewController {
+class LoginViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.tabBarItem.selectedImage = UIImage.init(systemName: "paperplane.fill")
+    self.tabBarItem.selectedImage = UIImage.init(systemName: "person.fill")
   }
   
   

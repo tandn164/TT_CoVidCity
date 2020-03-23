@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  FirstViewController.swift
 //  abc
 //
 //  Created by Trần Nhất Thống on 3/22/20.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class MapViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.tabBarItem.selectedImage = UIImage.init(systemName: "doc.text.fill")
+    self.tabBarItem.selectedImage = UIImage.init(systemName: "mappin.circle.fill")
   }
 
 

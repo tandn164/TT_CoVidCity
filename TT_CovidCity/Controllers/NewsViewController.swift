@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  SecondViewController.swift
 //  abc
 //
 //  Created by Trần Nhất Thống on 3/22/20.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class NewsViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.tabBarItem.selectedImage = UIImage.init(systemName: "mappin.circle.fill")
+    self.tabBarItem.selectedImage = UIImage.init(systemName: "doc.text.fill")
   }
 
 

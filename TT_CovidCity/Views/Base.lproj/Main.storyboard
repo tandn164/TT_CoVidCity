@@ -10,7 +10,7 @@
         <!--Map-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="abc" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9pv-A4-QxB" customClass="MapViewController" customModule="TT_CovidCity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -42,10 +42,10 @@
             </objects>
             <point key="canvasLocation" x="2569.5652173913045" y="-320.08928571428572"/>
         </scene>
-        <!--Second View Controller-->
+        <!--News View Controller-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="abc" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8rJ-Kc-sve" customClass="NewsViewController" customModule="TT_CovidCity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -80,7 +80,7 @@
         <!--Fourth-->
         <scene sceneID="Bev-pR-bR8">
             <objects>
-                <viewController id="puJ-OE-G38" userLabel="Fourth" customClass="FourthViewController" customModule="abc" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="puJ-OE-G38" userLabel="Fourth" customClass="ReportViewController" customModule="TT_CovidCity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xJj-PM-OS2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -135,7 +135,7 @@
         <!--Third-->
         <scene sceneID="A3M-2w-caR">
             <objects>
-                <viewController id="mHR-hS-UDA" userLabel="Third" customClass="ThirdViewController" customModule="abc" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="mHR-hS-UDA" userLabel="Third" customClass="LoginViewController" customModule="TT_CovidCity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WrZ-7s-jaW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

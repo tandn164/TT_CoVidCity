@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		DC0F970B2427BE9700E76CF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0F970A2427BE9700E76CF9 /* AppDelegate.swift */; };
 		DC0F970D2427BE9700E76CF9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0F970C2427BE9700E76CF9 /* SceneDelegate.swift */; };
-		DC0F970F2427BE9700E76CF9 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0F970E2427BE9700E76CF9 /* FirstViewController.swift */; };
-		DC0F97112427BE9700E76CF9 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0F97102427BE9700E76CF9 /* SecondViewController.swift */; };
+		DC0F970F2427BE9700E76CF9 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0F970E2427BE9700E76CF9 /* MapViewController.swift */; };
+		DC0F97112427BE9700E76CF9 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0F97102427BE9700E76CF9 /* NewsViewController.swift */; };
 		DC0F97142427BE9700E76CF9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC0F97122427BE9700E76CF9 /* Main.storyboard */; };
 		DC0F97162427BE9900E76CF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC0F97152427BE9900E76CF9 /* Assets.xcassets */; };
 		DC0F97192427BE9900E76CF9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC0F97172427BE9900E76CF9 /* LaunchScreen.storyboard */; };
-		DC0F97242428542700E76CF9 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0F97232428542700E76CF9 /* ThirdViewController.swift */; };
-		DC0F97262428543400E76CF9 /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0F97252428543400E76CF9 /* FourthViewController.swift */; };
+		DC0F97242428542700E76CF9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0F97232428542700E76CF9 /* LoginViewController.swift */; };
+		DC0F97262428543400E76CF9 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0F97252428543400E76CF9 /* ReportViewController.swift */; };
 		DC0F972824286D9800E76CF9 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0F972724286D9800E76CF9 /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
@@ -23,14 +23,14 @@
 		DC0F97072427BE9700E76CF9 /* TT_CovidCity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TT_CovidCity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC0F970A2427BE9700E76CF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC0F970C2427BE9700E76CF9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DC0F970E2427BE9700E76CF9 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		DC0F97102427BE9700E76CF9 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		DC0F970E2427BE9700E76CF9 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		DC0F97102427BE9700E76CF9 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		DC0F97132427BE9700E76CF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DC0F97152427BE9900E76CF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DC0F97182427BE9900E76CF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DC0F971A2427BE9900E76CF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DC0F97232428542700E76CF9 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
-		DC0F97252428543400E76CF9 /* FourthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
+		DC0F97232428542700E76CF9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		DC0F97252428543400E76CF9 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		DC0F972724286D9800E76CF9 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -48,7 +48,7 @@
 		DC0F96FE2427BE9600E76CF9 = {
 			isa = PBXGroup;
 			children = (
-				DC0F97092427BE9700E76CF9 /* abc */,
+				DC0F97092427BE9700E76CF9 /* TT_CovidCity */,
 				DC0F97082427BE9700E76CF9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -61,7 +61,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DC0F97092427BE9700E76CF9 /* abc */ = {
+		DC0F97092427BE9700E76CF9 /* TT_CovidCity */ = {
 			isa = PBXGroup;
 			children = (
 				DC0F970A2427BE9700E76CF9 /* AppDelegate.swift */,
@@ -72,17 +72,17 @@
 				DC0F97152427BE9900E76CF9 /* Assets.xcassets */,
 				DC0F971A2427BE9900E76CF9 /* Info.plist */,
 			);
-			path = abc;
+			path = TT_CovidCity;
 			sourceTree = "<group>";
 		};
 		DC0F97292428912500E76CF9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				DC0F972724286D9800E76CF9 /* TabBarController.swift */,
-				DC0F970E2427BE9700E76CF9 /* FirstViewController.swift */,
-				DC0F97102427BE9700E76CF9 /* SecondViewController.swift */,
-				DC0F97232428542700E76CF9 /* ThirdViewController.swift */,
-				DC0F97252428543400E76CF9 /* FourthViewController.swift */,
+				DC0F970E2427BE9700E76CF9 /* MapViewController.swift */,
+				DC0F97102427BE9700E76CF9 /* NewsViewController.swift */,
+				DC0F97232428542700E76CF9 /* LoginViewController.swift */,
+				DC0F97252428543400E76CF9 /* ReportViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -106,9 +106,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DC0F97062427BE9700E76CF9 /* abc */ = {
+		DC0F97062427BE9700E76CF9 /* TT_CovidCity */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DC0F971D2427BE9900E76CF9 /* Build configuration list for PBXNativeTarget "abc" */;
+			buildConfigurationList = DC0F971D2427BE9900E76CF9 /* Build configuration list for PBXNativeTarget "TT_CovidCity" */;
 			buildPhases = (
 				DC0F97032427BE9700E76CF9 /* Sources */,
 				DC0F97042427BE9700E76CF9 /* Frameworks */,
@@ -118,7 +118,7 @@
 			);
 			dependencies = (
 			);
-			name = abc;
+			name = TT_CovidCity;
 			productName = abc;
 			productReference = DC0F97072427BE9700E76CF9 /* TT_CovidCity.app */;
 			productType = "com.apple.product-type.application";
@@ -138,7 +138,7 @@
 					};
 				};
 			};
-			buildConfigurationList = DC0F97022427BE9600E76CF9 /* Build configuration list for PBXProject "abc" */;
+			buildConfigurationList = DC0F97022427BE9600E76CF9 /* Build configuration list for PBXProject "TT_CovidCity" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -151,7 +151,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DC0F97062427BE9700E76CF9 /* abc */,
+				DC0F97062427BE9700E76CF9 /* TT_CovidCity */,
 			);
 		};
 /* End PBXProject section */
@@ -174,10 +174,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC0F97112427BE9700E76CF9 /* SecondViewController.swift in Sources */,
-				DC0F970F2427BE9700E76CF9 /* FirstViewController.swift in Sources */,
-				DC0F97262428543400E76CF9 /* FourthViewController.swift in Sources */,
-				DC0F97242428542700E76CF9 /* ThirdViewController.swift in Sources */,
+				DC0F97112427BE9700E76CF9 /* NewsViewController.swift in Sources */,
+				DC0F970F2427BE9700E76CF9 /* MapViewController.swift in Sources */,
+				DC0F97262428543400E76CF9 /* ReportViewController.swift in Sources */,
+				DC0F97242428542700E76CF9 /* LoginViewController.swift in Sources */,
 				DC0F972824286D9800E76CF9 /* TabBarController.swift in Sources */,
 				DC0F970B2427BE9700E76CF9 /* AppDelegate.swift in Sources */,
 				DC0F970D2427BE9700E76CF9 /* SceneDelegate.swift in Sources */,
@@ -326,7 +326,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N2TUE3Q7K8;
-				INFOPLIST_FILE = abc/Info.plist;
+				INFOPLIST_FILE = TT_CovidCity/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -344,7 +344,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N2TUE3Q7K8;
-				INFOPLIST_FILE = abc/Info.plist;
+				INFOPLIST_FILE = TT_CovidCity/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -359,7 +359,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DC0F97022427BE9600E76CF9 /* Build configuration list for PBXProject "abc" */ = {
+		DC0F97022427BE9600E76CF9 /* Build configuration list for PBXProject "TT_CovidCity" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DC0F971B2427BE9900E76CF9 /* Debug */,
@@ -368,7 +368,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DC0F971D2427BE9900E76CF9 /* Build configuration list for PBXNativeTarget "abc" */ = {
+		DC0F971D2427BE9900E76CF9 /* Build configuration list for PBXNativeTarget "TT_CovidCity" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DC0F971E2427BE9900E76CF9 /* Debug */,
