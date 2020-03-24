@@ -10,6 +10,7 @@ import UIKit
 import GoogleMaps
 import GooglePlaces
 
+
 class MapViewController: UIViewController, CLLocationManagerDelegate {
   
   var locationManager = CLLocationManager()
@@ -26,10 +27,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    locationManager.requestAlwaysAuthorization()
+    
     let camera = GMSCameraPosition.camera(withLatitude: 21.0294498,
                                           longitude: 105.8544441,
                                           zoom: 12.5)
-    let mapView = GMSMapView.map(withFrame: self.view.frame, camera: camera)
+    mapView = GMSMapView.map(withFrame: self.view.frame, camera: camera)
     mapView.settings.myLocationButton = true
     mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     //mapView.isMyLocationEnabled = true
@@ -38,7 +42,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     view.addSubview(mapView)
     mapView.isHidden = true
     
-    locationManager = CLLocationManager()
     locationManager.desiredAccuracy = kCLLocationAccuracyBest
     locationManager.requestAlwaysAuthorization()
     locationManager.distanceFilter = 50
@@ -66,8 +69,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
       marker.snippet = selectedPlace?.formattedAddress
       marker.map = mapView
     }
-    
-    listLikelyPlaces()
+  }
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "segueToSelect" {
+      if let nextViewController = segue.destination as? PlacesViewController {
+        nextViewController.likelyPlaces = likelyPlaces
+      }
+    }
   }
 }
 
@@ -82,7 +90,7 @@ extension MapViewController {
                                           longitude: location.coordinate.longitude,
                                           zoom: zoomLevel)
     
-    if mapView.isHidden {
+    if mapView.isHidden == true {
       mapView.isHidden = false
       mapView.camera = camera
     } else {
@@ -135,16 +143,10 @@ extension MapViewController {
           let place = likelihood.place
           self.likelyPlaces.append(place)
         }
+        self.performSegue(withIdentifier: "segueToSelect", sender: self)
       }
     })
   }
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if segue.identifier == "segueToSelect" {
-      if let nextViewController = segue.destination as? PlacesViewController {
-        nextViewController.likelyPlaces = likelyPlaces
-      }
-    }
   }
-}
 
 
