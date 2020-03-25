@@ -19,6 +19,7 @@
 		DC0F97262428543400E76CF9 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0F97252428543400E76CF9 /* ReportViewController.swift */; };
 		DC0F972824286D9800E76CF9 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0F972724286D9800E76CF9 /* TabBarController.swift */; };
 		DC22FE9624299F9600AA5A8B /* PlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC22FE9524299F9600AA5A8B /* PlacesViewController.swift */; };
+		DCE6AB90242A34CB007F4BF8 /* MarkerCluster.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE6AB8F242A34CB007F4BF8 /* MarkerCluster.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		DC0F97252428543400E76CF9 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		DC0F972724286D9800E76CF9 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		DC22FE9524299F9600AA5A8B /* PlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesViewController.swift; sourceTree = "<group>"; };
+		DCE6AB8F242A34CB007F4BF8 /* MarkerCluster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerCluster.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 		DC0F972B2428914D00E76CF9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				DCE6AB8F242A34CB007F4BF8 /* MarkerCluster.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -141,7 +144,7 @@
 				DC0F97032427BE9700E76CF9 /* Sources */,
 				DC0F97042427BE9700E76CF9 /* Frameworks */,
 				DC0F97052427BE9700E76CF9 /* Resources */,
-				6009598AA6402A0FE761C7AD /* [CP] Copy Pods Resources */,
+				CB63FA0D09A24C126701C04A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -221,7 +224,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6009598AA6402A0FE761C7AD /* [CP] Copy Pods Resources */ = {
+		CB63FA0D09A24C126701C04A /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -253,6 +256,7 @@
 				DC0F972824286D9800E76CF9 /* TabBarController.swift in Sources */,
 				DC0F970B2427BE9700E76CF9 /* AppDelegate.swift in Sources */,
 				DC0F970D2427BE9700E76CF9 /* SceneDelegate.swift in Sources */,
+				DCE6AB90242A34CB007F4BF8 /* MarkerCluster.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

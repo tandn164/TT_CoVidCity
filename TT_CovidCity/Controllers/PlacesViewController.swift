@@ -50,7 +50,7 @@ extension PlacesViewController {
   
   // Show only the first five items in the table (scrolling is disabled in IB).
   override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    return tableView.frame.size.height/5
+    return tableView.frame.size.height/10
   }
   
   // Make table rows display at proper height if there are less than 5 items.

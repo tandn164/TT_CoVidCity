@@ -9,15 +9,19 @@
 import UIKit
 import GoogleMaps
 import GooglePlaces
+import GoogleMapsUtils
 
 
-class MapViewController: UIViewController, CLLocationManagerDelegate {
+class MapViewController: UIViewController, CLLocationManagerDelegate, GMUClusterManagerDelegate, GMSMapViewDelegate{
   
+  private var clusterManager: GMUClusterManager!
   var locationManager = CLLocationManager()
   var currentLocation: CLLocation?
   var mapView: GMSMapView!
   var placesClient: GMSPlacesClient!
   var zoomLevel: Float = 15.0
+  
+  var markers = [GMSMarker]()
   
   // An array to hold the list of likely places.
   var likelyPlaces: [GMSPlace] = []
@@ -36,39 +40,59 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     mapView = GMSMapView.map(withFrame: self.view.frame, camera: camera)
     mapView.settings.myLocationButton = true
     mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-    //mapView.isMyLocationEnabled = true
+    mapView.isMyLocationEnabled = true
     
     // Add the map to the view, hide it until we've got a location update.
     view.addSubview(mapView)
-    mapView.isHidden = true
+    mapView.isHidden = false
     
     locationManager.desiredAccuracy = kCLLocationAccuracyBest
-    locationManager.requestAlwaysAuthorization()
     locationManager.distanceFilter = 50
     locationManager.startUpdatingLocation()
     locationManager.delegate = self
     
     placesClient = GMSPlacesClient.shared()
     
-    // Creates a marker in the center of the map.
-    //    let marker = GMSMarker()
-    //    marker.position = CLLocationCoordinate2D(latitude: -33.86, longitude: 151.20)
-    //    marker.title = "Sydney"
-    //    marker.snippet = "Australia"
-    //    marker.map = mapView
+    markers.append(addMarker( lat: 20.98498, long:105.841041 , cased: "F0"))
+    markers.append(addMarker( lat: 20.9824498, long:105.831041 , cased: "F1"))
+    markers.append(addMarker( lat: 20.9794498, long:105.821041 , cased: "New F0"))
+    
+    // Set up the cluster manager with the supplied icon generator and
+    // renderer.
+    let iconGenerator = GMUDefaultClusterIconGenerator()
+    let algorithm = GMUNonHierarchicalDistanceBasedAlgorithm()
+    let renderer = GMUDefaultClusterRenderer(mapView: mapView,
+                                             clusterIconGenerator: iconGenerator)
+    clusterManager = GMUClusterManager(map: mapView, algorithm: algorithm,
+                                       renderer: renderer)
+    
+    // Generate and add random items to the cluster manager.
+    generateClusterItems()
+    
+    // Call cluster() after items have been added to perform the clustering
+    // and rendering on map.
+    clusterManager.cluster()
+    
+    clusterManager.setDelegate(self, mapDelegate: self)
   }
   // Update the map once the user has made their selection.
   @IBAction func unwindToMain(segue: UIStoryboardSegue) {
     // Clear the map.
     mapView.clear()
     
+    markers.append(addMarker( lat: 20.98498, long:105.841041 , cased: "F0"))
+    markers.append(addMarker( lat: 20.9824498, long:105.831041 , cased: "F1"))
+    markers.append(addMarker( lat: 20.9794498, long:105.821041 , cased: "New F0"))
+    
     // Add a marker to the map.
     if selectedPlace != nil {
       let marker = GMSMarker(position: (self.selectedPlace?.coordinate)!)
-      marker.title = selectedPlace?.name
+      marker.title = "You"
       marker.snippet = selectedPlace?.formattedAddress
       marker.map = mapView
+      marker.icon = GMSMarker.markerImage(with: .black)
     }
+    
   }
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "segueToSelect" {
@@ -76,6 +100,42 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         nextViewController.likelyPlaces = likelyPlaces
       }
     }
+  }
+  func addMarker(lat: Double, long: Double, cased: String) -> GMSMarker{
+    let position = CLLocationCoordinate2D(latitude: lat, longitude: long)
+    let marker = GMSMarker(position: position)
+    marker.title = cased
+    marker.map = mapView
+    marker.icon = GMSMarker.markerImage(with: caseIdent(title: cased))
+    marker.isFlat = true
+    return marker
+  }
+  func caseIdent(title: String) -> UIColor {
+    if title == "F0" {
+      return .red
+    }
+    if title == "F1" {
+      return .orange
+    } else {
+      return .white
+      
+    }
+  }
+  
+  private func generateClusterItems() {
+    let extent = 0.2
+    for index in 1...10 {
+      let lat = 20.977 + extent * randomScale()
+      let lng = 105.841 + extent * randomScale()
+      let name = "Item \(index)"
+      let item = POIItem(position: CLLocationCoordinate2DMake(lat, lng), name: name)
+      clusterManager.add(item)
+    }
+  }
+  
+  /// Returns a random value between -1.0 and 1.0.
+  private func randomScale() -> Double {
+    return Double(arc4random()) / Double(UINT32_MAX) * 2.0 - 1.0
   }
 }
 
@@ -147,6 +207,28 @@ extension MapViewController {
       }
     })
   }
+}
+
+extension MapViewController {
+  // MARK: - GMUClusterManagerDelegate
+  
+  func clusterManager(clusterManager: GMUClusterManager, didTapCluster cluster: GMUCluster) {
+    let newCamera = GMSCameraPosition.camera(withTarget: cluster.position,
+                                             zoom: mapView.camera.zoom + 1)
+    let update = GMSCameraUpdate.setCamera(newCamera)
+    mapView.moveCamera(update)
   }
+  
+  // MARK: - GMUMapViewDelegate
+  
+  func mapView(mapView: GMSMapView, didTapMarker marker: GMSMarker) -> Bool {
+    if let poiItem = marker.userData as? POIItem {
+      NSLog("Did tap marker for cluster item \(poiItem.name ?? "")")
+    } else {
+      NSLog("Did tap a normal marker")
+    }
+    return false
+  }
+}
 
 
