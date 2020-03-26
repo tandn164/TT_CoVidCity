@@ -7,9 +7,10 @@
 //
 
 import CoreLocation
+import GoogleMaps
 import GoogleMapsUtils
 
-class POIItem: NSObject, GMUClusterItem {
+class POIItem: NSObject, GMUClusterItem  {
   
   var position: CLLocationCoordinate2D
   var name: String!

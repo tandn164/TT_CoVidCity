@@ -10,7 +10,20 @@ import UIKit
 import GoogleMaps
 import GooglePlaces
 
-class PlacesViewController: UITableViewController {
+class PlacesViewController: UITableViewController, UIViewControllerTransitioningDelegate {
+  
+  required init?(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)
+    
+    self.modalPresentationStyle = .custom
+    self.transitioningDelegate = self
+  }
+  
+  func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+    
+    return HalfScreenPresentation(presentedViewController: presented, presenting: presenting)
+    
+  }
   
   // An array to hold the list of likely places.
   var likelyPlaces: [GMSPlace] = []
@@ -50,7 +63,7 @@ extension PlacesViewController {
   
   // Show only the first five items in the table (scrolling is disabled in IB).
   override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    return tableView.frame.size.height/10
+    return tableView.frame.size.height/5
   }
   
   // Make table rows display at proper height if there are less than 5 items.
@@ -66,5 +79,16 @@ extension PlacesViewController {
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     selectedPlace = likelyPlaces[indexPath.row]
     performSegue(withIdentifier: "unwindToMain", sender: self)
+  }
+}
+
+class HalfScreenPresentation: UIPresentationController {
+  
+  override var frameOfPresentedViewInContainerView : CGRect {
+    
+    let containerFrame = self.containerView!.frame
+    
+    return CGRect(x: 0, y: containerFrame.height/2, width: containerFrame.width, height: containerFrame.height/2)
+    
   }
 }

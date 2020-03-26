@@ -12,7 +12,6 @@ class ReportViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.tabBarItem.selectedImage = UIImage.init(systemName: "paperplane.fill")
   }
   
   
