@@ -21,6 +21,8 @@
 		4D0D02BD242F67AD006477B4 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0D02BC242F67AD006477B4 /* Contact.swift */; };
 		4D0D02BF242F67D6006477B4 /* hardcodeContactData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0D02BE242F67D6006477B4 /* hardcodeContactData.swift */; };
 		4D0D02C1242F67F3006477B4 /* hardcodeVietNamData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0D02C0242F67F3006477B4 /* hardcodeVietNamData.swift */; };
+		4D458D89242FC38200AD5DA6 /* hardcidePostsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D458D88242FC38200AD5DA6 /* hardcidePostsData.swift */; };
+		4D458D8B242FD7B700AD5DA6 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D458D8A242FD7B700AD5DA6 /* PostCell.swift */; };
 		DC0F970B2427BE9700E76CF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0F970A2427BE9700E76CF9 /* AppDelegate.swift */; };
 		DC0F970D2427BE9700E76CF9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0F970C2427BE9700E76CF9 /* SceneDelegate.swift */; };
 		DC0F970F2427BE9700E76CF9 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0F970E2427BE9700E76CF9 /* MapViewController.swift */; };
@@ -29,7 +31,7 @@
 		DC0F97162427BE9900E76CF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC0F97152427BE9900E76CF9 /* Assets.xcassets */; };
 		DC0F97192427BE9900E76CF9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC0F97172427BE9900E76CF9 /* LaunchScreen.storyboard */; };
 		DC0F97242428542700E76CF9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0F97232428542700E76CF9 /* LoginViewController.swift */; };
-		DC0F97262428543400E76CF9 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0F97252428543400E76CF9 /* ReportViewController.swift */; };
+		DC0F97262428543400E76CF9 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0F97252428543400E76CF9 /* NewsViewController.swift */; };
 		DC0F972824286D9800E76CF9 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0F972724286D9800E76CF9 /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +50,8 @@
 		4D0D02BC242F67AD006477B4 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Contact.swift; path = TT_CovidCity/CustomCell/Contact.swift; sourceTree = SOURCE_ROOT; };
 		4D0D02BE242F67D6006477B4 /* hardcodeContactData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = hardcodeContactData.swift; path = TT_CovidCity/CustomCell/hardcodeContactData.swift; sourceTree = SOURCE_ROOT; };
 		4D0D02C0242F67F3006477B4 /* hardcodeVietNamData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = hardcodeVietNamData.swift; path = TT_CovidCity/CustomCell/hardcodeVietNamData.swift; sourceTree = SOURCE_ROOT; };
+		4D458D88242FC38200AD5DA6 /* hardcidePostsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = hardcidePostsData.swift; path = TT_CovidCity/CustomCell/hardcidePostsData.swift; sourceTree = SOURCE_ROOT; };
+		4D458D8A242FD7B700AD5DA6 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		DC0F97072427BE9700E76CF9 /* TT_CovidCity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TT_CovidCity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC0F970A2427BE9700E76CF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC0F970C2427BE9700E76CF9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,7 +62,7 @@
 		DC0F97182427BE9900E76CF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DC0F971A2427BE9900E76CF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC0F97232428542700E76CF9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		DC0F97252428543400E76CF9 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
+		DC0F97252428543400E76CF9 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		DC0F972724286D9800E76CF9 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,6 +95,7 @@
 				4D0D02B5242F61A4006477B4 /* ContactCell.xib */,
 				4D0D02B8242F6493006477B4 /* SubCell.swift */,
 				4D0D02B9242F6493006477B4 /* SubCell.xib */,
+				4D458D8A242FD7B700AD5DA6 /* PostCell.swift */,
 			);
 			path = CustomCell;
 			sourceTree = "<group>";
@@ -135,7 +140,7 @@
 				DC0F970E2427BE9700E76CF9 /* MapViewController.swift */,
 				DC0F97102427BE9700E76CF9 /* DetailViewController.swift */,
 				DC0F97232428542700E76CF9 /* LoginViewController.swift */,
-				DC0F97252428543400E76CF9 /* ReportViewController.swift */,
+				DC0F97252428543400E76CF9 /* NewsViewController.swift */,
 				4D0D02AD242F5D91006477B4 /* DetailInfoView.swift */,
 			);
 			path = Controllers;
@@ -157,6 +162,7 @@
 				4D0763FF242A0D73000AD490 /* Country.swift */,
 				4D0D02BE242F67D6006477B4 /* hardcodeContactData.swift */,
 				4D0D02C0242F67F3006477B4 /* hardcodeVietNamData.swift */,
+				4D458D88242FC38200AD5DA6 /* hardcidePostsData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -245,14 +251,16 @@
 				4D076472242B665D000AD490 /* ResultData.swift in Sources */,
 				4D076400242A0D73000AD490 /* Country.swift in Sources */,
 				4D0D02AE242F5D91006477B4 /* DetailInfoView.swift in Sources */,
-				DC0F97262428543400E76CF9 /* ReportViewController.swift in Sources */,
+				DC0F97262428543400E76CF9 /* NewsViewController.swift in Sources */,
 				DC0F97242428542700E76CF9 /* LoginViewController.swift in Sources */,
 				DC0F972824286D9800E76CF9 /* TabBarController.swift in Sources */,
+				4D458D89242FC38200AD5DA6 /* hardcidePostsData.swift in Sources */,
 				DC0F970B2427BE9700E76CF9 /* AppDelegate.swift in Sources */,
 				4D0D02B2242F5F13006477B4 /* StartCell.swift in Sources */,
 				4D0763FC242A0C2B000AD490 /* WorldCovidData.swift in Sources */,
 				4D0D02B6242F61A4006477B4 /* ContactCell.swift in Sources */,
 				DC0F970D2427BE9700E76CF9 /* SceneDelegate.swift in Sources */,
+				4D458D8B242FD7B700AD5DA6 /* PostCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
