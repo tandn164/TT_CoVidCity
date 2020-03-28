@@ -9,12 +9,14 @@
 import UIKit
 
 class ContactCell: UITableViewCell {
-    static let contactCellID = "ContactCell"
+    
     @IBOutlet weak var hospitalName: UILabel!
+    @IBOutlet weak var managerName: UILabel!
     @IBOutlet weak var phoneNumber1: UILabel!
     @IBOutlet weak var phoneNumber2: UILabel!
-    @IBOutlet weak var button1: UIButton!
-    @IBOutlet weak var managerName: UILabel!
+    @IBOutlet weak var button: UIButton!
+    
+    static let contactCellID = "ContactCell"
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -26,4 +28,6 @@ class ContactCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    @IBAction func buttonPressed(_ sender: UIButton) {
+    }
 }

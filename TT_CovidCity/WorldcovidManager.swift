@@ -20,10 +20,12 @@ struct WorldCovidManager {
         performRequest(urlString: urlString)
     }
     func  performRequest(urlString: String) {
+        print("Data 23")
         if let url = URL(string: urlString)
         {
             let session = URLSession(configuration: .default)
             let task = session.dataTask(with: url) { (data, response, error) in
+                print("Data 28")
                 if error != nil{
                     self.delegate?.didEnableError(error!)
                     return
@@ -33,15 +35,19 @@ struct WorldCovidManager {
                 {
                     if let coronadata = self.parseJSON(data: safeData)
                     {
+                        print("Data 38")
+                        print(coronadata.count)
                         self.delegate?.DataDidUpdate(self, data: coronadata)
                     }
                     
                 }
             }
+            print("Data 44")
             task.resume()
         }
     }
     func parseJSON(data: Data) -> [WorldCovidData]?{
+        print("Data 49")
         let decoder = JSONDecoder()
         do{
             let decoderData = try decoder.decode([WorldCovidData].self, from: data)
