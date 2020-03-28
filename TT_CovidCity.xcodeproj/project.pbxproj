@@ -11,10 +11,13 @@
 		4D0763FE242A0C6C000AD490 /* WorldcovidManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0763FD242A0C6C000AD490 /* WorldcovidManager.swift */; };
 		4D076400242A0D73000AD490 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0763FF242A0D73000AD490 /* Country.swift */; };
 		4D076472242B665D000AD490 /* ResultData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D076471242B665D000AD490 /* ResultData.swift */; };
+		4D0D029D242F0855006477B4 /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0D029B242F0855006477B4 /* ContactCell.swift */; };
+		4D0D029E242F0855006477B4 /* ContactCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D0D029C242F0855006477B4 /* ContactCell.xib */; };
+		4D0D02A0242F1648006477B4 /* SubViewTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0D029F242F1648006477B4 /* SubViewTableCell.swift */; };
+		4D0D02A2242F1C9A006477B4 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0D02A1242F1C9A006477B4 /* Contact.swift */; };
 		4DC7B629242BA21E0023D902 /* SubCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC7B628242BA21E0023D902 /* SubCell.swift */; };
-		4DC7B630242C48230023D902 /* StartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC7B62F242C48230023D902 /* StartCell.swift */; };
-		4DC7B633242C4BFD0023D902 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC7B631242C4BFD0023D902 /* CustomCell.swift */; };
-		4DC7B634242C4BFD0023D902 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DC7B632242C4BFD0023D902 /* CustomCell.xib */; };
+		4DC7B65C242DF3580023D902 /* StartViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC7B65A242DF3580023D902 /* StartViewCell.swift */; };
+		4DC7B65D242DF3580023D902 /* StartViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DC7B65B242DF3580023D902 /* StartViewCell.xib */; };
 		DC0F970B2427BE9700E76CF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0F970A2427BE9700E76CF9 /* AppDelegate.swift */; };
 		DC0F970D2427BE9700E76CF9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0F970C2427BE9700E76CF9 /* SceneDelegate.swift */; };
 		DC0F970F2427BE9700E76CF9 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0F970E2427BE9700E76CF9 /* MapViewController.swift */; };
@@ -32,10 +35,13 @@
 		4D0763FD242A0C6C000AD490 /* WorldcovidManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldcovidManager.swift; sourceTree = "<group>"; };
 		4D0763FF242A0D73000AD490 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Country.swift; path = TT_CovidCity/Country.swift; sourceTree = SOURCE_ROOT; };
 		4D076471242B665D000AD490 /* ResultData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultData.swift; sourceTree = "<group>"; };
+		4D0D029B242F0855006477B4 /* ContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
+		4D0D029C242F0855006477B4 /* ContactCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactCell.xib; sourceTree = "<group>"; };
+		4D0D029F242F1648006477B4 /* SubViewTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubViewTableCell.swift; sourceTree = "<group>"; };
+		4D0D02A1242F1C9A006477B4 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Contact.swift; path = TT_CovidCity/CustomCell/Contact.swift; sourceTree = SOURCE_ROOT; };
 		4DC7B628242BA21E0023D902 /* SubCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCell.swift; sourceTree = "<group>"; };
-		4DC7B62F242C48230023D902 /* StartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartCell.swift; sourceTree = "<group>"; };
-		4DC7B631242C4BFD0023D902 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
-		4DC7B632242C4BFD0023D902 /* CustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
+		4DC7B65A242DF3580023D902 /* StartViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewCell.swift; sourceTree = "<group>"; };
+		4DC7B65B242DF3580023D902 /* StartViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartViewCell.xib; sourceTree = "<group>"; };
 		DC0F97072427BE9700E76CF9 /* TT_CovidCity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TT_CovidCity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC0F970A2427BE9700E76CF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC0F970C2427BE9700E76CF9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,22 +76,24 @@
 			name = WorldWideCoVidData;
 			sourceTree = "<group>";
 		};
-		4DC7B627242BA1D80023D902 /* CellController */ = {
-			isa = PBXGroup;
-			children = (
-				4DC7B628242BA21E0023D902 /* SubCell.swift */,
-				4DC7B62F242C48230023D902 /* StartCell.swift */,
-				4DC7B631242C4BFD0023D902 /* CustomCell.swift */,
-				4DC7B632242C4BFD0023D902 /* CustomCell.xib */,
-			);
-			path = CellController;
-			sourceTree = "<group>";
-		};
 		4DC7B62A242BC4120023D902 /* ControllerSupport */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = ControllerSupport;
+			sourceTree = "<group>";
+		};
+		4DC7B655242DF3120023D902 /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				4DC7B628242BA21E0023D902 /* SubCell.swift */,
+				4DC7B65A242DF3580023D902 /* StartViewCell.swift */,
+				4DC7B65B242DF3580023D902 /* StartViewCell.xib */,
+				4D0D029B242F0855006477B4 /* ContactCell.swift */,
+				4D0D029C242F0855006477B4 /* ContactCell.xib */,
+				4D0D029F242F1648006477B4 /* SubViewTableCell.swift */,
+			);
+			path = CustomCell;
 			sourceTree = "<group>";
 		};
 		DC0F96FE2427BE9600E76CF9 = {
@@ -107,10 +115,10 @@
 		DC0F97092427BE9700E76CF9 /* TT_CovidCity */ = {
 			isa = PBXGroup;
 			children = (
+				4DC7B655242DF3120023D902 /* CustomCell */,
 				DC0F970A2427BE9700E76CF9 /* AppDelegate.swift */,
 				DC0F970C2427BE9700E76CF9 /* SceneDelegate.swift */,
 				4DC7B62A242BC4120023D902 /* ControllerSupport */,
-				4DC7B627242BA1D80023D902 /* CellController */,
 				4D0763FA242A0BCE000AD490 /* WorldWideCoVidData */,
 				DC0F972B2428914D00E76CF9 /* Models */,
 				DC0F972A2428913F00E76CF9 /* Views */,
@@ -147,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				4D0763FF242A0D73000AD490 /* Country.swift */,
+				4D0D02A1242F1C9A006477B4 /* Contact.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -209,9 +218,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DC7B634242C4BFD0023D902 /* CustomCell.xib in Resources */,
+				4DC7B65D242DF3580023D902 /* StartViewCell.xib in Resources */,
 				DC0F97192427BE9900E76CF9 /* LaunchScreen.storyboard in Resources */,
 				DC0F97162427BE9900E76CF9 /* Assets.xcassets in Resources */,
+				4D0D029E242F0855006477B4 /* ContactCell.xib in Resources */,
 				DC0F97142427BE9700E76CF9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -226,16 +236,18 @@
 				DC0F97112427BE9700E76CF9 /* DetailViewController.swift in Sources */,
 				4D0763FE242A0C6C000AD490 /* WorldcovidManager.swift in Sources */,
 				DC0F970F2427BE9700E76CF9 /* MapViewController.swift in Sources */,
-				4DC7B630242C48230023D902 /* StartCell.swift in Sources */,
 				4D076472242B665D000AD490 /* ResultData.swift in Sources */,
-				4DC7B633242C4BFD0023D902 /* CustomCell.swift in Sources */,
+				4D0D02A2242F1C9A006477B4 /* Contact.swift in Sources */,
 				4D076400242A0D73000AD490 /* Country.swift in Sources */,
 				DC0F97262428543400E76CF9 /* ReportViewController.swift in Sources */,
 				DC0F97242428542700E76CF9 /* LoginViewController.swift in Sources */,
+				4D0D02A0242F1648006477B4 /* SubViewTableCell.swift in Sources */,
 				DC0F972824286D9800E76CF9 /* TabBarController.swift in Sources */,
 				4DC7B629242BA21E0023D902 /* SubCell.swift in Sources */,
 				DC0F970B2427BE9700E76CF9 /* AppDelegate.swift in Sources */,
 				4D0763FC242A0C2B000AD490 /* WorldCovidData.swift in Sources */,
+				4DC7B65C242DF3580023D902 /* StartViewCell.swift in Sources */,
+				4D0D029D242F0855006477B4 /* ContactCell.swift in Sources */,
 				DC0F970D2427BE9700E76CF9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

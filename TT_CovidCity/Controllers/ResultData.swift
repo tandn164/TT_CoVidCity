@@ -10,6 +10,9 @@ import Foundation
 class ResultData: WorldCovidDelegate {
     var cvManager = WorldCovidManager()
     var finalData : [Country] = []
+    var worldConfirmed: Int = 0
+    var worldRecovered: Int = 0
+    var worldDeaths: Int = 0
     init(){
         cvManager.delegate = self
         self.cvManager.fetCorona()
@@ -30,6 +33,9 @@ class ResultData: WorldCovidDelegate {
             {
             finalData.append(x)
             }
+            worldRecovered += x.recovered
+            worldConfirmed += x.confirmed
+            worldDeaths += x.deaths
         }
         print(finalData.count)
     }
