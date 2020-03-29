@@ -129,13 +129,6 @@ extension DetailViewController: UITableViewDataSource{
             return 80
         }
     }
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let view = CustomView1()
-        return view
-    }
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 5
-    }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section != 0{
             let view = CustomView1()
@@ -148,7 +141,7 @@ extension DetailViewController: UITableViewDataSource{
         {
             return 0
         }
-        return 5
+        return 15
     }
 }
 // MARK: - StartCellDelegate

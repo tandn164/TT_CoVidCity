@@ -30,10 +30,10 @@ class CustomView1: UIView {
         setStyle()
     }
     private func setStyle(){
-        backgroundColor = UIColor.white
+        backgroundColor = UIColor.systemBackground
     }
     private func setShadow(){
-        layer.shadowColor = UIColor.opaqueSeparator.cgColor
+        layer.shadowColor = UIColor.systemGray.cgColor
         layer.shadowOffset = CGSize(width: 0.0, height: 6.0)
         layer.shadowRadius = 8
         layer.shadowOpacity = 0.5
