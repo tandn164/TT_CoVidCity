@@ -16,10 +16,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="382" height="198"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Fm-rA-0RO" customClass="CustomView1" customModule="TT_CovidCity" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="382" height="188"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                    </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yrI-2q-Acs">
                         <rect key="frame" x="0.0" y="0.0" width="382" height="46"/>
                         <subviews>
@@ -69,16 +65,12 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="R4o-5q-3oM" firstAttribute="top" secondItem="yrI-2q-Acs" secondAttribute="bottom" constant="33" id="1EN-pW-3EM"/>
-                    <constraint firstAttribute="trailing" secondItem="3Fm-rA-0RO" secondAttribute="trailing" id="5Sm-zm-ajj"/>
                     <constraint firstAttribute="trailing" secondItem="yrI-2q-Acs" secondAttribute="trailing" id="A3T-Af-Jm0"/>
                     <constraint firstItem="R4o-5q-3oM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="27" id="Fnq-gp-6b9"/>
-                    <constraint firstItem="3Fm-rA-0RO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="L7r-pU-8Cx"/>
-                    <constraint firstAttribute="bottom" secondItem="3Fm-rA-0RO" secondAttribute="bottom" constant="10" id="N4A-Go-ZgS"/>
                     <constraint firstItem="yrI-2q-Acs" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="cNs-Uh-whF"/>
                     <constraint firstAttribute="trailingMargin" secondItem="Tbp-lb-1ea" secondAttribute="trailing" constant="26" id="iRp-rJ-Psd"/>
                     <constraint firstItem="Tbp-lb-1ea" firstAttribute="top" secondItem="yrI-2q-Acs" secondAttribute="bottom" constant="33" id="kLv-Nf-djD"/>
                     <constraint firstItem="yrI-2q-Acs" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="sUb-MD-iBS"/>
-                    <constraint firstItem="3Fm-rA-0RO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="wNg-wk-DjZ"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

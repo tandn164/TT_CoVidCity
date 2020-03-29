@@ -129,7 +129,27 @@ extension DetailViewController: UITableViewDataSource{
             return 80
         }
     }
-    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let view = CustomView1()
+        return view
+    }
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 5
+    }
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if section != 0{
+            let view = CustomView1()
+            return view
+        }
+        return UIView()
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == 0
+        {
+            return 0
+        }
+        return 5
+    }
 }
 // MARK: - StartCellDelegate
 extension DetailViewController: StartCellDelegate{

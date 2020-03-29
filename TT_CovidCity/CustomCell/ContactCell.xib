@@ -82,21 +82,11 @@
                             <constraint firstItem="FG9-tP-qGQ" firstAttribute="top" secondItem="JYN-zS-7xu" secondAttribute="bottom" constant="5" id="wGg-FD-kjn"/>
                         </constraints>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B6S-jH-U1O">
-                        <rect key="frame" x="0.0" y="76" width="320" height="10"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="10" id="9Nh-V9-UYr"/>
-                        </constraints>
-                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="B6S-jH-U1O" secondAttribute="trailing" id="2A3-fe-fRb"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="Cge-bD-Gfz" secondAttribute="bottom" constant="5" id="5yk-YQ-WVK"/>
                     <constraint firstItem="Cge-bD-Gfz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="DgY-jV-GC6"/>
                     <constraint firstAttribute="trailing" secondItem="Cge-bD-Gfz" secondAttribute="trailing" id="XIV-al-PbR"/>
-                    <constraint firstItem="B6S-jH-U1O" firstAttribute="top" secondItem="Cge-bD-Gfz" secondAttribute="bottom" constant="6" id="dCi-2D-Az0"/>
-                    <constraint firstItem="B6S-jH-U1O" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="fH3-uI-P1c"/>
-                    <constraint firstAttribute="bottom" secondItem="B6S-jH-U1O" secondAttribute="bottom" id="fgG-RA-Qqb"/>
                     <constraint firstItem="Cge-bD-Gfz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="hcO-hk-Qcb"/>
                 </constraints>
             </tableViewCellContentView>
