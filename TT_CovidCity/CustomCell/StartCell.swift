@@ -23,7 +23,6 @@ class StartCell: UITableViewCell {
     }
     func setButtonStyle() {
         hanoiButton.layer.cornerRadius = 0.5 * 75.0
-        vietnamButton.layer.cornerRadius = 0.5 * 75.0
         thegioiButton.layer.cornerRadius = 0.5 * 75.0
     }
     override func setSelected(_ selected: Bool, animated: Bool) {

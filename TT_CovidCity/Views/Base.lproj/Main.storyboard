@@ -42,7 +42,7 @@
             </objects>
             <point key="canvasLocation" x="2569.5652173913045" y="-320.08928571428572"/>
         </scene>
-        <!--Detail View Controller-->
+        <!--Thống kê chi tiết-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="DetailViewController" customModule="TT_CovidCity" customModuleProvider="target" sceneMemberID="viewController">
@@ -68,7 +68,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Us1-Q0-gbu"/>
+                    <navigationItem key="navigationItem" title="Thống kê chi tiết" id="Us1-Q0-gbu"/>
                     <connections>
                         <outlet property="tableView" destination="j0M-bj-Yb6" id="rJK-FD-4KZ"/>
                         <segue destination="25C-zb-fRq" kind="presentation" identifier="gotoResult" id="tUw-de-ryx"/>
@@ -323,17 +323,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Fourth View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="aaa-gQ-DCt">
-                                <rect key="frame" x="115.00000000000001" y="426.66666666666669" width="184.33333333333337" height="43"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by FourthViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NY8-uJ-S5Y">
-                                <rect key="frame" x="103.00000000000001" y="477.66666666666669" width="208.33333333333337" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="589" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Num-qE-Szd">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -448,7 +437,7 @@
                                                 <constraint firstItem="Cfg-IB-eNG" firstAttribute="top" secondItem="sWK-Du-m9a" secondAttribute="top" constant="12" id="jeh-Ox-4RY"/>
                                                 <constraint firstAttribute="trailing" secondItem="SvB-b1-yDU" secondAttribute="trailing" constant="12" id="kRx-iq-IQH"/>
                                                 <constraint firstItem="AAX-LZ-crH" firstAttribute="leading" secondItem="sWK-Du-m9a" secondAttribute="leadingMargin" id="nId-2r-oKd"/>
-                                                <constraint firstItem="OQo-0w-DQX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="AAX-LZ-crH" secondAttribute="trailing" symbolic="YES" id="nUv-s0-228"/>
+                                                <constraint firstItem="OQo-0w-DQX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="AAX-LZ-crH" secondAttribute="trailing" constant="8" symbolic="YES" id="nUv-s0-228"/>
                                                 <constraint firstItem="BnP-d7-Rbd" firstAttribute="leading" secondItem="sWK-Du-m9a" secondAttribute="leadingMargin" constant="12" id="sAZ-NS-rZ0"/>
                                                 <constraint firstItem="sLl-7g-U5J" firstAttribute="top" secondItem="AAX-LZ-crH" secondAttribute="bottom" constant="8" id="sd1-sG-9Y9"/>
                                                 <constraint firstAttribute="trailing" secondItem="Cfg-IB-eNG" secondAttribute="trailing" constant="12" id="xsR-Uz-mam"/>
@@ -474,16 +463,12 @@
                         <constraints>
                             <constraint firstItem="Num-qE-Szd" firstAttribute="bottom" secondItem="qGr-di-f7a" secondAttribute="bottom" id="5tI-wz-E3k"/>
                             <constraint firstItem="Num-qE-Szd" firstAttribute="leading" secondItem="qGr-di-f7a" secondAttribute="leading" id="EGP-fy-o7O"/>
-                            <constraint firstItem="aaa-gQ-DCt" firstAttribute="centerY" secondItem="xJj-PM-OS2" secondAttribute="centerY" id="W1x-DC-7vY"/>
-                            <constraint firstItem="NY8-uJ-S5Y" firstAttribute="top" secondItem="aaa-gQ-DCt" secondAttribute="bottom" constant="8" symbolic="YES" id="WMH-A2-OwZ"/>
                             <constraint firstItem="Num-qE-Szd" firstAttribute="trailing" secondItem="qGr-di-f7a" secondAttribute="trailing" id="bPW-55-Ngi"/>
-                            <constraint firstItem="NY8-uJ-S5Y" firstAttribute="centerX" secondItem="aaa-gQ-DCt" secondAttribute="centerX" id="hkb-d9-rBi"/>
                             <constraint firstItem="Num-qE-Szd" firstAttribute="top" secondItem="qGr-di-f7a" secondAttribute="top" id="ova-vG-miR"/>
-                            <constraint firstItem="aaa-gQ-DCt" firstAttribute="centerX" secondItem="xJj-PM-OS2" secondAttribute="centerX" id="vWC-7a-n9N"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qGr-di-f7a"/>
                     </view>
-                    <navigationItem key="navigationItem" id="gSx-1K-exW"/>
+                    <navigationItem key="navigationItem" title="Tin tức" id="gSx-1K-exW"/>
                     <connections>
                         <outlet property="tableView" destination="Num-qE-Szd" id="BRc-Lq-DGF"/>
                     </connections>

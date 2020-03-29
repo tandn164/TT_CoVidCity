@@ -89,7 +89,7 @@ extension DetailViewController: UITableViewDataSource{
         return UITableViewCell()
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       
+        tableView.beginUpdates()
         if indexPath.section == 1 || indexPath.section == 2 || indexPath.section == 3{
                 if tableData[indexPath.section-1].open == true{
                     tableData[indexPath.section-1].open = false
@@ -103,6 +103,7 @@ extension DetailViewController: UITableViewDataSource{
                     tableView.scrollToRow(at: indexPath, at: .top, animated: true)
                 }
             }
+        tableView.endUpdates()
         }
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
           return 15
@@ -110,7 +111,7 @@ extension DetailViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
           
            if indexPath.section == 0 {
-               return 250
+               return 230
            } else {
            return 60
         }
@@ -120,7 +121,7 @@ extension DetailViewController: UITableViewDataSource{
 extension DetailViewController: StartCellDelegate{
     func buttonPressed(_ button: UIButton) {
         switch button.tag {
-        case 1,2:
+        case 1:
             dataToPass = hardVietNamData.finalData
         case 3:
             print(rsdata.finalData.count)

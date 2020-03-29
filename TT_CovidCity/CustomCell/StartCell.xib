@@ -35,35 +35,21 @@
                         </constraints>
                     </view>
                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R4o-5q-3oM">
-                        <rect key="frame" x="20" y="79" width="100" height="80"/>
+                        <rect key="frame" x="47" y="79" width="100" height="80"/>
                         <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="100" id="ONh-ps-LGJ"/>
                             <constraint firstAttribute="height" constant="80" id="cRA-ub-RsV"/>
                         </constraints>
-                        <state key="normal" title="Hà Nội">
+                        <state key="normal" title="Việt Nam">
                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
                         <connections>
                             <action selector="buttonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Gcf-HP-WbA"/>
                         </connections>
                     </button>
-                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iIl-bg-ulY">
-                        <rect key="frame" x="141" y="79" width="100" height="80"/>
-                        <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="80" id="FS9-i3-loj"/>
-                            <constraint firstAttribute="width" constant="100" id="Kaj-Cd-rP1"/>
-                        </constraints>
-                        <state key="normal" title="Việt Nam">
-                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </state>
-                        <connections>
-                            <action selector="buttonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="aeL-rg-S7n"/>
-                        </connections>
-                    </button>
                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tbp-lb-1ea">
-                        <rect key="frame" x="262" y="79" width="100" height="80"/>
+                        <rect key="frame" x="236" y="79" width="100" height="80"/>
                         <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="80" id="Vdo-5r-2OI"/>
@@ -80,12 +66,10 @@
                 <constraints>
                     <constraint firstItem="R4o-5q-3oM" firstAttribute="top" secondItem="yrI-2q-Acs" secondAttribute="bottom" constant="33" id="1EN-pW-3EM"/>
                     <constraint firstAttribute="trailing" secondItem="yrI-2q-Acs" secondAttribute="trailing" id="A3T-Af-Jm0"/>
-                    <constraint firstItem="R4o-5q-3oM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="Fnq-gp-6b9"/>
+                    <constraint firstItem="R4o-5q-3oM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="27" id="Fnq-gp-6b9"/>
                     <constraint firstItem="yrI-2q-Acs" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="cNs-Uh-whF"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="Tbp-lb-1ea" secondAttribute="trailing" id="iRp-rJ-Psd"/>
-                    <constraint firstItem="iIl-bg-ulY" firstAttribute="top" secondItem="yrI-2q-Acs" secondAttribute="bottom" constant="33" id="iSY-Fu-50W"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Tbp-lb-1ea" secondAttribute="trailing" constant="26" id="iRp-rJ-Psd"/>
                     <constraint firstItem="Tbp-lb-1ea" firstAttribute="top" secondItem="yrI-2q-Acs" secondAttribute="bottom" constant="33" id="kLv-Nf-djD"/>
-                    <constraint firstItem="iIl-bg-ulY" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="r4v-0a-emq"/>
                     <constraint firstItem="yrI-2q-Acs" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="sUb-MD-iBS"/>
                 </constraints>
             </tableViewCellContentView>
@@ -93,7 +77,6 @@
             <connections>
                 <outlet property="hanoiButton" destination="R4o-5q-3oM" id="AhE-oh-kUa"/>
                 <outlet property="thegioiButton" destination="Tbp-lb-1ea" id="tRf-ft-V2W"/>
-                <outlet property="vietnamButton" destination="iIl-bg-ulY" id="c0d-Xx-CBd"/>
             </connections>
             <point key="canvasLocation" x="176.81159420289856" y="176.11607142857142"/>
         </tableViewCell>
