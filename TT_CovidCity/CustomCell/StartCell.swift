@@ -11,19 +11,15 @@ protocol StartCellDelegate {
     func buttonPressed(_ button: UIButton)
 }
 class StartCell: UITableViewCell {
-    @IBOutlet weak var hanoiButton: UIButton!
+    @IBOutlet weak var hanoiButton: CustomButton!
     @IBOutlet weak var vietnamButton: UIButton!
-    @IBOutlet weak var thegioiButton: UIButton!
+    @IBOutlet weak var thegioiButton: CustomButton!
     static let startCellID = "StartCell"
     var delegate : StartCellDelegate?
     override func awakeFromNib() {
         super.awakeFromNib()
-        setButtonStyle()
+        
         // Initialization code
-    }
-    func setButtonStyle() {
-        hanoiButton.layer.cornerRadius = 0.5 * 75.0
-        thegioiButton.layer.cornerRadius = 0.5 * 75.0
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -31,7 +27,8 @@ class StartCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    @IBAction func buttonPressed(_ sender: UIButton) {
+    @IBAction func buttonPressed(_ sender: CustomButton) {
+        sender.shake()
         delegate?.buttonPressed(sender)
     }
 }

@@ -94,10 +94,10 @@
                                     <outlet property="delegate" destination="25C-zb-fRq" id="zYs-qC-6VC"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t22-co-ri1">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t22-co-ri1" customClass="CustomView1" customModule="TT_CovidCity" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="214"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c0P-nz-dgx">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c0P-nz-dgx" customClass="CustomView2" customModule="TT_CovidCity" customModuleProvider="target">
                                         <rect key="frame" x="28" y="67" width="100" height="80"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="hSj-Ac-lHD">
@@ -126,7 +126,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XHv-31-vdz">
                                                         <rect key="frame" x="0.0" y="40" width="100" height="40"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zMp-9M-rDU">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zMp-9M-rDU">
                                                                 <rect key="frame" x="20" y="9.6666666666666714" width="60" height="21"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="TmB-ko-Zew"/>
@@ -155,7 +155,7 @@
                                             <constraint firstAttribute="trailing" secondItem="hSj-Ac-lHD" secondAttribute="trailing" id="vfn-tB-39u"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MKp-dd-uSd">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MKp-dd-uSd" customClass="CustomView2" customModule="TT_CovidCity" customModuleProvider="target">
                                         <rect key="frame" x="157" y="67" width="100" height="80"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="dlO-Re-Zer">
@@ -185,7 +185,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hau-hG-MkW">
                                                         <rect key="frame" x="0.0" y="40" width="100" height="40"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hZp-cX-1cL">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hZp-cX-1cL">
                                                                 <rect key="frame" x="20" y="9.6666666666666714" width="60" height="21"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="21" id="DRH-1N-kUV"/>
@@ -210,7 +210,7 @@
                                             <constraint firstAttribute="width" constant="100" id="yf5-gU-YV1"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zdA-Dg-5hP">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zdA-Dg-5hP" customClass="CustomView2" customModule="TT_CovidCity" customModuleProvider="target">
                                         <rect key="frame" x="286" y="67" width="100" height="80"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="6eS-Yj-RpZ">
@@ -240,7 +240,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8EA-1S-IEE">
                                                         <rect key="frame" x="0.0" y="40" width="100" height="40"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IGa-iH-WoZ">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IGa-iH-WoZ">
                                                                 <rect key="frame" x="20" y="9.6666666666666714" width="60" height="21"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="9aR-QQ-0a4"/>
@@ -306,9 +306,6 @@
                         <outlet property="deathNum" destination="hZp-cX-1cL" id="5r4-EM-Xyc"/>
                         <outlet property="recoveredNum" destination="IGa-iH-WoZ" id="Js6-mq-8Cs"/>
                         <outlet property="tableView" destination="7ZW-WP-NfM" id="KrT-DT-HY0"/>
-                        <outlet property="view1" destination="c0P-nz-dgx" id="1PJ-0G-ked"/>
-                        <outlet property="view2" destination="MKp-dd-uSd" id="0HG-5c-fAq"/>
-                        <outlet property="view3" destination="zdA-Dg-5hP" id="P5L-8Y-g0B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hdR-ZT-fu8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

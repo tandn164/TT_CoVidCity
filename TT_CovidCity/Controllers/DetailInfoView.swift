@@ -7,11 +7,8 @@
 //
 
 import UIKit
+// MARK: - Main
 class DetailInfoView: UIViewController {
- 
-    @IBOutlet weak var view3: UIView!
-    @IBOutlet weak var view2: UIView!
-    @IBOutlet weak var view1: UIView!
     @IBOutlet weak var deathNum: UILabel!
     @IBOutlet weak var recoveredNum: UILabel!
     @IBOutlet weak var confirmedNum: UILabel!
@@ -27,9 +24,6 @@ class DetailInfoView: UIViewController {
         deathNum.text = String(worldDeaths)
         confirmedNum.text = String(worldConfirmed)
         recoveredNum.text = String(worldRecovered)
-        view1.layer.cornerRadius = 0.5 * 75.0
-        view2.layer.cornerRadius = 0.5 * 75.0
-        view3.layer.cornerRadius = 0.5 * 75.0
     }
     func setupData() {
         for i in data{
@@ -42,11 +36,13 @@ class DetailInfoView: UIViewController {
         tableView.register(UINib(nibName: SubCell.subCellID, bundle: nil), forCellReuseIdentifier: SubCell.subCellID)
     }
 }
+// MARK: - UITableViewDelegate
 extension DetailInfoView: UITableViewDelegate{
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 }
+// MARK: - UITableViewDataSource
 extension DetailInfoView: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count+1

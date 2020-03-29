@@ -24,6 +24,9 @@
 		4D458D89242FC38200AD5DA6 /* hardcidePostsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D458D88242FC38200AD5DA6 /* hardcidePostsData.swift */; };
 		4D458D8B242FD7B700AD5DA6 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D458D8A242FD7B700AD5DA6 /* PostCell.swift */; };
 		4D458D8D2430183900AD5DA6 /* HanoiDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D458D8C2430183900AD5DA6 /* HanoiDetailView.swift */; };
+		4D458D94243077DA00AD5DA6 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D458D93243077DA00AD5DA6 /* CustomButton.swift */; };
+		4D458D9624307EA100AD5DA6 /* CustomView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D458D9524307EA100AD5DA6 /* CustomView1.swift */; };
+		4D458D982430816000AD5DA6 /* CustomView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D458D972430816000AD5DA6 /* CustomView2.swift */; };
 		DC0F970B2427BE9700E76CF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0F970A2427BE9700E76CF9 /* AppDelegate.swift */; };
 		DC0F970D2427BE9700E76CF9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0F970C2427BE9700E76CF9 /* SceneDelegate.swift */; };
 		DC0F970F2427BE9700E76CF9 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0F970E2427BE9700E76CF9 /* MapViewController.swift */; };
@@ -54,6 +57,9 @@
 		4D458D88242FC38200AD5DA6 /* hardcidePostsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = hardcidePostsData.swift; path = TT_CovidCity/CustomCell/hardcidePostsData.swift; sourceTree = SOURCE_ROOT; };
 		4D458D8A242FD7B700AD5DA6 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		4D458D8C2430183900AD5DA6 /* HanoiDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HanoiDetailView.swift; sourceTree = "<group>"; };
+		4D458D93243077DA00AD5DA6 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		4D458D9524307EA100AD5DA6 /* CustomView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView1.swift; sourceTree = "<group>"; };
+		4D458D972430816000AD5DA6 /* CustomView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView2.swift; sourceTree = "<group>"; };
 		DC0F97072427BE9700E76CF9 /* TT_CovidCity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TT_CovidCity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC0F970A2427BE9700E76CF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC0F970C2427BE9700E76CF9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +111,9 @@
 		4D458D8E24301D2400AD5DA6 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				4D458D93243077DA00AD5DA6 /* CustomButton.swift */,
+				4D458D9524307EA100AD5DA6 /* CustomView1.swift */,
+				4D458D972430816000AD5DA6 /* CustomView2.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -260,6 +269,7 @@
 				4D0D02BF242F67D6006477B4 /* hardcodeContactData.swift in Sources */,
 				4D0D02BD242F67AD006477B4 /* Contact.swift in Sources */,
 				4D076472242B665D000AD490 /* ResultData.swift in Sources */,
+				4D458D9624307EA100AD5DA6 /* CustomView1.swift in Sources */,
 				4D076400242A0D73000AD490 /* Country.swift in Sources */,
 				4D0D02AE242F5D91006477B4 /* DetailInfoView.swift in Sources */,
 				DC0F97262428543400E76CF9 /* NewsViewController.swift in Sources */,
@@ -270,6 +280,8 @@
 				4D0D02B2242F5F13006477B4 /* StartCell.swift in Sources */,
 				4D0763FC242A0C2B000AD490 /* WorldCovidData.swift in Sources */,
 				4D0D02B6242F61A4006477B4 /* ContactCell.swift in Sources */,
+				4D458D94243077DA00AD5DA6 /* CustomButton.swift in Sources */,
+				4D458D982430816000AD5DA6 /* CustomView2.swift in Sources */,
 				DC0F970D2427BE9700E76CF9 /* SceneDelegate.swift in Sources */,
 				4D458D8B242FD7B700AD5DA6 /* PostCell.swift in Sources */,
 				4D458D8D2430183900AD5DA6 /* HanoiDetailView.swift in Sources */,
