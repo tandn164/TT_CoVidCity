@@ -148,20 +148,6 @@ extension MapViewController {
   // Handle incoming location events.
   func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
     let location: CLLocation = locations.last!
-    print("Location: \(location)")
-    
-    let camera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude,
-                                          longitude: location.coordinate.longitude,
-                                          zoom: zoomLevel)
-    
-    if mapView.isHidden == true {
-      mapView.isHidden = false
-      mapView.camera = camera
-    } else {
-      mapView.animate(to: camera)
-    }
-    
-    listLikelyPlaces()
   }
   
   // Handle authorization for the location manager.
@@ -189,28 +175,7 @@ extension MapViewController {
     locationManager.stopUpdatingLocation()
     print("Error: \(error)")
   }
-  // Populate the array with the list of likely places.
-  func listLikelyPlaces() {
-    // Clean up from previous sessions.
-    likelyPlaces.removeAll()
-    
-    placesClient.currentPlace(callback: { (placeLikelihoods, error) -> Void in
-      if let error = error {
-        // TODO: Handle the error.
-        print("Current Place error: \(error.localizedDescription)")
-        return
-      }
-      
-      // Get likely places and add to the list.
-      if let likelihoodList = placeLikelihoods {
-        for likelihood in likelihoodList.likelihoods {
-          let place = likelihood.place
-          self.likelyPlaces.append(place)
-        }
-        self.performSegue(withIdentifier: "segueToSelect", sender: self)
-      }
-    })
-  }
+
 }
 
 

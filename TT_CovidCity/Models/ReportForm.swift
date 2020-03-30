@@ -12,4 +12,6 @@ struct ReportForm {
   let name: String
   let title: String
   let content: String
+  let lat: Double
+  let lang: Double
 }
