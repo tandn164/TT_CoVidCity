@@ -12,5 +12,6 @@ target 'TT_CovidCity' do
     pod 'Google-Maps-iOS-Utils'
     pod 'Firebase/Auth'
     pod 'Firebase/Firestore'
+    pod 'FirebaseFirestoreSwift'
     pod 'IQKeyboardManagerSwift'
 end

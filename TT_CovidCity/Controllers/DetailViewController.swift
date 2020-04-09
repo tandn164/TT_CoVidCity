@@ -7,12 +7,8 @@
 //
 
 import UIKit
+import Firebase
 // MARK: - Special datatype
-struct DropDownCellData {
-    var open = Bool()
-    var title = String()
-    var sectionData = [Contact]()
-}
 enum SectionType: Int {
     case start
     case contact1
@@ -25,25 +21,26 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var dataToPass : [Country] = []
     var rsdata = ResultData()
-    var hardContactData  = ContactData()
-    var hardVietNamData = VietNameData()
-    var tableData = [DropDownCellData]()
+    var ctrsdata = ContactResultData()
+    var columnName : String?
+    var tableData : [DropDownCellData] = []
+    var db = Firestore.firestore()
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupData()
         setupTable()
-    }
-    func setupData(){
-        tableData = hardContactData.finalData
+        tableData = ctrsdata.finalData
+        self.tabBarItem.selectedImage = UIImage.init(systemName: "doc.text.fill")
     }
     func setupTable(){
         tableView.register(UINib(nibName: StartCell.startCellID, bundle: nil), forCellReuseIdentifier: StartCell.startCellID)
         tableView.register(UINib(nibName: ContactCell.contactCellID, bundle: nil), forCellReuseIdentifier: ContactCell.contactCellID)
     }
+    
 }
 // MARK: - UITableViewDelegate
 extension DetailViewController: UITableViewDelegate{
     func numberOfSections(in tableView: UITableView) -> Int {
+        print(129)
         return 4
     }
 }
@@ -147,14 +144,43 @@ extension DetailViewController: StartCellDelegate{
     func buttonPressed(_ button: UIButton) {
         switch button.tag {
         case 1:
-            dataToPass = hardVietNamData.finalData
+            //  dataToPass = hardVietNamData.finalData
+            db.collection("Country/Việt Nam/City").addSnapshotListener { (querySnapshot, error) in
+                self.dataToPass = []
+                
+                if let err = error {
+                    print("not read OK \(err)")
+                }
+                else {
+                    if let snapShotDocuments = querySnapshot?.documents
+                    {
+                        
+                        for doc in snapShotDocuments {
+                            let data = doc.data()
+                            if let name = data["Name"] as? String, let confirmed = data["Confirmed"] as? String, let deaths = data["Deaths"] as? String, let recovered = data["Recovered"] as? String
+                            {
+                                let newCity = Country(name, Int(confirmed) ?? 0, Int(recovered) ?? 0, Int(deaths) ?? 0)
+                                self.dataToPass.append(newCity)
+                            }
+                            
+                        }
+                    }
+                }
+                self.columnName = "Tên thành phố"
+                DispatchQueue.main.async {
+                    self.performSegue(withIdentifier: "gotoResult", sender: self)
+                }
+            }
+            
         case 3:
             print(rsdata.finalData.count)
             dataToPass = rsdata.finalData
+            columnName = "Tên quốc gia"
+            self.performSegue(withIdentifier: "gotoResult", sender: self)
         default:
             break
         }
-        self.performSegue(withIdentifier: "gotoResult", sender: self)
+        
         
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -162,6 +188,7 @@ extension DetailViewController: StartCellDelegate{
         {
             let destinationMV = segue.destination as! DetailInfoView
             destinationMV.data = dataToPass
+            destinationMV.columnName = columnName
         }
     }
 }
