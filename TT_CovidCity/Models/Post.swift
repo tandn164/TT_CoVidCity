@@ -14,6 +14,13 @@ struct Post {
     let numberOfLike : String?
     let numberOfComment : String?
     let user : Writter?
+    let id : String?
+}
+struct Comment {
+    let comment: String
+    let time: String
+    let userName: String
+    let userProfileImage: String
 }
 struct Writter {
     let name: String?

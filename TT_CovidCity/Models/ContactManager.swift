@@ -15,9 +15,8 @@ struct ContactManager {
     var db = Firestore.firestore()
     var delegate : ContactDelegate?
     func loadContact1(){
-        print(41)
         db.collection("Contact/CDC/Hospital").addSnapshotListener { (querySnapshot, error) in
-            print(43)
+            print(19)
             var tableData : [DropDownCellData] = []
             var contact1 : [Contact] = []
             if let err = error {
@@ -30,7 +29,6 @@ struct ContactManager {
                         let data = doc.data()
                         if let name = data["Name"] as? String, let phone1 = data["Phone1"] as? String, let phone2 = data["Phone2"] as? String
                         {
-                            print(55)
                             let newContact = Contact(hospitalName: name, managerName: "", phoneNumber1: phone1, phoneNumber2: phone2)
                             contact1.append(newContact)
                         }
@@ -87,7 +85,6 @@ struct ContactManager {
                        }
             }
         }
-        print(69)
     }
     
 }

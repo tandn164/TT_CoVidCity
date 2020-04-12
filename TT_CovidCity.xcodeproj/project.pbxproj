@@ -7,13 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D1CF1AF244042CA00265377 /* FullPostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1CF1AE244042CA00265377 /* FullPostController.swift */; };
+		4D1CF1B2244056C400265377 /* FullPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1CF1B0244056C400265377 /* FullPostCell.swift */; };
+		4D1CF1B3244056C400265377 /* FullPostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D1CF1B1244056C400265377 /* FullPostCell.xib */; };
+		4DB2E8EC2442BB2400AFE9F2 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB2E8EA2442BB2400AFE9F2 /* CommentCell.swift */; };
+		4DB2E8ED2442BB2500AFE9F2 /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DB2E8EB2442BB2400AFE9F2 /* CommentCell.xib */; };
+		4DB2E8F1244300C400AFE9F2 /* CustomViewCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB2E8F0244300C400AFE9F2 /* CustomViewCorner.swift */; };
 		4DFA41D4243F086E00BE9832 /* ContactManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFA41D3243F086E00BE9832 /* ContactManager.swift */; };
 		4DFA41D6243F094900BE9832 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFA41D5243F094900BE9832 /* User.swift */; };
 		4DFA41D8243F096500BE9832 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFA41D7243F096500BE9832 /* Post.swift */; };
 		4DFA41DA243F098E00BE9832 /* ContactResultData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFA41D9243F098E00BE9832 /* ContactResultData.swift */; };
-		843DB35B2981A9912277B6A1 /* Pods_TT_CovidCity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FB1E66C62B43543067C4D89 /* Pods_TT_CovidCity.framework */; };
+		4DFA41E0244015DF00BE9832 /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DFA41DE244015DF00BE9832 /* PostCell.xib */; };
+		B24D1B6410556D1CF29D4D51 /* Pods_TT_CovidCity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69448D03686872D199064893 /* Pods_TT_CovidCity.framework */; };
 		DC029841243178E8007333B0 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC029840243178E8007333B0 /* DetailViewController.swift */; };
-		DC02984624317921007333B0 /* HanoiDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC02984424317920007333B0 /* HanoiDetailView.swift */; };
 		DC02984724317921007333B0 /* DetailInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC02984524317921007333B0 /* DetailInfoView.swift */; };
 		DC0298492431792B007333B0 /* ResultData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0298482431792B007333B0 /* ResultData.swift */; };
 		DC029854243179DD007333B0 /* WorldcovidManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC029852243179DB007333B0 /* WorldcovidManager.swift */; };
@@ -48,15 +54,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3FB1E66C62B43543067C4D89 /* Pods_TT_CovidCity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TT_CovidCity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D1CF1AE244042CA00265377 /* FullPostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullPostController.swift; sourceTree = "<group>"; };
+		4D1CF1B0244056C400265377 /* FullPostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullPostCell.swift; sourceTree = "<group>"; };
+		4D1CF1B1244056C400265377 /* FullPostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FullPostCell.xib; sourceTree = "<group>"; };
+		4DB2E8EA2442BB2400AFE9F2 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
+		4DB2E8EB2442BB2400AFE9F2 /* CommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentCell.xib; sourceTree = "<group>"; };
+		4DB2E8F0244300C400AFE9F2 /* CustomViewCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewCorner.swift; sourceTree = "<group>"; };
 		4DFA41D3243F086E00BE9832 /* ContactManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactManager.swift; sourceTree = "<group>"; };
 		4DFA41D5243F094900BE9832 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4DFA41D7243F096500BE9832 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		4DFA41D9243F098E00BE9832 /* ContactResultData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactResultData.swift; sourceTree = "<group>"; };
-		6019EAEF4104099C3E4F5D0F /* Pods-TT_CovidCity.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TT_CovidCity.debug.xcconfig"; path = "Target Support Files/Pods-TT_CovidCity/Pods-TT_CovidCity.debug.xcconfig"; sourceTree = "<group>"; };
-		63FB8025F3FBA73F4C5510B5 /* Pods-TT_CovidCity.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TT_CovidCity.release.xcconfig"; path = "Target Support Files/Pods-TT_CovidCity/Pods-TT_CovidCity.release.xcconfig"; sourceTree = "<group>"; };
+		4DFA41DE244015DF00BE9832 /* PostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
+		69448D03686872D199064893 /* Pods_TT_CovidCity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TT_CovidCity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC029840243178E8007333B0 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		DC02984424317920007333B0 /* HanoiDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HanoiDetailView.swift; sourceTree = "<group>"; };
 		DC02984524317921007333B0 /* DetailInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailInfoView.swift; sourceTree = "<group>"; };
 		DC0298482431792B007333B0 /* ResultData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultData.swift; sourceTree = "<group>"; };
 		DC029852243179DB007333B0 /* WorldcovidManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorldcovidManager.swift; sourceTree = "<group>"; };
@@ -90,6 +100,8 @@
 		DC0F972724286D9800E76CF9 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		DC22FE9524299F9600AA5A8B /* PlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesViewController.swift; sourceTree = "<group>"; };
 		DCE6AB8F242A34CB007F4BF8 /* MarkerCluster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerCluster.swift; sourceTree = "<group>"; };
+		E2C040D6C5AE01A044C2157D /* Pods-TT_CovidCity.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TT_CovidCity.release.xcconfig"; path = "Target Support Files/Pods-TT_CovidCity/Pods-TT_CovidCity.release.xcconfig"; sourceTree = "<group>"; };
+		E8E892D5D653A2ECCD0566E9 /* Pods-TT_CovidCity.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TT_CovidCity.debug.xcconfig"; path = "Target Support Files/Pods-TT_CovidCity/Pods-TT_CovidCity.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,17 +109,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				843DB35B2981A9912277B6A1 /* Pods_TT_CovidCity.framework in Frameworks */,
+				B24D1B6410556D1CF29D4D51 /* Pods_TT_CovidCity.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		43EFE79EB4C7CA97C8C425E4 /* Frameworks */ = {
+		1412B91538DFA14CEEDE28E4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3FB1E66C62B43543067C4D89 /* Pods_TT_CovidCity.framework */,
+				69448D03686872D199064893 /* Pods_TT_CovidCity.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -115,8 +127,8 @@
 		A03453012CA94FF604FFABBC /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				6019EAEF4104099C3E4F5D0F /* Pods-TT_CovidCity.debug.xcconfig */,
-				63FB8025F3FBA73F4C5510B5 /* Pods-TT_CovidCity.release.xcconfig */,
+				E8E892D5D653A2ECCD0566E9 /* Pods-TT_CovidCity.debug.xcconfig */,
+				E2C040D6C5AE01A044C2157D /* Pods-TT_CovidCity.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -126,11 +138,16 @@
 			children = (
 				DC02986824317C91007333B0 /* ContactCell.swift */,
 				DC02986B24317C95007333B0 /* ContactCell.xib */,
-				DC02986524317C8E007333B0 /* PostCell.swift */,
 				DC02986324317C8B007333B0 /* StartCell.swift */,
 				DC02986424317C8D007333B0 /* StartCell.xib */,
 				DC02986724317C90007333B0 /* SubCell.swift */,
 				DC02986924317C92007333B0 /* SubCell.xib */,
+				DC02986524317C8E007333B0 /* PostCell.swift */,
+				4DFA41DE244015DF00BE9832 /* PostCell.xib */,
+				4D1CF1B0244056C400265377 /* FullPostCell.swift */,
+				4D1CF1B1244056C400265377 /* FullPostCell.xib */,
+				4DB2E8EA2442BB2400AFE9F2 /* CommentCell.swift */,
+				4DB2E8EB2442BB2400AFE9F2 /* CommentCell.xib */,
 			);
 			path = CustomCell;
 			sourceTree = "<group>";
@@ -141,6 +158,7 @@
 				DC02987924317CBD007333B0 /* CustomView1.swift */,
 				DC02987A24317CBD007333B0 /* CustomButton.swift */,
 				DC02987B24317CBD007333B0 /* CustomView2.swift */,
+				4DB2E8F0244300C400AFE9F2 /* CustomViewCorner.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -151,7 +169,7 @@
 				DC0F97092427BE9700E76CF9 /* TT_CovidCity */,
 				DC0F97082427BE9700E76CF9 /* Products */,
 				A03453012CA94FF604FFABBC /* Pods */,
-				43EFE79EB4C7CA97C8C425E4 /* Frameworks */,
+				1412B91538DFA14CEEDE28E4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -185,14 +203,14 @@
 			children = (
 				DC0F972724286D9800E76CF9 /* TabBarController.swift */,
 				DC029840243178E8007333B0 /* DetailViewController.swift */,
+				DC02984524317921007333B0 /* DetailInfoView.swift */,
 				DC0F970E2427BE9700E76CF9 /* MapViewController.swift */,
 				DC22FE9524299F9600AA5A8B /* PlacesViewController.swift */,
 				DC0298CC24317D1B007333B0 /* NewsViewController.swift */,
+				4D1CF1AE244042CA00265377 /* FullPostController.swift */,
 				DC0F97232428542700E76CF9 /* LoginViewController.swift */,
-				DC0F97252428543400E76CF9 /* ReportViewController.swift */,
 				DC0E6908242EF625009372FC /* RegisterViewController.swift */,
-				DC02984524317921007333B0 /* DetailInfoView.swift */,
-				DC02984424317920007333B0 /* HanoiDetailView.swift */,
+				DC0F97252428543400E76CF9 /* ReportViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -231,12 +249,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DC0F971D2427BE9900E76CF9 /* Build configuration list for PBXNativeTarget "TT_CovidCity" */;
 			buildPhases = (
-				100534F614E5C52F02735C15 /* [CP] Check Pods Manifest.lock */,
+				616930D61A56F3ECB5F1C0C4 /* [CP] Check Pods Manifest.lock */,
 				DC0F97032427BE9700E76CF9 /* Sources */,
 				DC0F97042427BE9700E76CF9 /* Frameworks */,
 				DC0F97052427BE9700E76CF9 /* Resources */,
-				CB63FA0D09A24C126701C04A /* [CP] Copy Pods Resources */,
-				1234C5B123B30820A10780D5 /* [CP] Embed Pods Frameworks */,
+				E27E47A63912B6D30C320456 /* [CP] Embed Pods Frameworks */,
+				78407FBC9CAAD1608B7553F5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -285,11 +303,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DFA41E0244015DF00BE9832 /* PostCell.xib in Resources */,
 				DC0F97192427BE9900E76CF9 /* LaunchScreen.storyboard in Resources */,
 				DC0E690D242F3053009372FC /* GoogleService-Info.plist in Resources */,
 				DC02987624317C96007333B0 /* ContactCell.xib in Resources */,
 				DC0F97162427BE9900E76CF9 /* Assets.xcassets in Resources */,
+				4DB2E8ED2442BB2500AFE9F2 /* CommentCell.xib in Resources */,
 				DC02986F24317C96007333B0 /* StartCell.xib in Resources */,
+				4D1CF1B3244056C400265377 /* FullPostCell.xib in Resources */,
 				DC0F97142427BE9700E76CF9 /* Main.storyboard in Resources */,
 				DC02987424317C96007333B0 /* SubCell.xib in Resources */,
 			);
@@ -298,7 +319,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		100534F614E5C52F02735C15 /* [CP] Check Pods Manifest.lock */ = {
+		616930D61A56F3ECB5F1C0C4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -320,24 +341,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		1234C5B123B30820A10780D5 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TT_CovidCity/Pods-TT_CovidCity-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TT_CovidCity/Pods-TT_CovidCity-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TT_CovidCity/Pods-TT_CovidCity-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CB63FA0D09A24C126701C04A /* [CP] Copy Pods Resources */ = {
+		78407FBC9CAAD1608B7553F5 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -352,6 +356,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TT_CovidCity/Pods-TT_CovidCity-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E27E47A63912B6D30C320456 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TT_CovidCity/Pods-TT_CovidCity-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TT_CovidCity/Pods-TT_CovidCity-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TT_CovidCity/Pods-TT_CovidCity-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -386,11 +407,14 @@
 				DC02987024317C96007333B0 /* PostCell.swift in Sources */,
 				DC029855243179DD007333B0 /* WorldCovidData.swift in Sources */,
 				DC0F970B2427BE9700E76CF9 /* AppDelegate.swift in Sources */,
+				4D1CF1B2244056C400265377 /* FullPostCell.swift in Sources */,
 				DC0298CD24317D1B007333B0 /* NewsViewController.swift in Sources */,
+				4D1CF1AF244042CA00265377 /* FullPostController.swift in Sources */,
 				DC0F970D2427BE9700E76CF9 /* SceneDelegate.swift in Sources */,
+				4DB2E8F1244300C400AFE9F2 /* CustomViewCorner.swift in Sources */,
 				DCE6AB90242A34CB007F4BF8 /* MarkerCluster.swift in Sources */,
-				DC02984624317921007333B0 /* HanoiDetailView.swift in Sources */,
 				4DFA41D8243F096500BE9832 /* Post.swift in Sources */,
+				4DB2E8EC2442BB2400AFE9F2 /* CommentCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,7 +556,7 @@
 		};
 		DC0F971E2427BE9900E76CF9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6019EAEF4104099C3E4F5D0F /* Pods-TT_CovidCity.debug.xcconfig */;
+			baseConfigurationReference = E8E892D5D653A2ECCD0566E9 /* Pods-TT_CovidCity.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -552,7 +576,7 @@
 		};
 		DC0F971F2427BE9900E76CF9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 63FB8025F3FBA73F4C5510B5 /* Pods-TT_CovidCity.release.xcconfig */;
+			baseConfigurationReference = E2C040D6C5AE01A044C2157D /* Pods-TT_CovidCity.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
