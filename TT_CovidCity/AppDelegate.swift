@@ -24,6 +24,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     GMSServices.provideAPIKey("AIzaSyDTodDbsCkNQieBXiHmUg6O0Hd_mffbKac")
     GMSPlacesClient.provideAPIKey("AIzaSyDTodDbsCkNQieBXiHmUg6O0Hd_mffbKac")
     FirebaseApp.configure()
+    do {
+      try Auth.auth().signOut()
+    } catch let signOutError as NSError {
+      print ("Error signing out: %@", signOutError)
+    }
     IQKeyboardManager.shared.enable = true
     return true
   }

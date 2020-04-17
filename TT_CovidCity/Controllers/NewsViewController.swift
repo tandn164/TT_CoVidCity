@@ -21,7 +21,6 @@ class NewsViewController: UIViewController {
         loadPost()
         setupTable()
         self.tabBarItem.selectedImage = UIImage.init(systemName: "paperplane.fill")
-       
     }
     func setupTable(){
         tableView.register(UINib(nibName: PostCell.PostCellID, bundle: nil), forCellReuseIdentifier: PostCell.PostCellID)
@@ -85,6 +84,11 @@ extension NewsViewController: PostCellDelegate{
         {
             let destinationMV = segue.destination as! FullPostController
             destinationMV.post = postToPass
+        }
+        if segue.identifier == "GotoLogin"
+        {
+            let destinationMV = segue.destination as! LoginViewController
+            destinationMV.check = 1
         }
     }
 }

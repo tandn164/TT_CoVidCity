@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -77,11 +77,11 @@
             <objects>
                 <viewController id="mHR-hS-UDA" userLabel="Login" customClass="LoginViewController" customModule="TT_CovidCity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WrZ-7s-jaW">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qya-TU-4vs">
-                                <rect key="frame" x="0.0" y="88" width="414" height="176"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="176"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="textfield" translatesAutoresizingMaskIntoConstraints="NO" id="McE-J3-aEh">
                                         <rect key="frame" x="0.0" y="39" width="414" height="137"/>
@@ -107,7 +107,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xZT-Dn-VHq">
-                                <rect key="frame" x="0.0" y="223" width="414" height="214"/>
+                                <rect key="frame" x="0.0" y="135" width="414" height="214"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="textfield" translatesAutoresizingMaskIntoConstraints="NO" id="QdW-bK-EpF">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="137"/>
@@ -147,7 +147,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0X2-aa-0bU">
-                                <rect key="frame" x="133" y="739" width="150" height="54"/>
+                                <rect key="frame" x="133" y="651" width="150" height="54"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="35"/>
                                 <state key="normal" title="Register?">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -190,7 +190,7 @@
             <objects>
                 <viewController id="Vuu-y7-DPc" customClass="ReportViewController" customModule="TT_CovidCity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tjw-vN-5rt">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="textfield" translatesAutoresizingMaskIntoConstraints="NO" id="ryT-P5-w76">
@@ -202,7 +202,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5P5-HY-Mva">
-                                <rect key="frame" x="12" y="308" width="390" height="285"/>
+                                <rect key="frame" x="12" y="261.5" width="390" height="285"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="285" id="5k0-gJ-dPG"/>
@@ -213,7 +213,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aPc-Ur-qLX">
-                                <rect key="frame" x="150.5" y="673.5" width="113" height="54"/>
+                                <rect key="frame" x="150.5" y="627" width="113" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="A1v-09-AtO"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="113" id="fnP-b5-Oij"/>
@@ -227,7 +227,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NGL-4m-RMI">
-                                <rect key="frame" x="50" y="133" width="314" height="50"/>
+                                <rect key="frame" x="50" y="45" width="314" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="P2a-eU-5dp"/>
                                 </constraints>
@@ -235,7 +235,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tvx-qY-WV7">
-                                <rect key="frame" x="51" y="222" width="314" height="50"/>
+                                <rect key="frame" x="51" y="134" width="314" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="mue-TL-deX"/>
                                 </constraints>
@@ -321,6 +321,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SWq-YP-4ao" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Login" image="person" catalog="system" selectedImage="person" id="osh-eN-r2s" userLabel="Third"/>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="2jJ-Q4-DJc"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2We-vj-IUr">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -361,11 +362,11 @@
             <objects>
                 <viewController id="75k-gu-v6z" userLabel="Register" customClass="RegisterViewController" customModule="TT_CovidCity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vC0-g5-29A">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cPR-lU-l7c">
-                                <rect key="frame" x="0.0" y="88" width="414" height="176"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="176"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="textfield" translatesAutoresizingMaskIntoConstraints="NO" id="VeO-zo-tn3">
                                         <rect key="frame" x="0.0" y="39" width="414" height="137"/>
@@ -391,7 +392,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MuW-3X-vJS">
-                                <rect key="frame" x="0.0" y="223" width="414" height="214"/>
+                                <rect key="frame" x="0.0" y="135" width="414" height="214"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="textfield" translatesAutoresizingMaskIntoConstraints="NO" id="DvK-kX-a1R">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="137"/>
@@ -516,6 +517,7 @@
                     <connections>
                         <outlet property="tableView" destination="cY8-uG-D3s" id="pPu-TF-tm0"/>
                         <segue destination="Kmf-Vo-x3c" kind="show" identifier="PostResult" id="eSg-D4-cK8"/>
+                        <segue destination="mHR-hS-UDA" kind="presentation" identifier="GotoLogin" id="uxa-Vm-DUb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sEw-k1-8H8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -793,15 +795,16 @@
             <point key="canvasLocation" x="3315.9420289855075" y="359.59821428571428"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="ew0-Kq-Nb4"/>
-    </inferredMetricsTieBreakers>
     <resources>
-        <image name="doc.text" catalog="system" width="115" height="128"/>
-        <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
-        <image name="mappin.circle" catalog="system" width="128" height="121"/>
-        <image name="paperplane" catalog="system" width="128" height="121"/>
-        <image name="person" catalog="system" width="128" height="117"/>
+        <image name="doc.text" catalog="system" width="56" height="64"/>
+        <image name="mappin.and.ellipse" catalog="system" width="58" height="64"/>
+        <image name="mappin.circle" catalog="system" width="64" height="60"/>
+        <image name="paperplane" catalog="system" width="64" height="60"/>
+        <image name="person" catalog="system" width="64" height="58"/>
         <image name="textfield" width="298" height="93"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="ew0-Kq-Nb4"/>
+        <segue reference="uxa-Vm-DUb"/>
+    </inferredMetricsTieBreakers>
 </document>

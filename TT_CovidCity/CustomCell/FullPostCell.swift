@@ -34,7 +34,20 @@ class FullPostCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    @IBAction func buttonPressed(_ sender: UIButton) {
+        var title : String
+               if sender.tag == 0
+               {
+                   title = "Like"
+               }
+               else
+               {
+                   title = "Comment"
+               }
+        let action = ButtonPressed(post, title, self)
+        action.update()
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
@@ -42,3 +55,15 @@ class FullPostCell: UITableViewCell {
     }
     
 }
+//extension UIView {
+//    var parentViewController: UIViewController? {
+//        var parentResponder: UIResponder? = self
+//        while parentResponder != nil {
+//            parentResponder = parentResponder!.next
+//            if parentResponder is UIViewController {
+//                return parentResponder as? UIViewController
+//            }
+//        }
+//        return nil
+//    }
+//}
