@@ -13,10 +13,11 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    var check = 0
+    var check = 0;
+    weak var parentview : UIViewController?
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print(check)
     }
     //Neu nguoi dung da dang nhap thi chuyen den report luon
     override func viewDidAppear(_ animated: Bool) {
@@ -37,8 +38,7 @@ class LoginViewController: UIViewController {
                 } else {
                     // Neu login duoc goi tu new thi se return new khi bam login
                     if self.check == 1 {
-                        self.dismiss(animated: true, completion: nil)
-                        //  self.check = 0
+                        self.comeFromNews()
                     } else {
                         //Neu khong thi chuyen den report
                         self.performSegue(withIdentifier: "LogintoReport", sender: self)
@@ -49,6 +49,20 @@ class LoginViewController: UIViewController {
             }
         }
     }
-    
+    func comeFromNews() {
+        if let view = self.parentview as? NewsViewController
+        {
+            view.tableView.reloadData()
+        }
+        else if let view = self.parentview as? FullPostController
+        {
+            view.tableView.reloadData()
+            if let viewParentView = view.parent?.children[0] as? NewsViewController
+            {
+                viewParentView.tableView.reloadData()
+            }
+        }
+        self.dismiss(animated: true, completion: nil)
+    }
     
 }

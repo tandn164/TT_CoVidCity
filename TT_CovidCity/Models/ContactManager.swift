@@ -16,7 +16,6 @@ struct ContactManager {
     var delegate : ContactDelegate?
     func loadContact1(){
         db.collection("Contact/CDC/Hospital").addSnapshotListener { (querySnapshot, error) in
-            print(19)
             var tableData : [DropDownCellData] = []
             var contact1 : [Contact] = []
             if let err = error {

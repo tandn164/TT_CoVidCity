@@ -89,6 +89,7 @@ extension NewsViewController: PostCellDelegate{
         {
             let destinationMV = segue.destination as! LoginViewController
             destinationMV.check = 1
+            destinationMV.parentview = self
         }
     }
 }

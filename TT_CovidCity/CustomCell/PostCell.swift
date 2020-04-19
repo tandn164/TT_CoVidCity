@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 protocol PostCellDelegate {
     func didTapped(_ data: Post)
 }
@@ -18,7 +19,12 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var postImageView: UIImageView!
     @IBOutlet weak var captionLabel: UILabel!
     @IBOutlet weak var postStatsLabel: UILabel!
+    
+    @IBOutlet weak var likeButton: UIButton!
+    @IBOutlet weak var commentButton: UIButton!
+    
     static let PostCellID = "PostCell"
+    var db = Firestore.firestore()
     var delegate : PostCellDelegate?
     var post: Post!{
         didSet{
@@ -32,7 +38,25 @@ class PostCell: UITableViewCell {
         captionLabel.text = post.caption
         postImageView.image = UIImage(named: post.image!)
         postStatsLabel.text = "\(post.numberOfLike!) likes     \(post.numberOfComment!) comments"
-        
+        if Auth.auth().currentUser != nil {
+            let user = Auth.auth().currentUser
+            let docRef = db.collection("Post/\(post.id!)/Likes").document((user?.email)!)
+            print("Post/\(post.id!)/Likes")
+            docRef.getDocument(source: .cache) { (document, error) in
+                if let doc = document
+                {
+                    if doc.exists {
+                        self.likeButton.imageView?.tintColor = .cyan
+                    }else
+                    {
+                        self.likeButton.imageView?.tintColor = .darkGray
+                    }
+                }else
+                {
+                    self.likeButton.imageView?.tintColor = .darkGray
+                }
+            }
+        }
     }
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -52,16 +76,7 @@ class PostCell: UITableViewCell {
         self.timeAgoLabel.addGestureRecognizer(labelTap2)
     }
     @IBAction func buttonPressed(_ sender:UIButton) {
-        var title : String
-        if sender.tag == 0
-        {
-            title = "Like"
-        }
-        else
-        {
-            title = "Comment"
-        }
-        let action = ButtonPressed(post, title, self)
+        let action = ButtonPressed(post, sender.tag, self)
         action.update()
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -69,15 +84,3 @@ class PostCell: UITableViewCell {
     }
     
 }
-//extension UIView {
-//    var parentViewController: UIViewController? {
-//        var parentResponder: UIResponder? = self
-//        while parentResponder != nil {
-//            parentResponder = parentResponder!.next
-//            if parentResponder is UIViewController {
-//                return parentResponder as? UIViewController
-//            }
-//        }
-//        return nil
-//    }
-//}

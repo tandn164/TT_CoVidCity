@@ -152,6 +152,8 @@
             <gestureRecognizers/>
             <connections>
                 <outlet property="captionLabel" destination="snv-GF-5wh" id="7uy-Z0-3GV"/>
+                <outlet property="commentButton" destination="WEp-L9-bqc" id="N0J-id-NPv"/>
+                <outlet property="likeButton" destination="QpT-mK-wWt" id="Yde-ix-skh"/>
                 <outlet property="postImageView" destination="2PW-fC-thU" id="93x-hv-eba"/>
                 <outlet property="postStatsLabel" destination="jlI-zv-Fpr" id="Tk2-jG-jVW"/>
                 <outlet property="profileImageView" destination="HeY-2R-r6g" id="gyo-ey-7Yj"/>
