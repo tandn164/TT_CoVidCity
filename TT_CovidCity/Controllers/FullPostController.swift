@@ -118,16 +118,32 @@ extension FullPostController: UITextFieldDelegate{
             return false
         }
     }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.textField.endEditing(true)
+        
+    }
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+    }
     func textFieldDidEndEditing(_ textField: UITextField) {
         let user = Auth.auth().currentUser
-        // let userName = user?.displayName
-         let sender = "tan"
+        let userName = user?.displayName
+        // let sender = "tan"
          if let comment = textField.text{
-             db.collection("Post/\(post!.id!)/comment").addDocument(data: ["UserName":sender, "Comment":comment,"Time": "15m", "UserProfileImage":"tan"]){(error) in
+             db.collection("Post/\(post!.id!)/comment").addDocument(data: ["UserName":userName, "Comment":comment,"Time": "15m", "UserProfileImage":"tan"]){(error) in
                      if let err = error {
                          print(err)
                      } else {
                          print("OK")
+                         let numberOfComments = String("\(Int(self.post!.numberOfComment!)!+1)")
+                         let updateComment = self.db.collection("Post").document("\(self.post!.id!)")
+                         updateComment.updateData(["NumberOfComment":numberOfComments]) { err in
+                         if let err = err {
+                             print("Error updating document: \(err)")
+                         } else {
+                             print("Document successfully updated")
+                         }
+                         }
                          DispatchQueue.main.async {
                              self.textField.text = ""
                              self.textField.endEditing(true)

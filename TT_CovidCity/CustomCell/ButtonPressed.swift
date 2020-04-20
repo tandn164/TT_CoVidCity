@@ -60,10 +60,17 @@ struct ButtonPressed {
         }
     }
     func commentEvent(){
-        
+        if let view = self.parent as? PostCell{
+            view.delegate?.didTapped(view.post)
+        }
+        else if let view = self.parent?.parentContainerViewController() as? FullPostController{
+            view.textFieldDidBeginEditing(view.textField)
+        }
     }
+    
     func userLiked(){
         let user = Auth.auth().currentUser
+
         if let cell = self.parent as? PostCell
         {
             self.db.collection("Post/\(self.post!.id!)/Likes").document((user?.email)!).delete { (err) in
@@ -71,6 +78,15 @@ struct ButtonPressed {
                     print("Error removing document: \(err)")
                 } else {
                     cell.likeButton.imageView?.tintColor = .darkGray
+                    let numberOfLikes = String("\(Int(self.post!.numberOfLike!)!-1)")
+                    let updateLike = self.db.collection("Post").document("\(self.post!.id!)")
+                    updateLike.updateData(["NumberOfLike":numberOfLikes]) { err in
+                    if let err = err {
+                        print("Error updating document: \(err)")
+                    } else {
+                        print("Document successfully updated")
+                    }
+                    }
                     print("Document successfully removed!")
                 }
             }
@@ -81,17 +97,30 @@ struct ButtonPressed {
                     print("Error removing document: \(err)")
                 } else {
                     cell.likeButton.imageView?.tintColor = .darkGray
+                    let numberOfLikes = String("\(Int(self.post!.numberOfLike!)!-1)")
+                    let updateLike = self.db.collection("Post").document("\(self.post!.id!)")
+                    updateLike.updateData(["NumberOfLike":numberOfLikes]) { err in
+                    if let err = err {
+                        print("Error updating document: \(err)")
+                    } else {
+                        print("Document successfully updated")
+                    }
+                    }
+                    cell.postStatsLabel.text = "\(numberOfLikes) likes"
+                    if let view = self.parent?.parentContainerViewController()?.parent?.children[0] as? NewsViewController
+                    {
+                        view.tableView.reloadData()
+                    }
+                    print("Document successfully removed!")
                 }
             }
-            if let view = self.parent?.parentContainerViewController()?.parent?.children[0] as? NewsViewController
-            {
-                view.tableView.reloadData()
-            }
-            print("Document successfully removed!")
+            
         }
     }
+    
     func userHavenLikeYet() {
         let user = Auth.auth().currentUser
+
         if let cell = self.parent as? PostCell
         {
             self.db.collection("Post/\(self.post!.id!)/Likes").document((user?.email)!).setData([:]) { err in
@@ -99,6 +128,15 @@ struct ButtonPressed {
                     print("Error writing document: \(err)")
                 } else {
                     cell.likeButton.imageView?.tintColor = .cyan
+                    let numberOfLikes = String("\(Int(self.post!.numberOfLike!)!+1)")
+                    let updateLike = self.db.collection("Post").document("\(self.post!.id!)")
+                    updateLike.updateData(["NumberOfLike":numberOfLikes]) { err in
+                    if let err = err {
+                        print("Error updating document: \(err)")
+                    } else {
+                        print("Document successfully updated")
+                    }
+                    }
                     print("Document successfully written!")
                 }
             }
@@ -109,13 +147,24 @@ struct ButtonPressed {
                     print("Error writing document: \(err)")
                 } else {
                     cell.likeButton.imageView?.tintColor = .cyan
+                    let numberOfLikes = String("\(Int(self.post!.numberOfLike!)!+1)")
+                    let updateLike = self.db.collection("Post").document("\(self.post!.id!)")
+                    updateLike.updateData(["NumberOfLike":numberOfLikes]) { err in
+                    if let err = err {
+                        print("Error updating document: \(err)")
+                    } else {
+                        print("Document successfully updated")
+                    }
+                    }
+                    if let view = self.parent?.parentContainerViewController()?.parent?.children[0] as? NewsViewController
+                    {
+                        view.tableView.reloadData()
+                    }
+                    cell.postStatsLabel.text = "\(numberOfLikes) likes"
                     print("Document successfully written!")
                 }
             }
-            if let view = self.parent?.parentContainerViewController()?.parent?.children[0] as? NewsViewController
-            {
-                view.tableView.reloadData()
-            }
+            
         }
     }
 }

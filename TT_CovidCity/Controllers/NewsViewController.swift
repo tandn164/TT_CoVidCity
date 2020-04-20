@@ -84,6 +84,7 @@ extension NewsViewController: PostCellDelegate{
         {
             let destinationMV = segue.destination as! FullPostController
             destinationMV.post = postToPass
+            print(87)
         }
         if segue.identifier == "GotoLogin"
         {

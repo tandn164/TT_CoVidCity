@@ -11,28 +11,37 @@ import Firebase
 
 
 class RegisterViewController: UIViewController {
-  @IBOutlet weak var usernameTextfield: UITextField!
-  @IBOutlet weak var passwordTextfield: UITextField!
-  
-  override func viewDidLoad() {
-    super.viewDidLoad()
-  }
-  
-  @IBAction func registerButtonPressed (_ sender: UIButton) {
-    if let username = usernameTextfield.text, let password = passwordTextfield.text
-    {
-      Auth.auth().createUser(withEmail: username, password: password){ authResult, error in
-        if let err = error {
-          let alert = UIAlertController(title: "Error", message: err.localizedDescription, preferredStyle: .alert)
-          let action = UIAlertAction(title: "Done", style: .default) { (action) in
-          }
-          alert.addAction(action)
-          self.present(alert, animated: true, completion: nil)
-        } else {
-          self.performSegue(withIdentifier: "RegistertoReport", sender: self)
+    @IBOutlet weak var emailTextfield: UITextField!
+    @IBOutlet weak var passwordTextfield: UITextField!
+    @IBOutlet weak var usernameTextField: UITextField!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    @IBAction func registerButtonPressed (_ sender: UIButton) {
+        if let email = emailTextfield.text, let password = passwordTextfield.text, let username = usernameTextField.text
+        {
+            Auth.auth().createUser(withEmail: email, password: password){ authResult, error in
+                if let err = error {
+                    let alert = UIAlertController(title: "Error", message: err.localizedDescription, preferredStyle: .alert)
+                    let action = UIAlertAction(title: "Done", style: .default) { (action) in
+                    }
+                    alert.addAction(action)
+                    self.present(alert, animated: true, completion: nil)
+                } else {
+                    let changeRequest = authResult?.user.createProfileChangeRequest()
+                    changeRequest?.displayName = username
+                    changeRequest?.commitChanges(completion: { (err) in
+                        if let err = err {
+                            print(err)
+                        }
+                    })
+                    self.performSegue(withIdentifier: "RegistertoReport", sender: self)
+                }
+            }
         }
-      }
-    }  }
-  
-  
+        
+    }
+    
+    
 }
