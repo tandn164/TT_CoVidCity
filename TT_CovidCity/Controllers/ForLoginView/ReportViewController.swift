@@ -26,6 +26,7 @@ class ReportViewController: UIViewController, UITextViewDelegate, CLLocationMana
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.hidesBackButton = true
+        nameField.text = Auth.auth().currentUser?.displayName!
         locationManager.requestAlwaysAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.distanceFilter = 50
