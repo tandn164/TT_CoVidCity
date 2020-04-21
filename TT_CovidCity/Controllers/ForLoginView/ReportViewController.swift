@@ -10,14 +10,15 @@ import UIKit
 import Firebase
 import FirebaseFirestore
 import CoreLocation
-
+//import FirebaseStorage
 
 class ReportViewController: UIViewController, UITextViewDelegate, CLLocationManagerDelegate {
     
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var addressField: UITextField!
     @IBOutlet weak var typeField: UITextField!
-    
+    @IBOutlet weak var profileImage: UIImageView!
+    var image : UIImage?
     var locationManager = CLLocationManager()
     var currentLocation: CLLocation?
     var lat: Double!
@@ -26,7 +27,6 @@ class ReportViewController: UIViewController, UITextViewDelegate, CLLocationMana
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.hidesBackButton = true
-        nameField.text = Auth.auth().currentUser?.displayName!
         locationManager.requestAlwaysAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.distanceFilter = 50
@@ -38,6 +38,12 @@ class ReportViewController: UIViewController, UITextViewDelegate, CLLocationMana
     }
     func setViewData() {
         let currentUser = Auth.auth().currentUser
+        nameField.text = currentUser?.displayName!
+        if let url = currentUser?.photoURL {
+            ImageService.downloadImage(withURL: currentUser!.photoURL! ) { (image) in
+            self.profileImage.image = image
+        }
+        }
         let docRef = db.collection("User").document(currentUser!.uid)
         docRef.getDocument { (document, error) in
             if let document = document, document.exists {
@@ -76,11 +82,40 @@ class ReportViewController: UIViewController, UITextViewDelegate, CLLocationMana
     func updateUser() {
        //TODO
         let user = Auth.auth().currentUser
+        image = profileImage.image
+        guard let imageSelected = image else {
+            print("Image is nul")
+            return
+        }
+        guard let imageData = imageSelected.jpegData(compressionQuality: 0.4) else {
+            return
+        }
+        let storageRef = Storage.storage().reference(forURL: "gs://covidcity-1585012064634.appspot.com/")
+        let storageProfileRef = storageRef.child("profile").child(user!.uid)
+        let metaData = StorageMetadata()
+        metaData.contentType = "image/jpg"
+        storageProfileRef.putData(imageData, metadata: metaData) { (storage, err) in
+            if let err = err {
+                print("123+ \(err)")
+                return
+            }
+        }
+        storageProfileRef.downloadURL { (url, err) in
+            if let metaiputdata = url?.absoluteString{
+                print(metaiputdata)
+            }
+            let changeRequest = Auth.auth().currentUser!.createProfileChangeRequest()
+            changeRequest.photoURL = url
+            changeRequest.commitChanges { (error) in
+            }
+        }
+        
         if let content = typeField.text, let contentSender = nameField.text, let title = addressField.text, let lat = lat, let long = long {
             let changeRequest = user!.createProfileChangeRequest()
             changeRequest.displayName = contentSender
             changeRequest.commitChanges { (error) in
             }
+            print(112)
             db.collection("User").document(user!.uid).setData([
                 "UserName": contentSender,
                 "Address": title,
@@ -109,6 +144,12 @@ class ReportViewController: UIViewController, UITextViewDelegate, CLLocationMana
             print ("Error signing out: %@", signOutError)
         }
     }
+    
+    @IBAction func changeProfileImage(_ sender: UIButton) {
+        showImagePickerControllerActionSheet()
+        
+    }
+    
 }
 extension ReportViewController {
     
@@ -141,5 +182,33 @@ extension ReportViewController {
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         locationManager.stopUpdatingLocation()
         print("Error: \(error)")
+    }
+}
+extension ReportViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    func showImagePickerControllerActionSheet() {
+        let photoLibaryAction = UIAlertAction(title: "Choose from library", style: .default) { (action) in
+            self.showImagePickerController(.photoLibrary)
+        }
+//        let cameraAction = UIAlertAction(title: "Take a new photo", style: .default) { (action) in
+//            self.showImagePickerController(.camera)
+//        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        AlertService.showAlert(style: .actionSheet, title: "Choose your profile image", message: nil, actions: [photoLibaryAction,cancelAction], completion: nil)
+    }
+    
+    func showImagePickerController(_ sourceType: UIImagePickerController.SourceType) {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        imagePickerController.allowsEditing = true
+        imagePickerController.sourceType = sourceType
+        present(imagePickerController, animated: true, completion: nil)
+    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage{
+            profileImage.image = editedImage
+        } else if let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
+            profileImage.image = originalImage
+        }
+        dismiss(animated: true, completion: nil)
     }
 }

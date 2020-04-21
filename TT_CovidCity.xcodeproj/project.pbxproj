@@ -21,6 +21,8 @@
 		91B4C95F2448C1050012155C /* ButtonPressed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B4C95E2448C1050012155C /* ButtonPressed.swift */; };
 		91BD69C3244DE13200D44FCB /* CustomLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BD69C2244DE13200D44FCB /* CustomLoginView.swift */; };
 		91BD69D5244EEA9000D44FCB /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BD69D4244EEA9000D44FCB /* AdminViewController.swift */; };
+		91BD69D8244F55F900D44FCB /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BD69D7244F55F900D44FCB /* AlertService.swift */; };
+		91BD69DA244F74A200D44FCB /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BD69D9244F74A200D44FCB /* ImageService.swift */; };
 		B24D1B6410556D1CF29D4D51 /* Pods_TT_CovidCity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69448D03686872D199064893 /* Pods_TT_CovidCity.framework */; };
 		DC029841243178E8007333B0 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC029840243178E8007333B0 /* DetailViewController.swift */; };
 		DC02984724317921007333B0 /* DetailInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC02984524317921007333B0 /* DetailInfoView.swift */; };
@@ -71,6 +73,8 @@
 		91B4C95E2448C1050012155C /* ButtonPressed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonPressed.swift; sourceTree = "<group>"; };
 		91BD69C2244DE13200D44FCB /* CustomLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoginView.swift; sourceTree = "<group>"; };
 		91BD69D4244EEA9000D44FCB /* AdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminViewController.swift; sourceTree = "<group>"; };
+		91BD69D7244F55F900D44FCB /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
+		91BD69D9244F74A200D44FCB /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 		DC029840243178E8007333B0 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		DC02984524317921007333B0 /* DetailInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailInfoView.swift; sourceTree = "<group>"; };
 		DC0298482431792B007333B0 /* ResultData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultData.swift; sourceTree = "<group>"; };
@@ -266,6 +270,15 @@
 			path = ForNewsView;
 			sourceTree = "<group>";
 		};
+		91BD69D6244F55E600D44FCB /* CustomService */ = {
+			isa = PBXGroup;
+			children = (
+				91BD69D7244F55F900D44FCB /* AlertService.swift */,
+				91BD69D9244F74A200D44FCB /* ImageService.swift */,
+			);
+			path = CustomService;
+			sourceTree = "<group>";
+		};
 		A03453012CA94FF604FFABBC /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -322,6 +335,7 @@
 		DC0F97092427BE9700E76CF9 /* TT_CovidCity */ = {
 			isa = PBXGroup;
 			children = (
+				91BD69D6244F55E600D44FCB /* CustomService */,
 				DC0F970A2427BE9700E76CF9 /* AppDelegate.swift */,
 				DC02987824317CBD007333B0 /* CustomView */,
 				DC02986124317C73007333B0 /* CustomCell */,
@@ -539,9 +553,11 @@
 				91B4C95F2448C1050012155C /* ButtonPressed.swift in Sources */,
 				DC0F970D2427BE9700E76CF9 /* SceneDelegate.swift in Sources */,
 				4DB2E8F1244300C400AFE9F2 /* CustomViewCorner.swift in Sources */,
+				91BD69DA244F74A200D44FCB /* ImageService.swift in Sources */,
 				DCE6AB90242A34CB007F4BF8 /* MarkerCluster.swift in Sources */,
 				4DFA41D8243F096500BE9832 /* Post.swift in Sources */,
 				4DB2E8EC2442BB2400AFE9F2 /* CommentCell.swift in Sources */,
+				91BD69D8244F55F900D44FCB /* AlertService.swift in Sources */,
 				91BD69C3244DE13200D44FCB /* CustomLoginView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

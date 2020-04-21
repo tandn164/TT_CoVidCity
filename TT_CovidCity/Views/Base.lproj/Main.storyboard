@@ -191,6 +191,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4CH-xT-Xqf" customClass="CustomButton" customModule="TT_CovidCity" customModuleProvider="target">
+                                <rect key="frame" x="166" y="153" width="163" height="33"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="JQ7-N4-mSd"/>
+                                    <constraint firstAttribute="width" constant="163" id="U8a-4W-36E"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Change profile image">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeProfileImage:" destination="Vuu-y7-DPc" eventType="touchUpInside" id="aRY-2w-zBn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.91945191579999996" blue="0.37396198120000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -198,6 +213,7 @@
                             <constraint firstItem="3KZ-Yh-O1A" firstAttribute="leading" secondItem="aUY-Yj-h4v" secondAttribute="leading" constant="28" id="67K-AI-7xh"/>
                             <constraint firstItem="aUY-Yj-h4v" firstAttribute="trailing" secondItem="3KZ-Yh-O1A" secondAttribute="trailing" constant="20" id="7pE-jo-V1A"/>
                             <constraint firstItem="UuZ-qQ-xhp" firstAttribute="top" secondItem="aUY-Yj-h4v" secondAttribute="top" constant="16" id="LEu-32-zkS"/>
+                            <constraint firstItem="4CH-xT-Xqf" firstAttribute="top" secondItem="aUY-Yj-h4v" secondAttribute="top" constant="65" id="M6S-gF-YcL"/>
                             <constraint firstItem="aUY-Yj-h4v" firstAttribute="trailing" secondItem="PTW-ab-BKu" secondAttribute="trailing" constant="20" id="OG1-po-44k"/>
                             <constraint firstItem="PTW-ab-BKu" firstAttribute="top" secondItem="8Dq-C7-TcZ" secondAttribute="bottom" constant="28" id="Pax-uM-CF8"/>
                             <constraint firstItem="PTW-ab-BKu" firstAttribute="leading" secondItem="aUY-Yj-h4v" secondAttribute="leading" constant="100" id="Rfi-d2-fes"/>
@@ -211,6 +227,7 @@
                             <constraint firstItem="8Dq-C7-TcZ" firstAttribute="leading" secondItem="aUY-Yj-h4v" secondAttribute="leading" constant="100" id="eIr-2I-AgY"/>
                             <constraint firstItem="aUY-Yj-h4v" firstAttribute="trailing" secondItem="8Dq-C7-TcZ" secondAttribute="trailing" constant="20" id="eMV-FY-Jtf"/>
                             <constraint firstItem="acQ-4l-mOc" firstAttribute="top" secondItem="4pv-1W-EPL" secondAttribute="bottom" constant="57" id="f1x-ns-Lw0"/>
+                            <constraint firstItem="4CH-xT-Xqf" firstAttribute="leading" secondItem="UuZ-qQ-xhp" secondAttribute="trailing" constant="19" id="i31-6f-bPf"/>
                             <constraint firstItem="aPc-Ur-qLX" firstAttribute="top" secondItem="3KZ-Yh-O1A" secondAttribute="bottom" constant="7.5" id="kz1-jC-Lse"/>
                             <constraint firstItem="UuZ-qQ-xhp" firstAttribute="leading" secondItem="aUY-Yj-h4v" secondAttribute="leading" constant="20" id="pQo-iQ-BGm"/>
                             <constraint firstItem="aPc-Ur-qLX" firstAttribute="centerX" secondItem="aUY-Yj-h4v" secondAttribute="centerX" id="q43-9t-1cZ"/>
@@ -233,6 +250,7 @@
                     <connections>
                         <outlet property="addressField" destination="GGJ-ae-qkd" id="eA5-hz-Q8p"/>
                         <outlet property="nameField" destination="4ly-pv-LHf" id="aft-mv-RIY"/>
+                        <outlet property="profileImage" destination="UuZ-qQ-xhp" id="HFf-dR-Wrk"/>
                         <outlet property="typeField" destination="MKW-vK-sdB" id="tHi-Em-0Nl"/>
                     </connections>
                 </viewController>
