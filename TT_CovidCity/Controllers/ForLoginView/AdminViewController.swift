@@ -22,9 +22,7 @@ class AdminViewController: UIViewController {
         super.viewDidLoad()
     }
     @IBAction func postPressed(_ sender: UIButton) {
-        print(23)
         self.postTextView.endEditing(true)
-        print(25)
     }
     @IBAction func logoutPressed(_ sender: UIBarButtonItem) {
         do {
@@ -38,10 +36,9 @@ class AdminViewController: UIViewController {
 }
 extension AdminViewController: UITextViewDelegate{
     func textViewDidEndEditing(_ textView: UITextView) {
-        print(30)
         let time = String("\(Date().timeIntervalSince1970)")
         if let post = postTextView.text{
-            db.collection("Post").addDocument(data: ["Image": "3","Caption":post,"NumberOfComment":"0","NumberOfLike":"0","TimeAgo":time,"User":["Image":"boyte","Name":self.user.displayName!]]) { (error) in
+            db.collection("Post").addDocument(data: ["Image": "3","Caption":post,"NumberOfComment":"0","NumberOfLike":"0","TimeAgo":time,"Time":Date().timeIntervalSince1970,"User":["Image":"boyte","Name":self.user.displayName!]]) { (error) in
                 if let err = error{
                     print(err)
                 }else

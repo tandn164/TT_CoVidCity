@@ -17,7 +17,7 @@ class LoginViewController: UIViewController {
     weak var parentview : UIViewController?
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(check)
+        
     }
     //Neu nguoi dung da dang nhap thi chuyen den report luon
     override func viewDidAppear(_ animated: Bool) {

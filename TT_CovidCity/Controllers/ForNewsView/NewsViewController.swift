@@ -38,17 +38,21 @@ class NewsViewController: UIViewController {
                     
                     for doc in snapShotDocuments {
                         let data = doc.data()
-                        if let caption = data["Caption"] as? String, let image = data["Image"] as? String, let numberOfLike = data["NumberOfLike"] as? String, let numberOfComment = data["NumberOfComment"] as? String, let time = data["TimeAgo"] as? String, let user = data["User"] as? [String: String]
+                        if let caption = data["Caption"] as? String, let image = data["Image"] as? String, let numberOfLike = data["NumberOfLike"] as? String, let numberOfComment = data["NumberOfComment"] as? String, let user = data["User"] as? [String: String], let time = data["Time"] as? Double
                         {
-                            let newPost = Post(caption: caption, image: image, time: time, numberOfLike: numberOfLike, numberOfComment: numberOfComment, user: Writter(name: user["Name"], profileImage: user["Image"]),id: doc.documentID)
+                            let date = Date(timeIntervalSince1970: time)
+                            let dateFormatter = DateFormatter()
+                            dateFormatter.timeStyle = DateFormatter.Style.medium //Set time style
+                            dateFormatter.dateStyle = DateFormatter.Style.medium //Set date style
+                            dateFormatter.timeZone = .current
+                            let localDate = dateFormatter.string(from: date)
+                            let newPost = Post(caption: caption, image: image, time: localDate, numberOfLike: numberOfLike, numberOfComment: numberOfComment, user: Writter(name: user["Name"], profileImage: user["Image"]),id: doc.documentID)
                             self.posts.append(newPost)
-                            self.a = 9
-                            DispatchQueue.main.async {
-                                self.tableView.reloadData()
-                            }
-                            
                         }
                         
+                    }
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
                     }
                 }
             }

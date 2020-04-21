@@ -41,7 +41,7 @@ class ReportViewController: UIViewController, UITextViewDelegate, CLLocationMana
         docRef.getDocument { (document, error) in
             if let document = document, document.exists {
                 let data = document.data()!
-                if let name = data["UserName"] as? String, let address = data["Address"] as? String, let type = data["Type"] as? String//, let lat = data["lat"] as? NSNumber, let lon = data["lon"] as? NSNumber
+                if let name = data["UserName"] as? String, let address = data["Address"] as? String, let type = data["Type"] as? String//, let lat = data["lat"] as? Double, let lon = data["lon"] as? Double
                 {
                     self.nameField.text = name
                     self.addressField.text = address
@@ -85,7 +85,7 @@ class ReportViewController: UIViewController, UITextViewDelegate, CLLocationMana
                 "Address": title,
                 "Type": content,
                 "lat": lat,
-                "long": long,
+                "lon": long,
             ]) { (error) in
                 if let err = error {
                     print(err)

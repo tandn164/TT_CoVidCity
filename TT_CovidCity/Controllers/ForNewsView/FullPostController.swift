@@ -30,16 +30,21 @@ class FullPostController: UIViewController {
                 {
                     for doc in snapShotDocuments {
                         let data = doc.data()
-                        if let userName = data["UserName"] as? String, let image = data["UserProfileImage"] as? String, let cmt = data["Comment"] as? String, let time = data["Time"] as? String
+                        if let userName = data["UserName"] as? String, let image = data["UserProfileImage"] as? String, let cmt = data["Comment"] as? String, let time = data["Time"] as? Double
                         {
-                            let newComment = Comment(comment: cmt, time: time, userName: userName, userProfileImage: image)
+                            let date = Date(timeIntervalSince1970: time)
+                            let dateFormatter = DateFormatter()
+                            dateFormatter.timeStyle = DateFormatter.Style.medium //Set time style
+                            dateFormatter.dateStyle = DateFormatter.Style.medium //Set date style
+                            dateFormatter.timeZone = .current
+                            let localDate = dateFormatter.string(from: date)
+                            let newComment = Comment(comment: cmt, time: localDate, userName: userName, userProfileImage: image)
                             self.comment.append(newComment)
-                            DispatchQueue.main.async {
-                                self.tableView.reloadData()
-                            }
-                            
                         }
                         
+                    }
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
                     }
                 }
             }
@@ -129,11 +134,10 @@ extension FullPostController: UITextFieldDelegate{
         let user = Auth.auth().currentUser
         let userName = user?.displayName!
         if let comment = textField.text{
-             db.collection("Post/\(post!.id!)/comment").addDocument(data: ["UserName":userName, "Comment":comment,"Time": "15m", "UserProfileImage":"tan"]){(error) in
+            db.collection("Post/\(post!.id!)/comment").addDocument(data: ["UserName":userName, "Comment":comment,"Time": Date().timeIntervalSince1970, "UserProfileImage":"tan"]){(error) in
                      if let err = error {
                          print(err)
                      } else {
-                         print("OK")
                          let numberOfComments = String("\(Int(self.post!.numberOfComment!)!+1)")
                          let updateComment = self.db.collection("Post").document("\(self.post!.id!)")
                          updateComment.updateData(["NumberOfComment":numberOfComments]) { err in

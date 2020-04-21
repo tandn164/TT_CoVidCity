@@ -41,7 +41,6 @@ class PostCell: UITableViewCell {
         if Auth.auth().currentUser != nil {
             let user = Auth.auth().currentUser
             let docRef = db.collection("Post/\(post.id!)/Likes").document((user?.email)!)
-            print("Post/\(post.id!)/Likes")
             docRef.getDocument(source: .cache) { (document, error) in
                 if let doc = document
                 {
