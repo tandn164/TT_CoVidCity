@@ -20,6 +20,7 @@ class NewsViewController: UIViewController {
         super.viewDidLoad()
         loadPost()
         setupTable()
+        navigationItem.hidesBackButton = true
         self.tabBarItem.selectedImage = UIImage.init(systemName: "paperplane.fill")
     }
     func setupTable(){

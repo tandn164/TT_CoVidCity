@@ -25,6 +25,7 @@ class ReportViewController: UIViewController, UITextViewDelegate, CLLocationMana
     let db = Firestore.firestore()
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.hidesBackButton = true
         locationManager.requestAlwaysAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.distanceFilter = 50

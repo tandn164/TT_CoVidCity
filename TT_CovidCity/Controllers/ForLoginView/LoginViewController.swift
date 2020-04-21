@@ -41,7 +41,12 @@ class LoginViewController: UIViewController {
                         self.comeFromNews()
                     } else {
                         //Neu khong thi chuyen den report
+                        if Auth.auth().currentUser!.email! == "boyte@gmail.com"
+                        {
+                            self.performSegue(withIdentifier: "LogintoAdmin", sender: self)
+                        } else {
                         self.performSegue(withIdentifier: "LogintoReport", sender: self)
+                        }
                     }
                     
                 }

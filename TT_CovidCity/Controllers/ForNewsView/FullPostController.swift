@@ -127,9 +127,8 @@ extension FullPostController: UITextFieldDelegate{
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
         let user = Auth.auth().currentUser
-        let userName = user?.displayName
-        // let sender = "tan"
-         if let comment = textField.text{
+        let userName = user?.displayName!
+        if let comment = textField.text{
              db.collection("Post/\(post!.id!)/comment").addDocument(data: ["UserName":userName, "Comment":comment,"Time": "15m", "UserProfileImage":"tan"]){(error) in
                      if let err = error {
                          print(err)
