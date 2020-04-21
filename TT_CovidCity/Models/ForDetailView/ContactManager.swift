@@ -58,7 +58,7 @@ struct ContactManager {
                 }
                 tableData.append(DropDownCellData(open: false, title: "Danh sách liên hệ các lãnh đạo đơn vị", sectionData: contact2))
                 let db2 = Firestore.firestore()
-                db2.collection("Contact/CDC/UnitManager").addSnapshotListener { (querySnapshot, error) in
+                db2.collection("Contact/CDC/Top5Hospital").addSnapshotListener { (querySnapshot, error) in
                            var contact3 : [Contact] = []
                            if let err = error {
                                print("not read OK \(err)")
@@ -68,9 +68,9 @@ struct ContactManager {
                                {
                                    for doc in snapShotDocuments {
                                        let data = doc.data()
-                                       if let Unitname = data["UnitName"] as? String, let managerName = data["ManagerName"] as? String, let phone = data["Phone"] as? String
+                                       if let name = data["Name"] as? String,let hospital = data["Hospital"] as? String
                                        {
-                                           let newContact = Contact(hospitalName: Unitname, managerName: managerName, phoneNumber1: phone, phoneNumber2: "")
+                                           let newContact = Contact(hospitalName: name, managerName: "", phoneNumber1: hospital , phoneNumber2: "")
                                            contact3.append(newContact)
                                        }
                                        

@@ -15,7 +15,6 @@ class NewsViewController: UIViewController {
     var posts : [Post] = []
     var postToPass : Post?
     var docref : CollectionReference!
-    var a : Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         loadPost()

@@ -26,8 +26,8 @@ struct ButtonPressed {
                 commentEvent()
             }
         } else {
-            let arlert = UIAlertController(title: "Login", message: "you need to log in", preferredStyle: .alert)
-            let action = UIAlertAction(title: "Log in", style: .cancel) { (action) in
+            let arlert = UIAlertController(title: "You haven't logined yet", message: "You need to login", preferredStyle: .alert)
+            let action = UIAlertAction(title: "Login", style: .cancel) { (action) in
                 DispatchQueue.main.async {
                     self.parent?.parentContainerViewController()?.performSegue(withIdentifier: "GotoLogin", sender: self.parent?.parentContainerViewController())
                 }

@@ -40,7 +40,6 @@ class DetailViewController: UIViewController {
 // MARK: - UITableViewDelegate
 extension DetailViewController: UITableViewDelegate{
     func numberOfSections(in tableView: UITableView) -> Int {
-        print(129)
         return 4
     }
 }
