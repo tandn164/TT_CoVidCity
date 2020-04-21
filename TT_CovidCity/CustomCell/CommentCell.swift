@@ -23,7 +23,7 @@ class CommentCell: UITableViewCell {
         userImage.image = UIImage(named: comment.userProfileImage)
         userName.text = comment.userName
         userComment.text = comment.comment
-        timeAgo.text = comment.time
+        timeAgo.text = String("\(comment.time)")
     }
     override func awakeFromNib() {
         super.awakeFromNib()

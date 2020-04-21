@@ -15,6 +15,7 @@ struct Post {
     let numberOfComment : String?
     let user : Writter?
     let id : String?
+    
 }
 struct Comment {
     let comment: String

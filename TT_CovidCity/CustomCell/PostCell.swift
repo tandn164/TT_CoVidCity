@@ -34,7 +34,7 @@ class PostCell: UITableViewCell {
     func UpdateUI(){
         profileImageView.image = UIImage(named: post.user!.profileImage!)
         userNameLabel.text = post.user!.name
-        timeAgoLabel.text = post.time
+        timeAgoLabel.text = String("\(post.time!)")
         captionLabel.text = post.caption
         postImageView.image = UIImage(named: post.image!)
         postStatsLabel.text = "\(post.numberOfLike!) likes     \(post.numberOfComment!) comments"

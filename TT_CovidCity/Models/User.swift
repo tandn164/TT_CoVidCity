@@ -9,14 +9,15 @@
 import Foundation
 struct User {
     let name : String?
-    let location : Location?
-    let email : String?
-    let lon : String?
-    let lat : String?
-    let profileImage : String?
-    let password : String?
+    let address : String?
+    //let location : Location?
+    //let email : String?
+  //  let lon : NSNumber
+   // let lat : NSNumber
+    //let profileImage : String?
+    //let password : String?
     let type : String?
-    let visitedLocation : [Location?]
+    //let visitedLocation : [Location?]
 }
 struct Location {
     let lat : Float?

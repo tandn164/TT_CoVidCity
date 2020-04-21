@@ -28,7 +28,7 @@ class FullPostCell: UITableViewCell {
         }
     }
     func UpdateUI(){
-        timeAgoLabel.text = post.time
+        timeAgoLabel.text = String("\(post.time!)")
         profileImageView.image = UIImage(named: post.user!.profileImage!)
         userNameLabel.text = post.user!.name
         captionLabel.text = post.caption
