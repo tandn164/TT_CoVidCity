@@ -26,8 +26,6 @@ class PostManager{
                 {
                     for doc in snapShotDocuments {
                     let data = doc.data()
-                        let numberOfLike = String("\(self.countLike(doc.documentID))")
-                        print(numberOfLike)
                         if let caption = data["Caption"] as? String, let image = data["Image"] as? String, let numberOfComment = data["NumberOfComment"] as? String, let user = data["User"] as? [String: String], let time = data["Time"] as? Double, let numberOfLike = data["NumberOfLike"] as? String
                         {
                             let date = Date(timeIntervalSince1970: time)
