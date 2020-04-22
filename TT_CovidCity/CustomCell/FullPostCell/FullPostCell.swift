@@ -24,7 +24,9 @@ class FullPostCell: UITableViewCell {
     var db = Firestore.firestore()
     var post: Post!{
         didSet{
+            if post != nil {
             UpdateUI()
+            }
         }
     }
     func UpdateUI(){

@@ -18,6 +18,9 @@
 		4DFA41D8243F096500BE9832 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFA41D7243F096500BE9832 /* Post.swift */; };
 		4DFA41DA243F098E00BE9832 /* ContactResultData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFA41D9243F098E00BE9832 /* ContactResultData.swift */; };
 		4DFA41E0244015DF00BE9832 /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DFA41DE244015DF00BE9832 /* PostCell.xib */; };
+		91B2B4502450B51700F7F541 /* PostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B2B44F2450B51700F7F541 /* PostManager.swift */; };
+		91B2B4532450BC5300F7F541 /* CommentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B2B4522450BC5300F7F541 /* CommentManager.swift */; };
+		91B2B4552450BF1B00F7F541 /* SinglePostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B2B4542450BF1B00F7F541 /* SinglePostManager.swift */; };
 		91B4C95F2448C1050012155C /* ButtonPressed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B4C95E2448C1050012155C /* ButtonPressed.swift */; };
 		91BD69C3244DE13200D44FCB /* CustomLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BD69C2244DE13200D44FCB /* CustomLoginView.swift */; };
 		91BD69D5244EEA9000D44FCB /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BD69D4244EEA9000D44FCB /* AdminViewController.swift */; };
@@ -70,6 +73,9 @@
 		4DFA41D9243F098E00BE9832 /* ContactResultData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactResultData.swift; sourceTree = "<group>"; };
 		4DFA41DE244015DF00BE9832 /* PostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
 		69448D03686872D199064893 /* Pods_TT_CovidCity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TT_CovidCity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		91B2B44F2450B51700F7F541 /* PostManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostManager.swift; sourceTree = "<group>"; };
+		91B2B4522450BC5300F7F541 /* CommentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentManager.swift; sourceTree = "<group>"; };
+		91B2B4542450BF1B00F7F541 /* SinglePostManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinglePostManager.swift; sourceTree = "<group>"; };
 		91B4C95E2448C1050012155C /* ButtonPressed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonPressed.swift; sourceTree = "<group>"; };
 		91BD69C2244DE13200D44FCB /* CustomLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoginView.swift; sourceTree = "<group>"; };
 		91BD69D4244EEA9000D44FCB /* AdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminViewController.swift; sourceTree = "<group>"; };
@@ -199,11 +205,11 @@
 			children = (
 				4DFA41D3243F086E00BE9832 /* ContactManager.swift */,
 				4DFA41D9243F098E00BE9832 /* ContactResultData.swift */,
+				DC029856243179FD007333B0 /* Contact.swift */,
 				DC029852243179DB007333B0 /* WorldcovidManager.swift */,
 				DC029853243179DD007333B0 /* WorldCovidData.swift */,
-				DC029857243179FE007333B0 /* Country.swift */,
-				DC029856243179FD007333B0 /* Contact.swift */,
 				DC0298482431792B007333B0 /* ResultData.swift */,
+				DC029857243179FE007333B0 /* Country.swift */,
 			);
 			path = ForDetailView;
 			sourceTree = "<group>";
@@ -212,6 +218,9 @@
 			isa = PBXGroup;
 			children = (
 				4DFA41D7243F096500BE9832 /* Post.swift */,
+				91B2B44F2450B51700F7F541 /* PostManager.swift */,
+				91B2B4522450BC5300F7F541 /* CommentManager.swift */,
+				91B2B4542450BF1B00F7F541 /* SinglePostManager.swift */,
 			);
 			path = ForNewsView;
 			sourceTree = "<group>";
@@ -525,6 +534,7 @@
 				DC02987224317C96007333B0 /* SubCell.swift in Sources */,
 				DC02985B24317A02007333B0 /* Contact.swift in Sources */,
 				DC0E6909242EF625009372FC /* RegisterViewController.swift in Sources */,
+				91B2B4502450B51700F7F541 /* PostManager.swift in Sources */,
 				4DFA41D6243F094900BE9832 /* User.swift in Sources */,
 				DC02987D24317CBD007333B0 /* CustomButton.swift in Sources */,
 				DC0F970F2427BE9700E76CF9 /* MapViewController.swift in Sources */,
@@ -542,9 +552,11 @@
 				DC02986E24317C96007333B0 /* StartCell.swift in Sources */,
 				91BD69D5244EEA9000D44FCB /* AdminViewController.swift in Sources */,
 				DC0F972824286D9800E76CF9 /* TabBarController.swift in Sources */,
+				91B2B4552450BF1B00F7F541 /* SinglePostManager.swift in Sources */,
 				DC02987E24317CBD007333B0 /* CustomView2.swift in Sources */,
 				DC02987C24317CBD007333B0 /* CustomView1.swift in Sources */,
 				DC02987024317C96007333B0 /* PostCell.swift in Sources */,
+				91B2B4532450BC5300F7F541 /* CommentManager.swift in Sources */,
 				DC029855243179DD007333B0 /* WorldCovidData.swift in Sources */,
 				DC0F970B2427BE9700E76CF9 /* AppDelegate.swift in Sources */,
 				4D1CF1B2244056C400265377 /* FullPostCell.swift in Sources */,

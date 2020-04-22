@@ -38,7 +38,9 @@ class ReportViewController: UIViewController, UITextViewDelegate, CLLocationMana
     }
     func setViewData() {
         let currentUser = Auth.auth().currentUser
-        nameField.text = currentUser?.displayName!
+        if let name = currentUser?.displayName {
+            nameField.text = name
+        }
         if let url = currentUser?.photoURL {
             ImageService.downloadImage(withURL: currentUser!.photoURL! ) { (image) in
             self.profileImage.image = image

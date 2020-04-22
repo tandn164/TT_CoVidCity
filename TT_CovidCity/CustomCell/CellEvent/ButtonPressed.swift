@@ -107,10 +107,6 @@ struct ButtonPressed {
                     }
                     }
                     cell.postStatsLabel.text = "\(numberOfLikes) likes"
-                    if let view = self.parent?.parentContainerViewController()?.parent?.children[0] as? NewsViewController
-                    {
-                        view.tableView.reloadData()
-                    }
                     print("Document successfully removed!")
                 }
             }
@@ -155,10 +151,6 @@ struct ButtonPressed {
                     } else {
                         print("Document successfully updated")
                     }
-                    }
-                    if let view = self.parent?.parentContainerViewController()?.parent?.children[0] as? NewsViewController
-                    {
-                        view.tableView.reloadData()
                     }
                     cell.postStatsLabel.text = "\(numberOfLikes) likes"
                     print("Document successfully written!")

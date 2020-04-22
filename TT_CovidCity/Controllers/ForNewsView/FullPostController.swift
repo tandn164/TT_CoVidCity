@@ -12,43 +12,31 @@ class FullPostController: UIViewController {
     var post : Post?
     var comment : [Comment] = []
     var db = Firestore.firestore()
+    var postId : String?
+    var commentManager : CommentManager?
+    var fullPost : SinglePostManager?
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var textField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        setTableCell()
-        loadComment()
-    }
-    func loadComment(){
-        db.collection("Post/\(post!.id!)/comment").addSnapshotListener { (querySnapshot, error) in
-            self.comment = []
-            if let err = error {
-                print("not read OK \(err)")
-            }
-            else {
-                if let snapShotDocuments = querySnapshot?.documents
-                {
-                    for doc in snapShotDocuments {
-                        let data = doc.data()
-                        if let userName = data["UserName"] as? String, let image = data["UserProfileImage"] as? String, let cmt = data["Comment"] as? String, let time = data["Time"] as? Double
-                        {
-                            let date = Date(timeIntervalSince1970: time)
-                            let dateFormatter = DateFormatter()
-                            dateFormatter.timeStyle = DateFormatter.Style.medium //Set time style
-                            dateFormatter.dateStyle = DateFormatter.Style.medium //Set date style
-                            dateFormatter.timeZone = .current
-                            let localDate = dateFormatter.string(from: date)
-                            let newComment = Comment(comment: cmt, time: localDate, userName: userName, userProfileImage: image)
-                            self.comment.append(newComment)
-                        }
-                        
-                    }
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
-                    }
-                }
-            }
+        guard let id = postId else {
+            print("No post exits")
+            return
         }
+        print(id)
+        commentManager = CommentManager(id)
+        commentManager?.delegate = self
+        fullPost = SinglePostManager(id)
+        fullPost?.delegate = self
+        loadData()
+        setTableCell()
+
+    }
+//    override func viewWillAppear(_ animated: Bool) {
+//
+//    }
+    func loadData(){
+        fullPost?.loadData()
     }
     func setTableCell(){
         tableView.register(UINib(nibName: FullPostCell.FullPostCellID, bundle: nil), forCellReuseIdentifier: FullPostCell.FullPostCellID)
@@ -81,14 +69,14 @@ extension FullPostController: UITableViewDataSource{
         if  indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: FullPostCell.FullPostCellID, for: indexPath) as! FullPostCell
             cell.post = post
-            return cell}
+            return cell
+        }
         else
         {
             let cell = tableView.dequeueReusableCell(withIdentifier: CommentCell.CommentCellID, for: indexPath) as! CommentCell
             cell.comment = comment[indexPath.row]
             return cell
         }
-        //   return UITableViewCell()
     }
 }
 extension FullPostController: UITableViewDelegate{
@@ -159,5 +147,20 @@ extension FullPostController: UITextFieldDelegate{
                  }
          }
         self.textField.text = ""
+    }
+}
+extension FullPostController : CommentManagerDelegate{
+    func dataDidUpdate(_ commentManager: CommentManager, _ data: [Comment]) {
+        comment = data
+        self.tableView.reloadData()
+        
+    }
+    
+}
+extension FullPostController : SinglePostManagerDelegate{
+    func dataDidUpdate(_ sender: SinglePostManager, _ data: Post) {
+        post = data
+        //self.tableView.reloadData()
+        commentManager?.loadData()
     }
 }
