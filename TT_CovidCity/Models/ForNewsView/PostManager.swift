@@ -47,19 +47,5 @@ class PostManager{
             }
         }
     }
-//    func countLike(_ id : String) -> Int {
-//        var numberOfLikes : Int?
-//        print(54)
-//        db.collection("Post/\(id)/Likes").getDocuments { (query, err) in
-//            print("Post/\(id)/Likes")
-//            numberOfLikes = query?.count
-//            print(numberOfLikes)
-//        }
-//        if numberOfLikes == nil
-//        {
-//            return 0
-//        } else {
-//            return numberOfLikes!
-//        }
-//    }
+
 }

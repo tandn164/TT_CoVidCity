@@ -20,7 +20,11 @@ class CommentCell: UITableViewCell {
         }
     }
     func UpdateUI(){
-        userImage.image = UIImage(named: comment.userProfileImage)
+        //userImage.image = UIImage(named: comment.userProfileImage)
+        
+        ImageService.downloadImage(withURL: URL(string: comment.userProfileImage)!) { (image) in
+            self.userImage.image = image
+        }
         userName.text = comment.userName
         userComment.text = comment.comment
         timeAgo.text = String("\(comment.time)")

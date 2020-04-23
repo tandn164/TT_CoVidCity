@@ -7,7 +7,7 @@
 //
 import UIKit
 
-class CustomView2: UIView {
+class RedBackgroundView: UIView {
 
     /*
     // Only override draw() if you perform custom drawing.

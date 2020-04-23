@@ -34,7 +34,7 @@
                             <constraint firstItem="fkl-GE-Qrj" firstAttribute="centerY" secondItem="yrI-2q-Acs" secondAttribute="centerY" id="hco-80-3OF"/>
                         </constraints>
                     </view>
-                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R4o-5q-3oM" customClass="CustomButton" customModule="TT_CovidCity" customModuleProvider="target">
+                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R4o-5q-3oM" customClass="RedButton" customModule="TT_CovidCity" customModuleProvider="target">
                         <rect key="frame" x="47" y="79" width="100" height="80"/>
                         <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -48,7 +48,7 @@
                             <action selector="buttonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Gcf-HP-WbA"/>
                         </connections>
                     </button>
-                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tbp-lb-1ea" customClass="CustomButton" customModule="TT_CovidCity" customModuleProvider="target">
+                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tbp-lb-1ea" customClass="RedButton" customModule="TT_CovidCity" customModuleProvider="target">
                         <rect key="frame" x="236" y="79" width="100" height="80"/>
                         <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>

@@ -11,9 +11,9 @@ protocol StartCellDelegate {
     func buttonPressed(_ button: UIButton)
 }
 class StartCell: UITableViewCell {
-    @IBOutlet weak var hanoiButton: CustomButton!
+    @IBOutlet weak var hanoiButton: RedButton!
     @IBOutlet weak var vietnamButton: UIButton!
-    @IBOutlet weak var thegioiButton: CustomButton!
+    @IBOutlet weak var thegioiButton: RedButton!
     static let startCellID = "StartCell"
     var delegate : StartCellDelegate?
     override func awakeFromNib() {
@@ -27,7 +27,7 @@ class StartCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    @IBAction func buttonPressed(_ sender: CustomButton) {
+    @IBAction func buttonPressed(_ sender: RedButton) {
         sender.shake()
         delegate?.buttonPressed(sender)
     }

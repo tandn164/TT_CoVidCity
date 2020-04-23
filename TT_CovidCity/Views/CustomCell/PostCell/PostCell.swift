@@ -32,7 +32,9 @@ class PostCell: UITableViewCell {
         }
     }
     func UpdateUI(){
-        profileImageView.image = UIImage(named: post.user!.profileImage!)
+        ImageService.downloadImage(withURL: URL(string: post.user!.profileImage!)!) { (image) in
+            self.profileImageView.image = image
+        }
         userNameLabel.text = post.user!.name
         timeAgoLabel.text = String("\(post.time!)")
         captionLabel.text = post.caption
@@ -55,6 +57,9 @@ class PostCell: UITableViewCell {
                     self.likeButton.imageView?.tintColor = .darkGray
                 }
             }
+        } else
+        {
+            self.likeButton.imageView?.tintColor = .darkGray
         }
     }
     override func awakeFromNib() {

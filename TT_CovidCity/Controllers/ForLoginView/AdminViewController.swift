@@ -13,13 +13,18 @@ class AdminViewController: UIViewController {
     @IBOutlet weak var postTextView: UITextView!
     let user = Auth.auth().currentUser!
     var db = Firestore.firestore()
+    var userManager : SingleUserManager?
+    var currentUser : User?
     override func viewDidLoad() {
-        if let name = user.displayName{
-        nameField.text = name
-        }
+        super.viewDidLoad()
+        userManager = SingleUserManager((Auth.auth().currentUser?.email)!)
+        userManager?.delegate = self
+        userManager?.loadData()
         postTextView.delegate = self
         navigationItem.hidesBackButton = true
-        super.viewDidLoad()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        
     }
     @IBAction func postPressed(_ sender: UIButton) {
         self.postTextView.endEditing(true)
@@ -38,12 +43,11 @@ extension AdminViewController: UITextViewDelegate{
     func textViewDidEndEditing(_ textView: UITextView) {
         let time = String("\(Date().timeIntervalSince1970)")
         if let post = postTextView.text{
-            db.collection("Post").addDocument(data: ["Image": "3","Caption":post,"NumberOfComment":"0","NumberOfLike":"0","TimeAgo":time,"Time":Date().timeIntervalSince1970,"User":["Image":"boyte","Name":self.user.displayName!]]) { (error) in
+            db.collection("Post").addDocument(data: ["Image": "3","Caption":post,"NumberOfComment":"0","NumberOfLike":"0","TimeAgo":time,"Time":Date().timeIntervalSince1970,"User":["Image":currentUser?.imageURL,"Name":currentUser?.userName]]) { (error) in
                 if let err = error{
                     print(err)
                 }else
                 {
-                 //   self.performSegue(withIdentifier: "NewPost", sender: self)
                     let alert = UIAlertController(title: "New post uploaded", message: "", preferredStyle: .alert)
                     let action = UIAlertAction(title: "Okay", style: .default, handler: nil)
                     alert.addAction(action)
@@ -65,6 +69,14 @@ extension AdminViewController: UITextViewDelegate{
             present(alert, animated: true, completion: nil)
             return false
         }
+    }
+}
+extension AdminViewController : SingleUserManagerDelegate{
+    func dataDidUpdate(_ sender: SingleUserManager, _ data: User) {
+        print(data)
+        currentUser = data
+        nameField.text = currentUser?.userName
+
     }
     
     

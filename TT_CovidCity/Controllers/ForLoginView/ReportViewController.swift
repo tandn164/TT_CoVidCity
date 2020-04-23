@@ -23,7 +23,10 @@ class ReportViewController: UIViewController, UITextViewDelegate, CLLocationMana
     var currentLocation: CLLocation?
     var lat: Double!
     var long: Double!
+    var userManager : SingleUserManager?
+    var currentuser : User?
     let db = Firestore.firestore()
+    var photoURL : String?
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.hidesBackButton = true
@@ -32,34 +35,16 @@ class ReportViewController: UIViewController, UITextViewDelegate, CLLocationMana
         locationManager.distanceFilter = 50
         locationManager.startUpdatingLocation()
         locationManager.delegate = self
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         setViewData()
     }
     func setViewData() {
-        let currentUser = Auth.auth().currentUser
-        if let name = currentUser?.displayName {
-            nameField.text = name
-        }
-        if let url = currentUser?.photoURL {
-            ImageService.downloadImage(withURL: currentUser!.photoURL! ) { (image) in
-            self.profileImage.image = image
-        }
-        }
-        let docRef = db.collection("User").document(currentUser!.uid)
-        docRef.getDocument { (document, error) in
-            if let document = document, document.exists {
-                let data = document.data()!
-                if let name = data["UserName"] as? String, let address = data["Address"] as? String, let type = data["Type"] as? String//, let lat = data["lat"] as? Double, let lon = data["lon"] as? Double
-                {
-                    self.nameField.text = name
-                    self.addressField.text = address
-                    self.typeField.text = type
-                }
-            } else {
-                print("Document does not exist")
-            }
-        }
+        userManager = SingleUserManager((Auth.auth().currentUser?.email)!)
+        userManager?.delegate = self
+        userManager?.loadData()
+        
     }
     @IBAction func submitPressed(_ sender: UIButton) {
         //TODO
@@ -82,62 +67,50 @@ class ReportViewController: UIViewController, UITextViewDelegate, CLLocationMana
     }
     
     func updateUser() {
-       //TODO
+        //TODO
         let user = Auth.auth().currentUser
+        print(73)
+        //push profile image
         image = profileImage.image
         guard let imageSelected = image else {
-            print("Image is nul")
+            print("Image is null")
             return
         }
         guard let imageData = imageSelected.jpegData(compressionQuality: 0.4) else {
             return
         }
         let storageRef = Storage.storage().reference(forURL: "gs://covidcity-1585012064634.appspot.com/")
-        let storageProfileRef = storageRef.child("profile").child(user!.uid)
+        let storageProfileRef = storageRef.child("profile").child((user?.email)!)
         let metaData = StorageMetadata()
         metaData.contentType = "image/jpg"
         storageProfileRef.putData(imageData, metadata: metaData) { (storage, err) in
             if let err = err {
-                print("123+ \(err)")
+                print(err)
                 return
-            }
-        }
-        storageProfileRef.downloadURL { (url, err) in
-            if let metaiputdata = url?.absoluteString{
-                print(metaiputdata)
-            }
-            let changeRequest = Auth.auth().currentUser!.createProfileChangeRequest()
-            changeRequest.photoURL = url
-            changeRequest.commitChanges { (error) in
+            }else{
+                
+                storageProfileRef.downloadURL { (url, err) in
+                    self.photoURL = url?.absoluteString
+                    if let type = self.typeField.text, let userName = self.nameField.text, let address = self.addressField.text{
+                        print(85)
+                        self.db.collection("User").document(user!.email!).setData([
+                            "UserName": userName,
+                            "Address": address,
+                            "Type": type,
+                            "ImageURL":self.photoURL!], merge: true)
+                        self.currentuser = User(userName: userName, imageURL: self.photoURL, address: address, type: type)
+                        let alert = UIAlertController(title: "Submitted", message: "Thank you for the submition, ありがとうございます。", preferredStyle: .alert)
+                        let action = UIAlertAction(title: "Done", style: .default) { (action) in
+                        }
+                        alert.addAction(action)
+                        self.present(alert, animated: true, completion: nil)
+                    }
+                }
+                
             }
         }
         
-        if let content = typeField.text, let contentSender = nameField.text, let title = addressField.text, let lat = lat, let long = long {
-            let changeRequest = user!.createProfileChangeRequest()
-            changeRequest.displayName = contentSender
-            changeRequest.commitChanges { (error) in
-            }
-            print(112)
-            db.collection("User").document(user!.uid).setData([
-                "UserName": contentSender,
-                "Address": title,
-                "Type": content,
-                "lat": lat,
-                "lon": long,
-            ]) { (error) in
-                if let err = error {
-                    print(err)
-                } else {
-                    let alert = UIAlertController(title: "Submitted", message: "Thank you for the submition, ありがとうございます。", preferredStyle: .alert)
-                    let action = UIAlertAction(title: "Done", style: .default) { (action) in
-                    }
-                    alert.addAction(action)
-                    self.present(alert, animated: true, completion: nil)
-                }
-            }
-        }
     }
-    
     @IBAction func logoutPressed(_ sender: UIBarButtonItem) {
         do {
             try Auth.auth().signOut()
@@ -145,11 +118,15 @@ class ReportViewController: UIViewController, UITextViewDelegate, CLLocationMana
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
         }
+//        if let view = self.parent?.parent?.children[3].children[0] as? NewsViewController
+//        {
+//            view.tableView.reloadData()
+//        }
+      //   print(self.parent?.parent?.children[3].children[0].children)
     }
     
     @IBAction func changeProfileImage(_ sender: UIButton) {
         showImagePickerControllerActionSheet()
-        
     }
     
 }
@@ -191,9 +168,9 @@ extension ReportViewController : UIImagePickerControllerDelegate, UINavigationCo
         let photoLibaryAction = UIAlertAction(title: "Choose from library", style: .default) { (action) in
             self.showImagePickerController(.photoLibrary)
         }
-//        let cameraAction = UIAlertAction(title: "Take a new photo", style: .default) { (action) in
-//            self.showImagePickerController(.camera)
-//        }
+        //        let cameraAction = UIAlertAction(title: "Take a new photo", style: .default) { (action) in
+        //            self.showImagePickerController(.camera)
+        //        }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         AlertService.showAlert(style: .actionSheet, title: "Choose your profile image", message: nil, actions: [photoLibaryAction,cancelAction], completion: nil)
     }
@@ -212,5 +189,26 @@ extension ReportViewController : UIImagePickerControllerDelegate, UINavigationCo
             profileImage.image = originalImage
         }
         dismiss(animated: true, completion: nil)
+    }
+}
+extension ReportViewController : SingleUserManagerDelegate{
+    func dataDidUpdate(_ sender: SingleUserManager, _ data: User) {
+        currentuser = data
+        if let name = currentuser?.userName{
+            nameField.text = name
+        }
+        //get profile image
+        if let url = currentuser?.imageURL{
+            ImageService.downloadImage(withURL: URL(string: url)! ) { (image) in
+                self.profileImage.image = image
+            }
+        }
+        //get user's field
+        if let address = currentuser?.address{
+            self.addressField.text = address
+        }
+        if let type = currentuser?.type{
+            self.typeField.text = type
+        }
     }
 }

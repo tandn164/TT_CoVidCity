@@ -30,6 +30,9 @@ class NewsViewController: UIViewController {
         postManager.delegate = self
         postManager.loadData()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
    
 }
 extension NewsViewController: UITableViewDelegate{

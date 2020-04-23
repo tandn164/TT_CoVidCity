@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CustomButton: UIButton {
+class RedButton: UIButton {
 
     /*
     // Only override draw() if you perform custom drawing.

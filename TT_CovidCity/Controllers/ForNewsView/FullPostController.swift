@@ -15,6 +15,8 @@ class FullPostController: UIViewController {
     var postId : String?
     var commentManager : CommentManager?
     var fullPost : SinglePostManager?
+    var userManager : SingleUserManager?
+    var currentUser : User?
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var textField: UITextField!
     override func viewDidLoad() {
@@ -28,15 +30,21 @@ class FullPostController: UIViewController {
         commentManager?.delegate = self
         fullPost = SinglePostManager(id)
         fullPost?.delegate = self
+        if Auth.auth().currentUser != nil{
+            userManager = SingleUserManager((Auth.auth().currentUser?.email)!)
+            userManager?.delegate = self
+        }
+        
         loadData()
         setTableCell()
 
     }
-//    override func viewWillAppear(_ animated: Bool) {
-//
-//    }
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
     func loadData(){
         fullPost?.loadData()
+        userManager?.loadData()
     }
     func setTableCell(){
         tableView.register(UINib(nibName: FullPostCell.FullPostCellID, bundle: nil), forCellReuseIdentifier: FullPostCell.FullPostCellID)
@@ -119,10 +127,8 @@ extension FullPostController: UITextFieldDelegate{
         
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
-        let user = Auth.auth().currentUser
-        let userName = user?.displayName!
         if let comment = textField.text{
-            db.collection("Post/\(post!.id!)/comment").addDocument(data: ["UserName":userName, "Comment":comment,"Time": Date().timeIntervalSince1970, "UserProfileImage":"tan"]){(error) in
+            db.collection("Post/\(post!.id!)/comment").addDocument(data: ["UserName":currentUser?.userName!, "Comment":comment,"Time": Date().timeIntervalSince1970, "UserProfileImage": currentUser?.imageURL]){(error) in
                      if let err = error {
                          print(err)
                      } else {
@@ -139,8 +145,10 @@ extension FullPostController: UITextFieldDelegate{
                              self.textField.text = ""
                              self.textField.endEditing(true)
                              self.tableView.reloadData()
-                             let indexPath = IndexPath(row: self.comment.count-1, section: 1)
-                             self.tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+                             if self.comment.count > 1{
+                                let indexPath = IndexPath(row: self.comment.count-1, section: 1)
+                                self.tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+                            }
                          }
                         
                      }
@@ -162,5 +170,10 @@ extension FullPostController : SinglePostManagerDelegate{
         post = data
         //self.tableView.reloadData()
         commentManager?.loadData()
+    }
+}
+extension FullPostController : SingleUserManagerDelegate{
+    func dataDidUpdate(_ sender: SingleUserManager, _ data: User) {
+        currentUser = data
     }
 }

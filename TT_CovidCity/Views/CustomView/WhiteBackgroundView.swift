@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CustomView1: UIView {
+class WhiteBackgroundView: UIView {
 
     /*
     // Only override draw() if you perform custom drawing.
