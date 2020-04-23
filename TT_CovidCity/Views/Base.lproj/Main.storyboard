@@ -72,7 +72,7 @@
             </objects>
             <point key="canvasLocation" x="926" y="-21"/>
         </scene>
-        <!--Report View Controller-->
+        <!--Report-->
         <scene sceneID="8ha-pm-uwy">
             <objects>
                 <viewController id="Vuu-y7-DPc" customClass="ReportViewController" customModule="TT_CovidCity" customModuleProvider="target" sceneMemberID="viewController">
@@ -241,7 +241,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aUY-Yj-h4v"/>
                     </view>
-                    <navigationItem key="navigationItem" id="gFK-DC-vzs">
+                    <navigationItem key="navigationItem" title="Report" id="gFK-DC-vzs">
                         <barButtonItem key="rightBarButtonItem" title="Log out" id="wzx-a8-C1N">
                             <connections>
                                 <action selector="logoutPressed:" destination="Vuu-y7-DPc" id="Hd8-8J-eSi"/>
@@ -285,11 +285,11 @@
             </objects>
             <point key="canvasLocation" x="1659.4202898550725" y="-320.08928571428572"/>
         </scene>
-        <!--News-->
+        <!--statistic-->
         <scene sceneID="ZT2-02-0QV">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ygb-T8-Zg3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="News" image="doc.text" catalog="system" selectedImage="doc.text" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="statistic" image="map" catalog="system" selectedImage="map" id="cPa-gy-q4n"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Vqh-Cu-HiP">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -327,11 +327,11 @@
             </objects>
             <point key="canvasLocation" x="225" y="360"/>
         </scene>
-        <!--Report-->
+        <!--News-->
         <scene sceneID="0BU-TY-BE5">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cq4-bl-Ytk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Report" image="paperplane" catalog="system" selectedImage="paperplane" id="Nbs-3D-o0k" userLabel="Fourth"/>
+                    <tabBarItem key="tabBarItem" title="News" image="doc.text" catalog="system" selectedImage="doc.text" id="Nbs-3D-o0k" userLabel="Fourth"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1xg-5g-vQ4">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -824,7 +824,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7bE-q1-Svo"/>
                     </view>
-                    <navigationItem key="navigationItem" id="WVa-X9-FVd"/>
+                    <navigationItem key="navigationItem" title="Login" id="WVa-X9-FVd"/>
                     <connections>
                         <outlet property="passwordTextField" destination="Dch-sX-dre" id="OHZ-EM-OSs"/>
                         <outlet property="usernameTextField" destination="7v2-Qz-5pl" id="p7u-Hu-Zhd"/>
@@ -932,7 +932,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Kk2-bc-0dL"/>
                     </view>
-                    <navigationItem key="navigationItem" id="eTn-v4-WMn"/>
+                    <navigationItem key="navigationItem" title="Register" id="eTn-v4-WMn"/>
                     <connections>
                         <outlet property="emailTextfield" destination="jPe-kK-dES" id="UCm-Qb-vtO"/>
                         <outlet property="passwordTextfield" destination="qw1-7C-IOt" id="QVF-Xp-s8X"/>
@@ -944,7 +944,7 @@
             </objects>
             <point key="canvasLocation" x="-530" y="1047"/>
         </scene>
-        <!--Admin View Controller-->
+        <!--Admin-->
         <scene sceneID="vEC-Ls-Pb2">
             <objects>
                 <viewController id="09u-YC-Fgs" customClass="AdminViewController" customModule="TT_CovidCity" customModuleProvider="target" sceneMemberID="viewController">
@@ -972,7 +972,7 @@
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boyte" translatesAutoresizingMaskIntoConstraints="NO" id="f0a-WX-J6L">
-                                <rect key="frame" x="20" y="104" width="127" height="128"/>
+                                <rect key="frame" x="20" y="104" width="127" height="128.00000000000011"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="127" id="76q-ca-eZJ"/>
                                     <constraint firstAttribute="height" constant="128" id="izp-A9-Nv4"/>
@@ -1040,7 +1040,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="S18-yp-j42"/>
                     </view>
-                    <navigationItem key="navigationItem" id="7W1-bM-66l">
+                    <navigationItem key="navigationItem" title="Admin" id="7W1-bM-66l">
                         <barButtonItem key="rightBarButtonItem" title="Log out" id="CQl-Qj-nhB">
                             <connections>
                                 <action selector="logoutPressed:" destination="09u-YC-Fgs" id="YFi-iB-HyJ"/>
@@ -1061,16 +1061,16 @@
     <resources>
         <image name="boyte" width="400" height="394"/>
         <image name="doc.text" catalog="system" width="56" height="64"/>
+        <image name="map" catalog="system" width="64" height="56"/>
         <image name="mappin.and.ellipse" catalog="system" width="58" height="64"/>
         <image name="mappin.circle" catalog="system" width="64" height="60"/>
-        <image name="paperplane" catalog="system" width="64" height="60"/>
         <image name="paperplane.fill" catalog="system" width="64" height="60"/>
         <image name="person" catalog="system" width="64" height="58"/>
         <image name="person.crop.square.fill" catalog="system" width="64" height="56"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="GeA-7X-ttu"/>
-        <segue reference="fKU-Kj-Y6g"/>
+        <segue reference="Prf-pN-3M1"/>
         <segue reference="ciZ-f6-E5K"/>
     </inferredMetricsTieBreakers>
 </document>

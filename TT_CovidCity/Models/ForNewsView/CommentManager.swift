@@ -19,7 +19,7 @@ class CommentManager{
         self.id = id
     }
     func loadData() {
-        db.collection("Post/\(id!)/comment").addSnapshotListener { (querySnapshot, error) in
+        db.collection(Path.pathToComment(withID: id!)).addSnapshotListener { (querySnapshot, error) in
             var comment : [Comment] = []
             if let err = error {
                 print("not read OK \(err)")
@@ -29,7 +29,7 @@ class CommentManager{
                 {
                     for doc in snapShotDocuments {
                         let data = doc.data()
-                        if let userName = data["UserName"] as? String, let image = data["UserProfileImage"] as? String, let cmt = data["Comment"] as? String, let time = data["Time"] as? Double
+                        if let userName = data[Database.Post.comment.UserName] as? String, let image = data[Database.Post.comment.UserProfileImage] as? String, let cmt = data[Database.Post.comment.Comment] as? String, let time = data[Database.Post.comment.Time] as? Double
                         {
                             let date = Date(timeIntervalSince1970: time)
                             let dateFormatter = DateFormatter()

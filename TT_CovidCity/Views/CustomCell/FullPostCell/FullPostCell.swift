@@ -40,7 +40,7 @@ class FullPostCell: UITableViewCell {
         postStatsLabel.text = "\(post.numberOfLike!) likes     \(post.numberOfComment!) comments"
         if Auth.auth().currentUser != nil {
             let user = Auth.auth().currentUser
-            let docRef = db.collection("Post/\(post.id!)/Likes").document((user?.email)!)
+            let docRef = db.collection(Path.pathToLikes(withID: post.id!)).document((user?.email)!)
             docRef.getDocument(source: .cache) { (document, error) in
                 if let doc = document
                 {
@@ -58,29 +58,6 @@ class FullPostCell: UITableViewCell {
         } else
         {
             self.likeButton.imageView?.tintColor = .darkGray
-            //        timeAgoLabel.text = String("\(post.time!)")
-            //        profileImageView.image = UIImage(named: post.user!.profileImage!)
-            //        userNameLabel.text = post.user!.name
-            //        captionLabel.text = post.caption
-            //        postImageView.image = UIImage(named: post.image!)
-            //        postStatsLabel.text = "\(post.numberOfLike!) likes"
-            //        if Auth.auth().currentUser != nil {
-            //            let user = Auth.auth().currentUser
-            //            let docRef = db.collection("Post/\(post.id!)/Likes").document((user?.email)!)
-            //            docRef.getDocument(source: .cache) { (document, error) in
-            //                if let doc = document
-            //                {
-            //                    if doc.exists {
-            //                        self.likeButton.imageView?.tintColor = .cyan
-            //                    }else
-            //                    {
-            //                        self.likeButton.imageView?.tintColor = .darkGray
-            //                    }
-            //                }else
-            //                {
-            //                    self.likeButton.imageView?.tintColor = .darkGray
-            //                }
-            //            }
         }
         
     }

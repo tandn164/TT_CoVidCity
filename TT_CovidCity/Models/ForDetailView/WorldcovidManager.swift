@@ -12,7 +12,7 @@ protocol WorldCovidDelegate {
     func DataDidUpdate(_ CoronaManager: WorldCovidManager,data: [WorldCovidData])
 }
 struct WorldCovidManager {
-    let coronaURL="https://covid19.mathdro.id/api/confirmed"
+    let coronaURL=API.URL
     var delegate : WorldCovidDelegate?
     func fetCorona()
     {

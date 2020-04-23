@@ -15,7 +15,7 @@ class PostManager{
     var db = Firestore.firestore()
     var delegate : PostManagerDelegate?
     func loadData(){
-        db.collection("Post").addSnapshotListener { (querySnapshot, error) in
+        db.collection(Database.post).addSnapshotListener { (querySnapshot, error) in
             var posts : [Post] = []
 
             if let err = error {
@@ -26,7 +26,7 @@ class PostManager{
                 {
                     for doc in snapShotDocuments {
                     let data = doc.data()
-                        if let caption = data["Caption"] as? String, let image = data["Image"] as? String, let numberOfComment = data["NumberOfComment"] as? String, let user = data["User"] as? [String: String], let time = data["Time"] as? Double, let numberOfLike = data["NumberOfLike"] as? String
+                        if let caption = data[Database.Post.Caption] as? String, let image = data[Database.Post.Image] as? String, let numberOfComment = data[Database.Post.NumberOfComment] as? String, let user = data[Database.Post.User] as? [String: String], let time = data[Database.Post.Time] as? Double, let numberOfLike = data[Database.Post.NumberOfLike] as? String
                         {
                             let date = Date(timeIntervalSince1970: time)
                             let dateFormatter = DateFormatter()
@@ -34,13 +34,12 @@ class PostManager{
                             dateFormatter.dateStyle = DateFormatter.Style.medium //Set date style
                             dateFormatter.timeZone = .current
                             let localDate = dateFormatter.string(from: date)
-                            let newPost = Post(caption: caption, image: image, time: localDate, numberOfLike: numberOfLike, numberOfComment: numberOfComment, user: Writter(name: user["Name"], profileImage: user["Image"]),id: doc.documentID)
+                            let newPost = Post(caption: caption, image: image, time: localDate, numberOfLike: numberOfLike, numberOfComment: numberOfComment, user: Writter(name: user[Database.Post.UserName], profileImage: user[Database.Post.UserImage]),id: doc.documentID)
                             posts.append(newPost)
                         }
                         
                     }
                     DispatchQueue.main.async {
-                       // self.tableView.reloadData()
                         self.delegate?.dataDidUpdate(self, posts)
                     }
                 }

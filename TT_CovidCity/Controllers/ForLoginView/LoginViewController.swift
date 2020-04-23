@@ -22,12 +22,12 @@ class LoginViewController: UIViewController {
     //Neu nguoi dung da dang nhap thi chuyen den report luon
     override func viewDidAppear(_ animated: Bool) {
         if let currentUser = Auth.auth().currentUser{
-            if currentUser.email! == "admin@gmail.com"
+            if currentUser.email! == Authentication.admin
             {
-                self.performSegue(withIdentifier: "LogintoAdmin", sender: self)
+                self.performSegue(withIdentifier: SegueIdentify.LogintoAdmin, sender: self)
             }else
             {
-                self.performSegue(withIdentifier: "LogintoReport", sender: self)
+                self.performSegue(withIdentifier: SegueIdentify.LogintoReport, sender: self)
             }
         }
         
@@ -48,11 +48,11 @@ class LoginViewController: UIViewController {
                         self.comeFromNews()
                     } else {
                         //Neu khong thi chuyen den report
-                        if username == "admin@gmail.com"
+                        if username == Authentication.admin
                         {
-                            self.performSegue(withIdentifier: "LogintoAdmin", sender: self)
+                            self.performSegue(withIdentifier: SegueIdentify.LogintoAdmin, sender: self)
                         } else {
-                        self.performSegue(withIdentifier: "LogintoReport", sender: self)
+                            self.performSegue(withIdentifier: SegueIdentify.LogintoReport, sender: self)
                         }
                     }
                     

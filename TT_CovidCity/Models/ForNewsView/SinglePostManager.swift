@@ -19,9 +19,9 @@ class SinglePostManager {
         self.id = id
     }
     func loadData() {
-        db.collection("Post").document(id!).addSnapshotListener { (documents, err) in
+        db.collection(Database.post).document(id!).addSnapshotListener { (documents, err) in
             let data = documents!.data()!
-            if let caption = data["Caption"] as? String, let image = data["Image"] as? String, let numberOfLike = data["NumberOfLike"] as? String, let numberOfComment = data["NumberOfComment"] as? String, let user = data["User"] as? [String: String], let time = data["Time"] as? Double
+            if let caption = data[Database.Post.Caption] as? String, let image = data[Database.Post.Image] as? String, let numberOfLike = data[Database.Post.NumberOfLike] as? String, let numberOfComment = data[Database.Post.NumberOfComment] as? String, let user = data[Database.Post.User] as? [String: String], let time = data[Database.Post.Time] as? Double
             {
                 let date = Date(timeIntervalSince1970: time)
                 let dateFormatter = DateFormatter()
@@ -29,7 +29,7 @@ class SinglePostManager {
                 dateFormatter.dateStyle = DateFormatter.Style.medium //Set date style
                 dateFormatter.timeZone = .current
                 let localDate = dateFormatter.string(from: date)
-                let post = Post(caption: caption, image: image, time: localDate, numberOfLike: numberOfLike, numberOfComment: numberOfComment, user: Writter(name: user["Name"], profileImage: user["Image"]),id: self.id)
+                let post = Post(caption: caption, image: image, time: localDate, numberOfLike: numberOfLike, numberOfComment: numberOfComment, user: Writter(name: user[Database.Post.UserName], profileImage: user[Database.Post.UserImage]),id: self.id)
                 self.delegate?.dataDidUpdate(self, post)
             } else {
                 print("Document does not exist")

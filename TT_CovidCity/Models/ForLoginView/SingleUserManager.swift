@@ -19,9 +19,9 @@ class SingleUserManager {
         self.id = id
     }
     func loadData() {
-        db.collection("User").document(id!).addSnapshotListener { (documents, err) in
+        db.collection(Database.user).document(id!).addSnapshotListener { (documents, err) in
             let data = documents!.data()!
-            if let userName = data["UserName"] as? String, let imageURL = data["ImageURL"] as? String, let type = data["Type"] as? String, let address = data["Address"] as? String
+            if let userName = data[Database.User.UserName] as? String, let imageURL = data[Database.User.ImageURL] as? String, let type = data[Database.User.Type1] as? String, let address = data[Database.User.Address] as? String
             {
                 let user = User(userName: userName, imageURL: imageURL, address: address,type: type)
                 self.delegate?.dataDidUpdate(self, user)

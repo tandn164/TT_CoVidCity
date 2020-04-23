@@ -144,7 +144,7 @@ extension DetailViewController: StartCellDelegate{
         switch button.tag {
         case 1:
             //  dataToPass = hardVietNamData.finalData
-            db.collection("Country/Việt Nam/City").addSnapshotListener { (querySnapshot, error) in
+            db.collection(Path.City).addSnapshotListener { (querySnapshot, error) in
                 self.dataToPass = []
                 
                 if let err = error {
@@ -156,7 +156,7 @@ extension DetailViewController: StartCellDelegate{
                         
                         for doc in snapShotDocuments {
                             let data = doc.data()
-                            if let name = data["Name"] as? String, let confirmed = data["Confirmed"] as? String, let deaths = data["Deaths"] as? String, let recovered = data["Recovered"] as? String
+                            if let name = data[Database.Country.City.Name] as? String, let confirmed = data[Database.Country.City.Confirmed] as? String, let deaths = data[Database.Country.City.Deaths] as? String, let recovered = data[Database.Country.City.Recovered] as? String
                             {
                                 let newCity = Country(name, Int(confirmed) ?? 0, Int(recovered) ?? 0, Int(deaths) ?? 0)
                                 self.dataToPass.append(newCity)
@@ -167,7 +167,7 @@ extension DetailViewController: StartCellDelegate{
                 }
                 self.columnName = "Tên thành phố"
                 DispatchQueue.main.async {
-                    self.performSegue(withIdentifier: "gotoResult", sender: self)
+                    self.performSegue(withIdentifier: SegueIdentify.gotoResult, sender: self)
                 }
             }
             
@@ -175,7 +175,7 @@ extension DetailViewController: StartCellDelegate{
             print(rsdata.finalData.count)
             dataToPass = rsdata.finalData
             columnName = "Tên quốc gia"
-            self.performSegue(withIdentifier: "gotoResult", sender: self)
+            self.performSegue(withIdentifier: SegueIdentify.gotoResult, sender: self)
         default:
             break
         }
@@ -183,7 +183,7 @@ extension DetailViewController: StartCellDelegate{
         
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "gotoResult"
+        if segue.identifier == SegueIdentify.gotoResult
         {
             let destinationMV = segue.destination as! DetailInfoView
             destinationMV.data = dataToPass

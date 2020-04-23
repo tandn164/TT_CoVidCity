@@ -42,7 +42,7 @@ class PostCell: UITableViewCell {
         postStatsLabel.text = "\(post.numberOfLike!) likes     \(post.numberOfComment!) comments"
         if Auth.auth().currentUser != nil {
             let user = Auth.auth().currentUser
-            let docRef = db.collection("Post/\(post.id!)/Likes").document((user?.email)!)
+            let docRef = db.collection(Path.pathToLikes(withID: post.id!)).document((user?.email)!)
             docRef.getDocument(source: .cache) { (document, error) in
                 if let doc = document
                 {

@@ -79,10 +79,10 @@ class ReportViewController: UIViewController, UITextViewDelegate, CLLocationMana
         guard let imageData = imageSelected.jpegData(compressionQuality: 0.4) else {
             return
         }
-        let storageRef = Storage.storage().reference(forURL: "gs://covidcity-1585012064634.appspot.com/")
-        let storageProfileRef = storageRef.child("profile").child((user?.email)!)
+        let storageRef = Storage.storage().reference(forURL: storage.storageRefURL)
+        let storageProfileRef = storageRef.child(storage.profile).child((user?.email)!)
         let metaData = StorageMetadata()
-        metaData.contentType = "image/jpg"
+        metaData.contentType = storage.contentType
         storageProfileRef.putData(imageData, metadata: metaData) { (storage, err) in
             if let err = err {
                 print(err)
@@ -93,11 +93,11 @@ class ReportViewController: UIViewController, UITextViewDelegate, CLLocationMana
                     self.photoURL = url?.absoluteString
                     if let type = self.typeField.text, let userName = self.nameField.text, let address = self.addressField.text{
                         print(85)
-                        self.db.collection("User").document(user!.email!).setData([
-                            "UserName": userName,
-                            "Address": address,
-                            "Type": type,
-                            "ImageURL":self.photoURL!], merge: true)
+                        self.db.collection(Database.user).document(user!.email!).setData([
+                            Database.User.UserName: userName,
+                            Database.User.Address: address,
+                            Database.User.Type1: type,
+                            Database.User.ImageURL:self.photoURL!], merge: true)
                         self.currentuser = User(userName: userName, imageURL: self.photoURL, address: address, type: type)
                         let alert = UIAlertController(title: "Submitted", message: "Thank you for the submition, ありがとうございます。", preferredStyle: .alert)
                         let action = UIAlertAction(title: "Done", style: .default) { (action) in
@@ -118,11 +118,6 @@ class ReportViewController: UIViewController, UITextViewDelegate, CLLocationMana
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
         }
-//        if let view = self.parent?.parent?.children[3].children[0] as? NewsViewController
-//        {
-//            view.tableView.reloadData()
-//        }
-      //   print(self.parent?.parent?.children[3].children[0].children)
     }
     
     @IBAction func changeProfileImage(_ sender: UIButton) {

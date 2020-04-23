@@ -23,6 +23,8 @@
 		91B2B45724514F2400F7F541 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B2B45624514F2400F7F541 /* User.swift */; };
 		91B2B45924514FC900F7F541 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B2B45824514FC900F7F541 /* UserManager.swift */; };
 		91B2B45B245153BF00F7F541 /* SingleUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B2B45A245153BF00F7F541 /* SingleUserManager.swift */; };
+		91B2B45E2451877600F7F541 /* ConstString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B2B45D2451877600F7F541 /* ConstString.swift */; };
+		91B2B4602451A8D400F7F541 /* UtilitiesFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B2B45F2451A8D400F7F541 /* UtilitiesFunction.swift */; };
 		91B4C95F2448C1050012155C /* ButtonPressed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B4C95E2448C1050012155C /* ButtonPressed.swift */; };
 		91BD69C3244DE13200D44FCB /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BD69C2244DE13200D44FCB /* LoginTextField.swift */; };
 		91BD69D5244EEA9000D44FCB /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BD69D4244EEA9000D44FCB /* AdminViewController.swift */; };
@@ -80,6 +82,8 @@
 		91B2B45624514F2400F7F541 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		91B2B45824514FC900F7F541 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		91B2B45A245153BF00F7F541 /* SingleUserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleUserManager.swift; sourceTree = "<group>"; };
+		91B2B45D2451877600F7F541 /* ConstString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstString.swift; sourceTree = "<group>"; };
+		91B2B45F2451A8D400F7F541 /* UtilitiesFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilitiesFunction.swift; sourceTree = "<group>"; };
 		91B4C95E2448C1050012155C /* ButtonPressed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonPressed.swift; sourceTree = "<group>"; };
 		91BD69C2244DE13200D44FCB /* LoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
 		91BD69D4244EEA9000D44FCB /* AdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +144,15 @@
 				69448D03686872D199064893 /* Pods_TT_CovidCity.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		91B2B45C2451872400F7F541 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				91B2B45D2451877600F7F541 /* ConstString.swift */,
+				91B2B45F2451A8D400F7F541 /* UtilitiesFunction.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		91BD69C4244ED96400D44FCB /* PostCellEvent */ = {
@@ -285,13 +298,13 @@
 			path = ForNewsView;
 			sourceTree = "<group>";
 		};
-		91BD69D6244F55E600D44FCB /* CustomService */ = {
+		91BD69D6244F55E600D44FCB /* ConstantService */ = {
 			isa = PBXGroup;
 			children = (
 				91BD69D7244F55F900D44FCB /* AlertService.swift */,
 				91BD69D9244F74A200D44FCB /* ImageService.swift */,
 			);
-			path = CustomService;
+			path = ConstantService;
 			sourceTree = "<group>";
 		};
 		A03453012CA94FF604FFABBC /* Pods */ = {
@@ -350,9 +363,8 @@
 		DC0F97092427BE9700E76CF9 /* TT_CovidCity */ = {
 			isa = PBXGroup;
 			children = (
-				91BD69D6244F55E600D44FCB /* CustomService */,
-				DC0F970A2427BE9700E76CF9 /* AppDelegate.swift */,
-				DC0F970C2427BE9700E76CF9 /* SceneDelegate.swift */,
+				91B2B45C2451872400F7F541 /* Utilities */,
+				91BD69D6244F55E600D44FCB /* ConstantService */,
 				DC0F972B2428914D00E76CF9 /* Models */,
 				DC0F97292428912500E76CF9 /* Controllers */,
 				DC0F972A2428913F00E76CF9 /* Views */,
@@ -366,6 +378,8 @@
 		DC0F97292428912500E76CF9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				DC0F970A2427BE9700E76CF9 /* AppDelegate.swift */,
+				DC0F970C2427BE9700E76CF9 /* SceneDelegate.swift */,
 				DC0F972724286D9800E76CF9 /* TabBarController.swift */,
 				91BD69D3244EDC3600D44FCB /* ForNewsView */,
 				91BD69D2244EDC2400D44FCB /* ForLoginView */,
@@ -549,6 +563,7 @@
 				4DFA41D4243F086E00BE9832 /* ContactManager.swift in Sources */,
 				DC0F97262428543400E76CF9 /* ReportViewController.swift in Sources */,
 				DC0F97242428542700E76CF9 /* LoginViewController.swift in Sources */,
+				91B2B4602451A8D400F7F541 /* UtilitiesFunction.swift in Sources */,
 				DC02987324317C96007333B0 /* ContactCell.swift in Sources */,
 				DC02984724317921007333B0 /* DetailInfoView.swift in Sources */,
 				4DFA41DA243F098E00BE9832 /* ContactResultData.swift in Sources */,
@@ -571,6 +586,7 @@
 				DC0298CD24317D1B007333B0 /* NewsViewController.swift in Sources */,
 				4D1CF1AF244042CA00265377 /* FullPostController.swift in Sources */,
 				91B4C95F2448C1050012155C /* ButtonPressed.swift in Sources */,
+				91B2B45E2451877600F7F541 /* ConstString.swift in Sources */,
 				DC0F970D2427BE9700E76CF9 /* SceneDelegate.swift in Sources */,
 				4DB2E8F1244300C400AFE9F2 /* ViewWithCustomCorner.swift in Sources */,
 				91BD69DA244F74A200D44FCB /* ImageService.swift in Sources */,

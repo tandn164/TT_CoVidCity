@@ -31,7 +31,7 @@ class RegisterViewController: UIViewController {
                     self.present(alert, animated: true, completion: nil)
                 } else {
                     //create new user with userName, id is uid
-                    self.db.collection("User").document(email).setData(["UserName":username,"Type": "","Address": "", "ImageURL":"https://firebasestorage.googleapis.com/v0/b/covidcity-1585012064634.appspot.com/o/profile%2Fadmin%40gmail.com.jpeg?alt=media&token=9a4b1374-d0dc-413a-aa41-0cb75bd29167"]) { (error) in
+                    self.db.collection(Database.user).document(email).setData([Database.User.UserName:username,Database.User.Type1: "",Database.User.Address: "", Database.User.ImageURL:storage.defaultImageURL]) { (error) in
                         if let err = error {
                             print("Error writing document: \(err)")
                         } else {
@@ -47,7 +47,7 @@ class RegisterViewController: UIViewController {
                             alert.addAction(action)
                             self.present(alert, animated: true, completion: nil)
                         } else {
-                            self.performSegue(withIdentifier: "RegistertoReport", sender: self)
+                            self.performSegue(withIdentifier: SegueIdentify.RegistertoReport, sender: self)
                         }
                     }
                     

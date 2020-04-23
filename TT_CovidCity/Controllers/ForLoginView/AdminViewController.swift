@@ -41,9 +41,8 @@ class AdminViewController: UIViewController {
 }
 extension AdminViewController: UITextViewDelegate{
     func textViewDidEndEditing(_ textView: UITextView) {
-        let time = String("\(Date().timeIntervalSince1970)")
         if let post = postTextView.text{
-            db.collection("Post").addDocument(data: ["Image": "3","Caption":post,"NumberOfComment":"0","NumberOfLike":"0","TimeAgo":time,"Time":Date().timeIntervalSince1970,"User":["Image":currentUser?.imageURL,"Name":currentUser?.userName]]) { (error) in
+            db.collection(Database.post).addDocument(data: [Database.Post.Image: "3",Database.Post.Caption:post,Database.Post.NumberOfComment:"0",Database.Post.NumberOfLike:"0",Database.Post.Time:Date().timeIntervalSince1970,Database.Post.User:[Database.Post.UserImage:currentUser?.imageURL,Database.Post.UserName:currentUser?.userName]]) { (error) in
                 if let err = error{
                     print(err)
                 }else

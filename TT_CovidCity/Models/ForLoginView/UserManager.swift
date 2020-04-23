@@ -15,7 +15,7 @@ class UserManager {
     var delegate : UserManagerDelegate?
     var db = Firestore.firestore()
     func loadData() {
-        db.collection("User").addSnapshotListener { (querySnapshot, error) in
+        db.collection(Database.user).addSnapshotListener { (querySnapshot, error) in
             var users : [User] = []
 
             if let err = error {
@@ -26,7 +26,7 @@ class UserManager {
                 {
                     for doc in snapShotDocuments {
                     let data = doc.data()
-                        if let userName = data["UserName"] as? String, let imageURL = data["ImageURL"] as? String, let type = data["Type"] as? String, let address = data["Address"] as? String
+                        if let userName = data[Database.User.UserName] as? String, let imageURL = data[Database.User.ImageURL] as? String, let type = data[Database.User.Type1] as? String, let address = data[Database.User.Address] as? String
                         {
                             let newUser = User(userName: userName, imageURL: imageURL, address: address,type: type)
                             users.append(newUser)

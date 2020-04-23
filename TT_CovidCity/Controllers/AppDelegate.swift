@@ -8,28 +8,16 @@
 
 import UIKit
 import Firebase
-import GoogleMaps
-import GooglePlaces
 import Firebase
 import FirebaseFirestore
-import IQKeyboardManagerSwift
-
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    GMSServices.provideAPIKey("AIzaSyDTodDbsCkNQieBXiHmUg6O0Hd_mffbKac")
-    GMSPlacesClient.provideAPIKey("AIzaSyDTodDbsCkNQieBXiHmUg6O0Hd_mffbKac")
+    GMSSetup.provideAPIKey()
     FirebaseApp.configure()
-    do {
-      try Auth.auth().signOut()
-    } catch let signOutError as NSError {
-      print ("Error signing out: %@", signOutError)
-    }
-    IQKeyboardManager.shared.enable = true
+    AppwillBegin.reLogin()
     return true
   }
 

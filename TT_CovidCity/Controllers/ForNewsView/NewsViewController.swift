@@ -57,17 +57,17 @@ extension NewsViewController: UITableViewDataSource{
 extension NewsViewController: PostCellDelegate{
     func didTapped(_ data: Post) {
         postToPass = data
-        self.performSegue(withIdentifier: "PostResult", sender: self)
+        self.performSegue(withIdentifier: SegueIdentify.postResult, sender: self)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "PostResult"
+        if segue.identifier == SegueIdentify.postResult
         {
             let destinationMV = segue.destination as! FullPostController
             destinationMV.postId = postToPass?.id
            // destinationMV.post = postToPass
             print(87)
         }
-        if segue.identifier == "GotoLogin"
+        if segue.identifier == SegueIdentify.gotoLogin
         {
             let destinationMV = segue.destination as! LoginViewController
             destinationMV.check = 1

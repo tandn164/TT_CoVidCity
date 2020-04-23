@@ -52,7 +52,7 @@ class FullPostController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "GotoLogin"
+        if segue.identifier == SegueIdentify.gotoLogin
         {
             let destinationMV = segue.destination as! LoginViewController
             destinationMV.check = 1
@@ -101,7 +101,7 @@ extension FullPostController: UITextFieldDelegate{
             let arlert = UIAlertController(title: "You haven't logined yet", message: "You need to log in", preferredStyle: .alert)
             let action = UIAlertAction(title: "Login", style: .cancel) { (action) in
                 DispatchQueue.main.async {
-                    self.performSegue(withIdentifier: "GotoLogin", sender: self)
+                    self.performSegue(withIdentifier: SegueIdentify.gotoLogin, sender: self)
                 }
             }
             arlert.addAction(action)
@@ -128,13 +128,13 @@ extension FullPostController: UITextFieldDelegate{
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
         if let comment = textField.text{
-            db.collection("Post/\(post!.id!)/comment").addDocument(data: ["UserName":currentUser?.userName!, "Comment":comment,"Time": Date().timeIntervalSince1970, "UserProfileImage": currentUser?.imageURL]){(error) in
+            db.collection(Path.pathToComment(withID: post!.id!)).addDocument(data: [Database.Post.comment.UserName:currentUser?.userName!, Database.Post.comment.Comment:comment,Database.Post.comment.Time: Date().timeIntervalSince1970, Database.Post.comment.UserProfileImage: currentUser?.imageURL]){(error) in
                      if let err = error {
                          print(err)
                      } else {
                          let numberOfComments = String("\(Int(self.post!.numberOfComment!)!+1)")
-                         let updateComment = self.db.collection("Post").document("\(self.post!.id!)")
-                         updateComment.updateData(["NumberOfComment":numberOfComments]) { err in
+                        let updateComment = self.db.collection(Database.post).document("\(self.post!.id!)")
+                        updateComment.updateData([Database.Post.NumberOfComment:numberOfComments]) { err in
                          if let err = err {
                              print("Error updating document: \(err)")
                          } else {
