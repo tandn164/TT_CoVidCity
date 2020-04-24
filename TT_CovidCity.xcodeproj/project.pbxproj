@@ -403,9 +403,9 @@
 		DC0F972B2428914D00E76CF9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				91BD69CC244EDB1800D44FCB /* ForNewsView */,
 				91BD69CF244EDB9000D44FCB /* ForMapView */,
 				91BD69CD244EDB4800D44FCB /* ForLoginView */,
-				91BD69CC244EDB1800D44FCB /* ForNewsView */,
 				91BD69CB244EDAC400D44FCB /* ForDetailView */,
 			);
 			path = Models;

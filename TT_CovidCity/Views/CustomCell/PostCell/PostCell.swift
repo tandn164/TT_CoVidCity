@@ -38,7 +38,9 @@ class PostCell: UITableViewCell {
         userNameLabel.text = post.user!.name
         timeAgoLabel.text = String("\(post.time!)")
         captionLabel.text = post.caption
-        postImageView.image = UIImage(named: post.image!)
+        ImageService.downloadImage(withURL: URL(string: post.image!)!) { (image) in
+            self.postImageView.image = image
+        }
         postStatsLabel.text = "\(post.numberOfLike!) likes     \(post.numberOfComment!) comments"
         if Auth.auth().currentUser != nil {
             let user = Auth.auth().currentUser

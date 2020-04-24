@@ -11,10 +11,14 @@ import Firebase
 class AdminViewController: UIViewController {
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var postTextView: UITextView!
+    @IBOutlet weak var postImage: UIImageView!
+    
     let user = Auth.auth().currentUser!
     var db = Firestore.firestore()
     var userManager : SingleUserManager?
     var currentUser : User?
+    var image : UIImage?
+    var photoURL : String?
     override func viewDidLoad() {
         super.viewDidLoad()
         userManager = SingleUserManager((Auth.auth().currentUser?.email)!)
@@ -24,10 +28,26 @@ class AdminViewController: UIViewController {
         navigationItem.hidesBackButton = true
     }
     override func viewWillAppear(_ animated: Bool) {
-        
+        ImageService.downloadImage(withURL: URL(string: storage.defaultImageURL)! ) { (image) in
+            self.postImage.image = image
+        }
     }
     @IBAction func postPressed(_ sender: UIButton) {
-        self.postTextView.endEditing(true)
+        //self.postTextView.endEditing(true)
+        
+        if postTextView.text != ""
+        {
+            uploadPost()
+        }
+        else{
+            let alert = UIAlertController(title: "Input somthing pls", message: "", preferredStyle: .alert)
+            let action = UIAlertAction(title: "Okay", style: .default, handler: nil)
+            alert.addAction(action)
+            present(alert, animated: true, completion: nil)
+        }
+        
+        
+        
     }
     @IBAction func logoutPressed(_ sender: UIBarButtonItem) {
         do {
@@ -37,37 +57,53 @@ class AdminViewController: UIViewController {
             print ("Error signing out: %@", signOutError)
         }
     }
-    
+    @IBAction func selectImage(_ sender: UIButton) {
+        showImagePickerControllerActionSheet()
+    }
+    func uploadPost()  {
+        image = postImage.image
+        guard let imageSelected = image else {
+            print("Image is null")
+            return
+        }
+        guard let imageData = imageSelected.jpegData(compressionQuality: 0.4) else {
+            return
+        }
+        let date = String("\(Date().timeIntervalSince1970)")
+        let storageRef = Storage.storage().reference(forURL: storage.storageRefURL)
+        let storageProfileRef = storageRef.child(storage.post).child(date)
+        let metaData = StorageMetadata()
+        metaData.contentType = storage.contentType
+        storageProfileRef.putData(imageData, metadata: metaData) { (storage, err) in
+            if let err = err {
+                print(err)
+                return
+            }else{
+                storageProfileRef.downloadURL { (url, err) in
+                    self.photoURL = url?.absoluteString
+                    if let post = self.postTextView.text{
+                        self.db.collection(Database.post).addDocument(data: [Database.Post.Image: self.photoURL,Database.Post.Caption:post,Database.Post.NumberOfComment:"0",Database.Post.NumberOfLike:"0",Database.Post.Time:Date().timeIntervalSince1970,Database.Post.User:[Database.Post.UserImage:self.currentUser?.imageURL,Database.Post.UserName:self.currentUser?.userName]]) { (error) in
+                            if let err = error{
+                                print(err)
+                            }else
+                            {
+                                let alert = UIAlertController(title: "New post uploaded", message: "", preferredStyle: .alert)
+                                let action = UIAlertAction(title: "Okay", style: .default, handler: nil)
+                                alert.addAction(action)
+                                self.present(alert, animated: true, completion: nil)
+                            }
+                        }
+                    }
+                    self.postTextView.text = ""
+                }
+                
+            }
+        }
+    }
 }
 extension AdminViewController: UITextViewDelegate{
     func textViewDidEndEditing(_ textView: UITextView) {
-        if let post = postTextView.text{
-            db.collection(Database.post).addDocument(data: [Database.Post.Image: "3",Database.Post.Caption:post,Database.Post.NumberOfComment:"0",Database.Post.NumberOfLike:"0",Database.Post.Time:Date().timeIntervalSince1970,Database.Post.User:[Database.Post.UserImage:currentUser?.imageURL,Database.Post.UserName:currentUser?.userName]]) { (error) in
-                if let err = error{
-                    print(err)
-                }else
-                {
-                    let alert = UIAlertController(title: "New post uploaded", message: "", preferredStyle: .alert)
-                    let action = UIAlertAction(title: "Okay", style: .default, handler: nil)
-                    alert.addAction(action)
-                    self.present(alert, animated: true, completion: nil)
-                }
-            }
-        }
-        textView.text = ""
-    }
-    func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
-        if textView.text != ""
-        {
-            return true
-        }
-        else{
-            let alert = UIAlertController(title: "Input somthing pls", message: "", preferredStyle: .alert)
-            let action = UIAlertAction(title: "Okay", style: .default, handler: nil)
-            alert.addAction(action)
-            present(alert, animated: true, completion: nil)
-            return false
-        }
+        
     }
 }
 extension AdminViewController : SingleUserManagerDelegate{
@@ -75,8 +111,34 @@ extension AdminViewController : SingleUserManagerDelegate{
         print(data)
         currentUser = data
         nameField.text = currentUser?.userName
-
+        
+    }
+}
+extension AdminViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    func showImagePickerControllerActionSheet() {
+        let photoLibaryAction = UIAlertAction(title: "Choose from library", style: .default) { (action) in
+            self.showImagePickerController(.photoLibrary)
+        }
+        //        let cameraAction = UIAlertAction(title: "Take a new photo", style: .default) { (action) in
+        //            self.showImagePickerController(.camera)
+        //        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        AlertService.showAlert(style: .actionSheet, title: "Choose your profile image", message: nil, actions: [photoLibaryAction,cancelAction], completion: nil)
     }
     
-    
+    func showImagePickerController(_ sourceType: UIImagePickerController.SourceType) {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        imagePickerController.allowsEditing = true
+        imagePickerController.sourceType = sourceType
+        present(imagePickerController, animated: true, completion: nil)
+    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage{
+            postImage.image = editedImage
+        } else if let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
+            postImage.image = originalImage
+        }
+        dismiss(animated: true, completion: nil)
+    }
 }

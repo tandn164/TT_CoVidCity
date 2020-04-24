@@ -88,6 +88,7 @@ struct storage {
     static let defaultImageURL = "https://firebasestorage.googleapis.com/v0/b/covidcity-1585012064634.appspot.com/o/profile%2Fadmin%40gmail.com.jpeg?alt=media&token=9a4b1374-d0dc-413a-aa41-0cb75bd29167"
     static let storageRefURL = "gs://covidcity-1585012064634.appspot.com/"
     static let profile = "profile"
+    static let post = "post"
     static let contentType = "image/jpg"
     
 }
