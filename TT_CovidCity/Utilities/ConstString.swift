@@ -36,6 +36,13 @@ struct Database {
     static let contact = "Contact"
     static let country = "Country"
     static let user = "User"
+    static let location = "Location"
+    struct Location {
+        static let locationName = "LocationName"
+        static let lat = "Lat"
+        static let lon = "Lon"
+        static let userType = "UserType"
+    }
     struct Contact {
         static let Email = "Email"
         struct Hospital {

@@ -112,6 +112,12 @@ class ReportViewController: UIViewController, UITextViewDelegate, CLLocationMana
                                 Database.User.VisitedLocation.locationName:i.locationAddress!,
                                 Database.User.VisitedLocation.lat:i.lat!,
                                 Database.User.VisitedLocation.lon:i.lon!], merge: true)
+                            self.db.collection(Database.location).document(i.locationAddress!).setData([
+                                Database.Location.locationName: i.locationAddress!,
+                                Database.Location.lat: i.lat!,
+                                Database.Location.lon: i.lon!,
+                                Database.Location.userType: type
+                            ], merge: true)
                         }
                         let alert = UIAlertController(title: "Submitted", message: "Thank you for the submition, ありがとうございます。", preferredStyle: .alert)
                         let action = UIAlertAction(title: "Done", style: .default) { (action) in
