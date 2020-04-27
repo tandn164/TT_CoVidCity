@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     GMSSetup.provideAPIKey()
     FirebaseApp.configure()
     AppwillBegin.reLogin()
+    
     return true
   }
 

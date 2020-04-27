@@ -22,29 +22,27 @@ class FullPostController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let id = postId else {
-            print("No post exits")
             return
         }
-        print(id)
         commentManager = CommentManager(id)
         commentManager?.delegate = self
         fullPost = SinglePostManager(id)
         fullPost?.delegate = self
+        fullPost?.loadData()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        
         if Auth.auth().currentUser != nil{
             userManager = SingleUserManager((Auth.auth().currentUser?.email)!)
             userManager?.delegate = self
         }
-        
-        loadData()
+        userManager?.loadData()
+      //  loadData()
         setTableCell()
-
-    }
-    override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
     }
     func loadData(){
-        fullPost?.loadData()
-        userManager?.loadData()
+        
     }
     func setTableCell(){
         tableView.register(UINib(nibName: FullPostCell.FullPostCellID, bundle: nil), forCellReuseIdentifier: FullPostCell.FullPostCellID)
@@ -175,5 +173,6 @@ extension FullPostController : SinglePostManagerDelegate{
 extension FullPostController : SingleUserManagerDelegate{
     func dataDidUpdate(_ sender: SingleUserManager, _ data: User) {
         currentUser = data
+        //self.tableView.reloadData()
     }
 }

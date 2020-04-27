@@ -13,6 +13,8 @@ struct SegueIdentify {
     static let LogintoReport = "LogintoReport"
     static let RegistertoReport = "RegistertoReport"
     static let gotoResult = "gotoResult"
+    static let ChoosePlace = "ChoosePlace"
+    static let searchDetail = "searchDetail"
 }
 struct Path {
     static func pathToLikes(withID id : String  ) -> String{
@@ -20,6 +22,9 @@ struct Path {
     }
     static func pathToComment(withID id: String) -> String{
         return "Post/\(id)/comment"
+    }
+    static func pathToVistedLocation(withID id: String) -> String{
+        return "User/\(id)/VisitedLocation"
     }
     static let City = "Country/Việt Nam/City"
     static let Hospital = "Contact/CDC/Hospital"
@@ -82,6 +87,11 @@ struct Database {
         static let ImageURL = "ImageURL"
         static let Type1 = "Type"
         static let UserName = "UserName"
+        struct VisitedLocation {
+            static let locationName = "LocationName"
+            static let lat = "lat"
+            static let lon = "lon"
+        }
     }
 }
 struct storage {

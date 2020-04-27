@@ -11,7 +11,7 @@ import Firebase
 protocol UserManagerDelegate {
     func dataDidUpdate(_ sender: UserManager, _ data : [User] )
 }
-class UserManager {
+struct UserManager {
     var delegate : UserManagerDelegate?
     var db = Firestore.firestore()
     func loadData() {

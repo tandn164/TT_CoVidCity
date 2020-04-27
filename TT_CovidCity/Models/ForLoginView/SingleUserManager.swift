@@ -11,7 +11,7 @@ import Firebase
 protocol SingleUserManagerDelegate {
     func dataDidUpdate(_ sender: SingleUserManager, _ data: User)
 }
-class SingleUserManager {
+struct SingleUserManager {
     var db = Firestore.firestore()
     var delegate : SingleUserManagerDelegate?
     var id : String?
@@ -20,7 +20,10 @@ class SingleUserManager {
     }
     func loadData() {
         db.collection(Database.user).document(id!).addSnapshotListener { (documents, err) in
-            let data = documents!.data()!
+            guard let data = documents?.data() else{
+                print("Get user process get error")
+                return
+            }
             if let userName = data[Database.User.UserName] as? String, let imageURL = data[Database.User.ImageURL] as? String, let type = data[Database.User.Type1] as? String, let address = data[Database.User.Address] as? String
             {
                 let user = User(userName: userName, imageURL: imageURL, address: address,type: type)

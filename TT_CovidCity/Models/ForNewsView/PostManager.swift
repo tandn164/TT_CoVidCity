@@ -11,7 +11,7 @@ import Firebase
 protocol PostManagerDelegate {
     func dataDidUpdate(_ PostManager: PostManager, _ data: [Post])
 }
-class PostManager{
+struct PostManager{
     var db = Firestore.firestore()
     var delegate : PostManagerDelegate?
     func loadData(){

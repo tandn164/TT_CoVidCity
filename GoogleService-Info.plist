@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>879738785722-d6cv5bfi6falkpg89hntusngj0dffsn7.apps.googleusercontent.com</string>
+	<string>879738785722-u9t07tgk4trfeamb92q06fb8f9n3tg7u.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.879738785722-d6cv5bfi6falkpg89hntusngj0dffsn7</string>
+	<string>com.googleusercontent.apps.879738785722-u9t07tgk4trfeamb92q06fb8f9n3tg7u</string>
 	<key>API_KEY</key>
 	<string>AIzaSyDTodDbsCkNQieBXiHmUg6O0Hd_mffbKac</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,23 +13,23 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.home.TT-CovidCity</string>
+	<string>tan.nd.Covidcity1</string>
 	<key>PROJECT_ID</key>
 	<string>covidcity-1585012064634</string>
 	<key>STORAGE_BUCKET</key>
 	<string>covidcity-1585012064634.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_GCM_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:879738785722:ios:f9d3f1e9ce23ecf9b8d783</string>
+	<string>1:879738785722:ios:2be2b7f2e3167338b8d783</string>
 	<key>DATABASE_URL</key>
 	<string>https://covidcity-1585012064634.firebaseio.com</string>
 </dict>

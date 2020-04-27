@@ -30,6 +30,12 @@
 		91BD69D5244EEA9000D44FCB /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BD69D4244EEA9000D44FCB /* AdminViewController.swift */; };
 		91BD69D8244F55F900D44FCB /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BD69D7244F55F900D44FCB /* AlertService.swift */; };
 		91BD69DA244F74A200D44FCB /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BD69D9244F74A200D44FCB /* ImageService.swift */; };
+		91FD96492455D028003A2D9A /* ChoosePlaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FD96482455D028003A2D9A /* ChoosePlaceController.swift */; };
+		91FD964F2455F405003A2D9A /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FD964E2455F405003A2D9A /* SearchView.swift */; };
+		91FD9671245608B4003A2D9A /* DetailSearchPlaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FD9670245608B4003A2D9A /* DetailSearchPlaceController.swift */; };
+		91FD96752456C08B003A2D9A /* VisitedLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FD96742456C08B003A2D9A /* VisitedLocation.swift */; };
+		91FD96772456CA7A003A2D9A /* GrayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FD96762456CA7A003A2D9A /* GrayButton.swift */; };
+		91FD96792456E00B003A2D9A /* VisitedLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FD96782456E00B003A2D9A /* VisitedLocationManager.swift */; };
 		B24D1B6410556D1CF29D4D51 /* Pods_TT_CovidCity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69448D03686872D199064893 /* Pods_TT_CovidCity.framework */; };
 		DC029841243178E8007333B0 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC029840243178E8007333B0 /* DetailViewController.swift */; };
 		DC02984724317921007333B0 /* DetailInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC02984524317921007333B0 /* DetailInfoView.swift */; };
@@ -89,6 +95,12 @@
 		91BD69D4244EEA9000D44FCB /* AdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminViewController.swift; sourceTree = "<group>"; };
 		91BD69D7244F55F900D44FCB /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		91BD69D9244F74A200D44FCB /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
+		91FD96482455D028003A2D9A /* ChoosePlaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePlaceController.swift; sourceTree = "<group>"; };
+		91FD964E2455F405003A2D9A /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		91FD9670245608B4003A2D9A /* DetailSearchPlaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSearchPlaceController.swift; sourceTree = "<group>"; };
+		91FD96742456C08B003A2D9A /* VisitedLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitedLocation.swift; sourceTree = "<group>"; };
+		91FD96762456CA7A003A2D9A /* GrayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrayButton.swift; sourceTree = "<group>"; };
+		91FD96782456E00B003A2D9A /* VisitedLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitedLocationManager.swift; sourceTree = "<group>"; };
 		DC029840243178E8007333B0 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		DC02984524317921007333B0 /* DetailInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailInfoView.swift; sourceTree = "<group>"; };
 		DC0298482431792B007333B0 /* ResultData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultData.swift; sourceTree = "<group>"; };
@@ -248,6 +260,8 @@
 				91B2B45624514F2400F7F541 /* User.swift */,
 				91B2B45824514FC900F7F541 /* UserManager.swift */,
 				91B2B45A245153BF00F7F541 /* SingleUserManager.swift */,
+				91FD96742456C08B003A2D9A /* VisitedLocation.swift */,
+				91FD96782456E00B003A2D9A /* VisitedLocationManager.swift */,
 			);
 			path = ForLoginView;
 			sourceTree = "<group>";
@@ -283,8 +297,8 @@
 			children = (
 				DC0F97232428542700E76CF9 /* LoginViewController.swift */,
 				DC0E6908242EF625009372FC /* RegisterViewController.swift */,
-				DC0F97252428543400E76CF9 /* ReportViewController.swift */,
-				91BD69D4244EEA9000D44FCB /* AdminViewController.swift */,
+				91FD96722456B110003A2D9A /* NormalUser */,
+				91FD96732456B128003A2D9A /* Admin */,
 			);
 			path = ForLoginView;
 			sourceTree = "<group>";
@@ -305,6 +319,24 @@
 				91BD69D9244F74A200D44FCB /* ImageService.swift */,
 			);
 			path = ConstantService;
+			sourceTree = "<group>";
+		};
+		91FD96722456B110003A2D9A /* NormalUser */ = {
+			isa = PBXGroup;
+			children = (
+				DC0F97252428543400E76CF9 /* ReportViewController.swift */,
+				91FD96482455D028003A2D9A /* ChoosePlaceController.swift */,
+				91FD9670245608B4003A2D9A /* DetailSearchPlaceController.swift */,
+			);
+			path = NormalUser;
+			sourceTree = "<group>";
+		};
+		91FD96732456B128003A2D9A /* Admin */ = {
+			isa = PBXGroup;
+			children = (
+				91BD69D4244EEA9000D44FCB /* AdminViewController.swift */,
+			);
+			path = Admin;
 			sourceTree = "<group>";
 		};
 		A03453012CA94FF604FFABBC /* Pods */ = {
@@ -338,6 +370,8 @@
 				DC02987B24317CBD007333B0 /* RedBackgroundView.swift */,
 				4DB2E8F0244300C400AFE9F2 /* ViewWithCustomCorner.swift */,
 				91BD69C2244DE13200D44FCB /* LoginTextField.swift */,
+				91FD964E2455F405003A2D9A /* SearchView.swift */,
+				91FD96762456CA7A003A2D9A /* GrayButton.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -562,6 +596,8 @@
 				DC02985C24317A02007333B0 /* Country.swift in Sources */,
 				4DFA41D4243F086E00BE9832 /* ContactManager.swift in Sources */,
 				DC0F97262428543400E76CF9 /* ReportViewController.swift in Sources */,
+				91FD96772456CA7A003A2D9A /* GrayButton.swift in Sources */,
+				91FD96492455D028003A2D9A /* ChoosePlaceController.swift in Sources */,
 				DC0F97242428542700E76CF9 /* LoginViewController.swift in Sources */,
 				91B2B4602451A8D400F7F541 /* UtilitiesFunction.swift in Sources */,
 				DC02987324317C96007333B0 /* ContactCell.swift in Sources */,
@@ -583,14 +619,18 @@
 				DC0F970B2427BE9700E76CF9 /* AppDelegate.swift in Sources */,
 				4D1CF1B2244056C400265377 /* FullPostCell.swift in Sources */,
 				91B2B45924514FC900F7F541 /* UserManager.swift in Sources */,
+				91FD96752456C08B003A2D9A /* VisitedLocation.swift in Sources */,
 				DC0298CD24317D1B007333B0 /* NewsViewController.swift in Sources */,
 				4D1CF1AF244042CA00265377 /* FullPostController.swift in Sources */,
 				91B4C95F2448C1050012155C /* ButtonPressed.swift in Sources */,
+				91FD964F2455F405003A2D9A /* SearchView.swift in Sources */,
 				91B2B45E2451877600F7F541 /* ConstString.swift in Sources */,
 				DC0F970D2427BE9700E76CF9 /* SceneDelegate.swift in Sources */,
+				91FD9671245608B4003A2D9A /* DetailSearchPlaceController.swift in Sources */,
 				4DB2E8F1244300C400AFE9F2 /* ViewWithCustomCorner.swift in Sources */,
 				91BD69DA244F74A200D44FCB /* ImageService.swift in Sources */,
 				DCE6AB90242A34CB007F4BF8 /* MarkerCluster.swift in Sources */,
+				91FD96792456E00B003A2D9A /* VisitedLocationManager.swift in Sources */,
 				4DFA41D8243F096500BE9832 /* Post.swift in Sources */,
 				4DB2E8EC2442BB2400AFE9F2 /* CommentCell.swift in Sources */,
 				91BD69D8244F55F900D44FCB /* AlertService.swift in Sources */,

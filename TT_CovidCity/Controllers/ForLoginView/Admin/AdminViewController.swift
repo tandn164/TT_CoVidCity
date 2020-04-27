@@ -119,11 +119,11 @@ extension AdminViewController : UIImagePickerControllerDelegate, UINavigationCon
         let photoLibaryAction = UIAlertAction(title: "Choose from library", style: .default) { (action) in
             self.showImagePickerController(.photoLibrary)
         }
-        //        let cameraAction = UIAlertAction(title: "Take a new photo", style: .default) { (action) in
-        //            self.showImagePickerController(.camera)
-        //        }
+        let cameraAction = UIAlertAction(title: "Take a new photo", style: .default) { (action) in
+            self.showImagePickerController(.camera)
+        }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        AlertService.showAlert(style: .actionSheet, title: "Choose your profile image", message: nil, actions: [photoLibaryAction,cancelAction], completion: nil)
+        AlertService.showAlert(style: .actionSheet, title: "Choose your profile image", message: nil, actions: [photoLibaryAction,cameraAction,cancelAction], completion: nil)
     }
     
     func showImagePickerController(_ sourceType: UIImagePickerController.SourceType) {

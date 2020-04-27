@@ -45,7 +45,7 @@ class LoginViewController: UIViewController {
                 } else {
                     // Neu login duoc goi tu new thi se return new khi bam login
                     if self.check == 1 {
-                        self.comeFromNews()
+                       self.comeFromNews()
                     } else {
                         //Neu khong thi chuyen den report
                         if username == Authentication.admin
@@ -64,14 +64,17 @@ class LoginViewController: UIViewController {
     func comeFromNews() {
         if let view = self.parentview as? NewsViewController
         {
-            view.tableView.reloadData()
+            view.viewWillAppear(true)
+           // view.tableView.reloadData()
         }
         else if let view = self.parentview as? FullPostController
         {
-            view.tableView.reloadData()
+           // view.tableView.reloadData()
+            view.viewWillAppear(true)
             if let viewParentView = view.parent?.children[0] as? NewsViewController
             {
-                viewParentView.tableView.reloadData()
+                
+               viewParentView.viewWillAppear(true)
             }
         }
         self.dismiss(animated: true, completion: nil)

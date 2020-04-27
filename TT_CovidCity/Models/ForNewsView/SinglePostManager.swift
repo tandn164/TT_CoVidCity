@@ -11,7 +11,7 @@ import Firebase
 protocol SinglePostManagerDelegate {
     func dataDidUpdate(_ sender: SinglePostManager, _ data: Post)
 }
-class SinglePostManager {
+struct SinglePostManager {
     var db = Firestore.firestore()
     var delegate : SinglePostManagerDelegate?
     var id : String?

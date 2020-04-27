@@ -18,33 +18,41 @@ class ReportViewController: UIViewController, UITextViewDelegate, CLLocationMana
     @IBOutlet weak var addressField: UITextField!
     @IBOutlet weak var typeField: UITextField!
     @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var tableView: UITableView!
+    
+    
     var image : UIImage?
+    var child = ChoosePlaceController()
     var locationManager = CLLocationManager()
     var currentLocation: CLLocation?
     var lat: Double!
     var long: Double!
     var userManager : SingleUserManager?
+    var locations : VisitedLocationManager?
     var currentuser : User?
     let db = Firestore.firestore()
     var photoURL : String?
+    var visitedLocation : [VisitedLocation] = []
     override func viewDidLoad() {
         super.viewDidLoad()
+        setViewData()
         navigationItem.hidesBackButton = true
         locationManager.requestAlwaysAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.distanceFilter = 50
         locationManager.startUpdatingLocation()
         locationManager.delegate = self
+        child.delegate = self
+    
         
     }
     override func viewWillAppear(_ animated: Bool) {
-        setViewData()
+        
     }
     func setViewData() {
         userManager = SingleUserManager((Auth.auth().currentUser?.email)!)
         userManager?.delegate = self
         userManager?.loadData()
-        
     }
     @IBAction func submitPressed(_ sender: UIButton) {
         //TODO
@@ -69,7 +77,6 @@ class ReportViewController: UIViewController, UITextViewDelegate, CLLocationMana
     func updateUser() {
         //TODO
         let user = Auth.auth().currentUser
-        print(73)
         //push profile image
         image = profileImage.image
         guard let imageSelected = image else {
@@ -92,13 +99,20 @@ class ReportViewController: UIViewController, UITextViewDelegate, CLLocationMana
                 storageProfileRef.downloadURL { (url, err) in
                     self.photoURL = url?.absoluteString
                     if let type = self.typeField.text, let userName = self.nameField.text, let address = self.addressField.text{
-                        print(85)
                         self.db.collection(Database.user).document(user!.email!).setData([
                             Database.User.UserName: userName,
                             Database.User.Address: address,
                             Database.User.Type1: type,
                             Database.User.ImageURL:self.photoURL!], merge: true)
                         self.currentuser = User(userName: userName, imageURL: self.photoURL, address: address, type: type)
+                        
+                        //Add visited table
+                        for i in self.visitedLocation{
+                            self.db.collection(Path.pathToVistedLocation(withID: user!.email!)).document(i.locationAddress!).setData([
+                                Database.User.VisitedLocation.locationName:i.locationAddress!,
+                                Database.User.VisitedLocation.lat:i.lat!,
+                                Database.User.VisitedLocation.lon:i.lon!], merge: true)
+                        }
                         let alert = UIAlertController(title: "Submitted", message: "Thank you for the submition, ありがとうございます。", preferredStyle: .alert)
                         let action = UIAlertAction(title: "Done", style: .default) { (action) in
                         }
@@ -111,6 +125,13 @@ class ReportViewController: UIViewController, UITextViewDelegate, CLLocationMana
         }
         
     }
+    
+    
+    @IBAction func addLocationTap(_ sender: UIButton) {
+        child.visitedLocation = self.visitedLocation
+        self.show(child, sender: self)
+    }
+    
     @IBAction func logoutPressed(_ sender: UIBarButtonItem) {
         do {
             try Auth.auth().signOut()
@@ -163,11 +184,11 @@ extension ReportViewController : UIImagePickerControllerDelegate, UINavigationCo
         let photoLibaryAction = UIAlertAction(title: "Choose from library", style: .default) { (action) in
             self.showImagePickerController(.photoLibrary)
         }
-        //        let cameraAction = UIAlertAction(title: "Take a new photo", style: .default) { (action) in
-        //            self.showImagePickerController(.camera)
-        //        }
+        let cameraAction = UIAlertAction(title: "Take a new photo", style: .default) { (action) in
+            self.showImagePickerController(.camera)
+        }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        AlertService.showAlert(style: .actionSheet, title: "Choose your profile image", message: nil, actions: [photoLibaryAction,cancelAction], completion: nil)
+        AlertService.showAlert(style: .actionSheet, title: "Choose your profile image", message: nil, actions: [photoLibaryAction,cameraAction,cancelAction], completion: nil)
     }
     
     func showImagePickerController(_ sourceType: UIImagePickerController.SourceType) {
@@ -205,5 +226,39 @@ extension ReportViewController : SingleUserManagerDelegate{
         if let type = currentuser?.type{
             self.typeField.text = type
         }
+        getVistedPlace()
+    }
+    func getVistedPlace() {
+        locations = VisitedLocationManager((Auth.auth().currentUser?.email)!)
+        locations?.delegate = self
+        locations?.loadData()
+    }
+}
+extension ReportViewController: ChoosePlaceControllerDelegate{
+    func didGetvisitedLocation(from sender: ChoosePlaceController, _ data: [VisitedLocation]) {
+        visitedLocation = data
+        tableView.reloadData()
+    }
+}
+extension ReportViewController: UITableViewDelegate{
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+}
+extension ReportViewController: UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return visitedLocation.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "visitedLocationCell", for: indexPath)
+        cell.textLabel?.text = visitedLocation[indexPath.row].locationAddress
+        return cell
+    }
+}
+extension ReportViewController: VisitedLocationManagerDelegate{
+    func dataDidUpdate(_ sender: VisitedLocationManager, _ data: [VisitedLocation]) {
+        visitedLocation = data
+        tableView.reloadData()
     }
 }

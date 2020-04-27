@@ -13,8 +13,10 @@ import IQKeyboardManagerSwift
 
 struct GMSSetup {
     static func provideAPIKey(){
-        GMSServices.provideAPIKey("AIzaSyDTodDbsCkNQieBXiHmUg6O0Hd_mffbKac")
-        GMSPlacesClient.provideAPIKey("AIzaSyDTodDbsCkNQieBXiHmUg6O0Hd_mffbKac")
+       //GMSServices.provideAPIKey("AIzaSyDTodDbsCkNQieBXiHmUg6O0Hd_mffbKac")
+        //GMSPlacesClient.provideAPIKey("AIzaSyDTodDbsCkNQieBXiHmUg6O0Hd_mffbKac")
+        GMSServices.provideAPIKey("AIzaSyAsVdJwU6GfnCj2KHC-r7TkicqR6aXbY1I")
+        GMSPlacesClient.provideAPIKey("AIzaSyAsVdJwU6GfnCj2KHC-r7TkicqR6aXbY1I")
     }
 }
 struct AppwillBegin {
