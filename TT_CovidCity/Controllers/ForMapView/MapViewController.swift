@@ -12,10 +12,43 @@ import GooglePlaces
 import GoogleMapsUtils
 
 
-class MapViewController: UIViewController,
+class MapViewController: UIViewController, GMSAutocompleteViewControllerDelegate,
 CLLocationManagerDelegate,
 GMUClusterManagerDelegate,
 GMSMapViewDelegate{
+  @IBAction func searchPressed(_ sender: UIBarButtonItem) {
+    let autocompleteController = GMSAutocompleteViewController()
+    autocompleteController.delegate = self
+
+    // Specify the place data types to return.
+    let fields: GMSPlaceField = GMSPlaceField(rawValue: UInt(GMSPlaceField.name.rawValue) |
+      UInt(GMSPlaceField.placeID.rawValue))!
+    autocompleteController.placeFields = fields
+
+    // Specify a filter.
+    let filter = GMSAutocompleteFilter()
+    filter.type = .address
+    autocompleteController.autocompleteFilter = filter
+
+    // Display the autocomplete view controller.
+    present(autocompleteController, animated: true, completion: nil)
+  }
+  func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
+    print("Place name: \(place.name ?? "")")
+    print("Place ID: \(place.placeID ?? "")")
+    print("Place attributions: \(String(describing: place.attributions))")
+    dismiss(animated: true, completion: nil)
+  }
+  
+  func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
+    print("Error: ", error.localizedDescription)
+  }
+  // User canceled the operation.
+  func wasCancelled(_ viewController: GMSAutocompleteViewController) {
+    dismiss(animated: true, completion: nil)
+  }
+  
+  
   
   let kClusterItemCount = 10000
   let kCameraLatitude = 20.98498
@@ -38,6 +71,7 @@ GMSMapViewDelegate{
   var selectedPlace: GMSPlace?
   
   override func loadView() {
+    
     let camera = GMSCameraPosition.camera(withLatitude: 21.0294498,
                                           longitude: 105.8544441, zoom: 12)
     mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
@@ -148,6 +182,20 @@ extension MapViewController {
   // Handle incoming location events.
   func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
     let location: CLLocation = locations.last!
+    print("Location: \(location)")
+    
+    let camera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude,
+                                          longitude: location.coordinate.longitude,
+                                          zoom: zoomLevel)
+    
+    if mapView.isHidden == true {
+      mapView.isHidden = false
+      mapView.camera = camera
+    } else {
+      mapView.animate(to: camera)
+    }
+    
+    listLikelyPlaces()
   }
   
   // Handle authorization for the location manager.
@@ -175,7 +223,28 @@ extension MapViewController {
     locationManager.stopUpdatingLocation()
     print("Error: \(error)")
   }
-
+  // Populate the array with the list of likely places.
+  func listLikelyPlaces() {
+    // Clean up from previous sessions.
+    likelyPlaces.removeAll()
+    
+    placesClient.currentPlace(callback: { (placeLikelihoods, error) -> Void in
+      if let error = error {
+        // TODO: Handle the error.
+        print("Current Place error: \(error.localizedDescription)")
+        return
+      }
+      
+      // Get likely places and add to the list.
+      if let likelihoodList = placeLikelihoods {
+        for likelihood in likelihoodList.likelihoods {
+          let place = likelihood.place
+          self.likelyPlaces.append(place)
+        }
+        self.performSegue(withIdentifier: "segueToSelect", sender: self)
+      }
+    })
+  }
 }
 
 
