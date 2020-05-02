@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D0263C9245E241400692757 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0263C8245E241400692757 /* Location.swift */; };
 		4D1CF1AF244042CA00265377 /* FullPostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1CF1AE244042CA00265377 /* FullPostController.swift */; };
 		4D1CF1B2244056C400265377 /* FullPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1CF1B0244056C400265377 /* FullPostCell.swift */; };
 		4D1CF1B3244056C400265377 /* FullPostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D1CF1B1244056C400265377 /* FullPostCell.xib */; };
+		4D2CE677245B67F800AC7F51 /* OrangeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2CE676245B67F800AC7F51 /* OrangeButton.swift */; };
 		4DB2E8EC2442BB2400AFE9F2 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB2E8EA2442BB2400AFE9F2 /* CommentCell.swift */; };
 		4DB2E8ED2442BB2500AFE9F2 /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DB2E8EB2442BB2400AFE9F2 /* CommentCell.xib */; };
 		4DB2E8F1244300C400AFE9F2 /* ViewWithCustomCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB2E8F0244300C400AFE9F2 /* ViewWithCustomCorner.swift */; };
@@ -72,9 +74,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D0263C8245E241400692757 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		4D1CF1AE244042CA00265377 /* FullPostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullPostController.swift; sourceTree = "<group>"; };
 		4D1CF1B0244056C400265377 /* FullPostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullPostCell.swift; sourceTree = "<group>"; };
 		4D1CF1B1244056C400265377 /* FullPostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FullPostCell.xib; sourceTree = "<group>"; };
+		4D2CE676245B67F800AC7F51 /* OrangeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrangeButton.swift; sourceTree = "<group>"; };
 		4DB2E8EA2442BB2400AFE9F2 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		4DB2E8EB2442BB2400AFE9F2 /* CommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentCell.xib; sourceTree = "<group>"; };
 		4DB2E8F0244300C400AFE9F2 /* ViewWithCustomCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewWithCustomCorner.swift; sourceTree = "<group>"; };
@@ -272,6 +276,7 @@
 			isa = PBXGroup;
 			children = (
 				DCE6AB8F242A34CB007F4BF8 /* MarkerCluster.swift */,
+				4D0263C8245E241400692757 /* Location.swift */,
 			);
 			path = ForMapView;
 			sourceTree = "<group>";
@@ -375,6 +380,7 @@
 				91BD69C2244DE13200D44FCB /* LoginTextField.swift */,
 				91FD964E2455F405003A2D9A /* SearchView.swift */,
 				91FD96762456CA7A003A2D9A /* GrayButton.swift */,
+				4D2CE676245B67F800AC7F51 /* OrangeButton.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -589,6 +595,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC02987224317C96007333B0 /* SubCell.swift in Sources */,
+				4D2CE677245B67F800AC7F51 /* OrangeButton.swift in Sources */,
 				DC02985B24317A02007333B0 /* Contact.swift in Sources */,
 				DC0E6909242EF625009372FC /* RegisterViewController.swift in Sources */,
 				91B2B4502450B51700F7F541 /* PostManager.swift in Sources */,
@@ -603,6 +610,7 @@
 				91FD96492455D028003A2D9A /* ChoosePlaceController.swift in Sources */,
 				DC0F97242428542700E76CF9 /* LoginViewController.swift in Sources */,
 				91B2B4602451A8D400F7F541 /* UtilitiesFunction.swift in Sources */,
+				4D0263C9245E241400692757 /* Location.swift in Sources */,
 				DC02987324317C96007333B0 /* ContactCell.swift in Sources */,
 				DC02984724317921007333B0 /* DetailInfoView.swift in Sources */,
 				4DFA41DA243F098E00BE9832 /* ContactResultData.swift in Sources */,

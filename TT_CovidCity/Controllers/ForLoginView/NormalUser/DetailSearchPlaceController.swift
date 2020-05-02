@@ -14,7 +14,6 @@ protocol DetailSearchPlaceControllerDelegate: class {
 class DetailSearchPlaceController: UIViewController {
     var resultsViewController: GMSAutocompleteResultsViewController?
     var searchController: UISearchController?
-    var resultView: UITextView?
     weak var delegate : DetailSearchPlaceControllerDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +26,17 @@ class DetailSearchPlaceController: UIViewController {
         view.addSubview(subView)
         view.backgroundColor = .white
         searchController?.searchBar.sizeToFit()
+        searchController?.view.backgroundColor = .white
+        searchController?.searchBar.backgroundColor = .white
+        searchController?.searchBar.tintColor = .gray
+        searchController?.searchBar.searchTextField.backgroundColor = .white
+        searchController?.searchBar.searchTextField.textColor = .black
         searchController?.hidesNavigationBarDuringPresentation = false
+        resultsViewController?.view.backgroundColor = .white
+        resultsViewController?.primaryTextColor = .black
+        resultsViewController?.primaryTextHighlightColor = .black
+        resultsViewController?.tableCellBackgroundColor = .white
+        resultsViewController?.secondaryTextColor = .black
         // When UISearchController presents the results view, present it in
         // this view controller, not one further up the chain.
         definesPresentationContext = true

@@ -49,8 +49,8 @@ class ChoosePlaceController: UIViewController,CLLocationManagerDelegate,GMUClust
         let camera = GMSCameraPosition.camera(withLatitude: 21.0294498, longitude: 105.8544441, zoom: 12)
         mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
         searchField = UITextField(frame: CGRect(x: 0, y: 0, width: self.view.frame.width-20, height: 45.0))
-        searchField.placeholder = "Search"
         searchField.addTarget(self, action: #selector(myTargetFunction(textField:)), for: .touchDown)
+        searchField.attributedPlaceholder = NSAttributedString(string: "Search", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
         findView = SearchView(frame: CGRect(x: 10, y: 100, width: self.view.frame.width-20, height: 45.0))
         findView.addSubview(searchField)
         self.view = mapView

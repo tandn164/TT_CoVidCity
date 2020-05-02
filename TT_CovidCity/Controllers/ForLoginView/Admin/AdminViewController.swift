@@ -21,16 +21,17 @@ class AdminViewController: UIViewController {
     var photoURL : String?
     override func viewDidLoad() {
         super.viewDidLoad()
-        userManager = SingleUserManager((Auth.auth().currentUser?.email)!)
+        self.postImage.image = UIImage(systemName: "photo.fill")
         userManager?.delegate = self
         userManager?.loadData()
         postTextView.delegate = self
         navigationItem.hidesBackButton = true
     }
     override func viewWillAppear(_ animated: Bool) {
-        ImageService.downloadImage(withURL: URL(string: storage.defaultImageURL)! ) { (image) in
-            self.postImage.image = image
-        }
+        setView()
+    }
+    func setView() {
+        postTextView.backgroundColor = .white
     }
     @IBAction func postPressed(_ sender: UIButton) {
         //self.postTextView.endEditing(true)

@@ -15,5 +15,5 @@ target 'TT_CovidCity' do
     pod 'FirebaseFirestoreSwift'
     pod 'IQKeyboardManagerSwift'
     pod 'Firebase/Storage'
-    #pod 'FirebaseInstanceID', '4.3.0'
+    pod 'SwipeCellKit'
 end

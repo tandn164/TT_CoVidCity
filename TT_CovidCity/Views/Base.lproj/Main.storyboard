@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+    <device id="retina4_7" orientation="portrait" appearance="dark"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -32,15 +32,15 @@
             <objects>
                 <tableViewController id="IoC-J6-cSQ" userLabel="Places View Controller" customClass="PlacesViewController" customModule="TT_CovidCity" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="gvk-aX-Ci6">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellReuseIdentifier" id="Jdz-bo-ZGB">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jdz-bo-ZGB" id="uc8-pO-WcA">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
@@ -84,7 +84,7 @@
             <objects>
                 <viewController id="Coc-dG-8gU" customClass="DetailSearchPlaceController" customModule="TT_CovidCity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Rw-gX-fbE">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="g0J-zR-kbB"/>
@@ -99,14 +99,14 @@
             <objects>
                 <viewController id="PhT-SY-qbr" customClass="ChoosePlaceController" customModule="TT_CovidCity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jci-lR-dDX">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aNj-Hk-vGD">
-                                <rect key="frame" x="25" y="49" width="363" height="43"/>
+                                <rect key="frame" x="25" y="93" width="324" height="43"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RoD-bu-Dop">
-                                        <rect key="frame" x="5" y="0.0" width="353" height="43"/>
+                                        <rect key="frame" x="5" y="0.0" width="314" height="43"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -145,14 +145,14 @@
             <objects>
                 <viewController id="Vuu-y7-DPc" customClass="ReportViewController" customModule="TT_CovidCity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tjw-vN-5rt">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PTW-ab-BKu" customClass="LoginTextField" customModule="TT_CovidCity" customModuleProvider="target">
-                                <rect key="frame" x="100" y="317" width="294" height="50"/>
+                                <rect key="frame" x="100" y="266" width="255" height="50"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MKW-vK-sdB">
-                                        <rect key="frame" x="10" y="0.0" width="274" height="50"/>
+                                        <rect key="frame" x="10" y="0.0" width="235" height="50"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -168,10 +168,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Dq-C7-TcZ" customClass="LoginTextField" customModule="TT_CovidCity" customModuleProvider="target">
-                                <rect key="frame" x="100" y="239" width="294" height="50"/>
+                                <rect key="frame" x="100" y="208" width="255" height="50"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GGJ-ae-qkd">
-                                        <rect key="frame" x="10" y="0.0" width="274" height="50"/>
+                                        <rect key="frame" x="10" y="0.0" width="235" height="50"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -187,10 +187,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cG2-RH-bno" customClass="LoginTextField" customModule="TT_CovidCity" customModuleProvider="target">
-                                <rect key="frame" x="100" y="161" width="294" height="50"/>
+                                <rect key="frame" x="100" y="150" width="255" height="50"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4ly-pv-LHf">
-                                        <rect key="frame" x="10" y="0.0" width="274" height="50"/>
+                                        <rect key="frame" x="10" y="0.0" width="235" height="50"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -206,42 +206,42 @@
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.crop.square.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="UuZ-qQ-xhp">
-                                <rect key="frame" x="20" y="17" width="127" height="125.5"/>
+                                <rect key="frame" x="20" y="61" width="76" height="80"/>
                                 <color key="tintColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="32k-pW-ao7"/>
-                                    <constraint firstAttribute="width" constant="127" id="89Z-FL-1ML"/>
+                                    <constraint firstAttribute="height" constant="82.5" id="32k-pW-ao7"/>
+                                    <constraint firstAttribute="width" constant="76" id="89Z-FL-1ML"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acQ-4l-mOc">
-                                <rect key="frame" x="28" y="254" width="68" height="21"/>
+                                <rect key="frame" x="28" y="223" width="68" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="1uy-Pa-EMj"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QGv-HW-nud">
-                                <rect key="frame" x="28" y="332" width="38" height="21"/>
+                                <rect key="frame" x="28" y="281" width="38" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="JYU-qs-2QU"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4pv-1W-EPL">
-                                <rect key="frame" x="28" y="176" width="45" height="21"/>
+                                <rect key="frame" x="28" y="165" width="45" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Pea-pv-6cb"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4CH-xT-Xqf" customClass="RedButton" customModule="TT_CovidCity" customModuleProvider="target">
-                                <rect key="frame" x="166" y="65" width="163" height="33"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4CH-xT-Xqf" customClass="OrangeButton" customModule="TT_CovidCity" customModuleProvider="target">
+                                <rect key="frame" x="131" y="85" width="163" height="33"/>
                                 <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="33" id="JQ7-N4-mSd"/>
@@ -256,25 +256,26 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AC6-ie-BBx">
-                                <rect key="frame" x="20" y="375" width="374" height="310"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <rect key="frame" x="20" y="324" width="335" height="184"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="visitedLocationCell" textLabel="xE3-PR-bUc" style="IBUITableViewCellStyleDefault" id="ojm-3c-Sav">
-                                        <rect key="frame" x="0.0" y="28" width="374" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="visitedLocationCell" textLabel="xE3-PR-bUc" style="IBUITableViewCellStyleDefault" id="ojm-3c-Sav" customClass="SwipeTableViewCell" customModule="SwipeCellKit">
+                                        <rect key="frame" x="0.0" y="28" width="335" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ojm-3c-Sav" id="jaj-ZE-0LZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="335" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xE3-PR-bUc">
-                                                    <rect key="frame" x="20" y="0.0" width="334" height="43.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="305" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -283,7 +284,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aPc-Ur-qLX">
-                                <rect key="frame" x="150.5" y="731" width="113" height="54"/>
+                                <rect key="frame" x="129" y="554" width="113" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="igB-CY-T01"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="113" id="mlQ-Xf-MXB"/>
@@ -296,8 +297,8 @@
                                     <action selector="submitPressed:" destination="Vuu-y7-DPc" eventType="touchUpInside" id="V19-jB-3y8"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CZu-Rd-1rb" customClass="RedButton" customModule="TT_CovidCity" customModuleProvider="target">
-                                <rect key="frame" x="145.5" y="693" width="118" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CZu-Rd-1rb" customClass="OrangeButton" customModule="TT_CovidCity" customModuleProvider="target">
+                                <rect key="frame" x="126" y="516" width="118" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="1HZ-d4-QB8"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="118" id="DLI-aP-FYm"/>
@@ -315,24 +316,24 @@
                             <constraint firstItem="cG2-RH-bno" firstAttribute="leading" secondItem="4pv-1W-EPL" secondAttribute="trailing" constant="27" id="5ft-1V-Gy7"/>
                             <constraint firstItem="aPc-Ur-qLX" firstAttribute="top" secondItem="CZu-Rd-1rb" secondAttribute="bottom" constant="8" id="Ig5-dA-MZV"/>
                             <constraint firstItem="UuZ-qQ-xhp" firstAttribute="top" secondItem="aUY-Yj-h4v" secondAttribute="top" constant="16" id="LEu-32-zkS"/>
-                            <constraint firstItem="4CH-xT-Xqf" firstAttribute="top" secondItem="aUY-Yj-h4v" secondAttribute="top" constant="65" id="M6S-gF-YcL"/>
+                            <constraint firstItem="4CH-xT-Xqf" firstAttribute="top" secondItem="aUY-Yj-h4v" secondAttribute="top" constant="41" id="M6S-gF-YcL"/>
                             <constraint firstItem="aUY-Yj-h4v" firstAttribute="trailing" secondItem="PTW-ab-BKu" secondAttribute="trailing" constant="20" id="OG1-po-44k"/>
-                            <constraint firstItem="PTW-ab-BKu" firstAttribute="top" secondItem="8Dq-C7-TcZ" secondAttribute="bottom" constant="28" id="Pax-uM-CF8"/>
+                            <constraint firstItem="PTW-ab-BKu" firstAttribute="top" secondItem="8Dq-C7-TcZ" secondAttribute="bottom" constant="8" id="Pax-uM-CF8"/>
                             <constraint firstItem="PTW-ab-BKu" firstAttribute="leading" secondItem="aUY-Yj-h4v" secondAttribute="leading" constant="100" id="Rfi-d2-fes"/>
                             <constraint firstItem="CZu-Rd-1rb" firstAttribute="top" secondItem="AC6-ie-BBx" secondAttribute="bottom" constant="8" id="V0q-Uo-UM1"/>
-                            <constraint firstItem="cG2-RH-bno" firstAttribute="top" secondItem="aUY-Yj-h4v" secondAttribute="top" constant="161" id="VaC-RE-Gnb"/>
-                            <constraint firstItem="4pv-1W-EPL" firstAttribute="top" secondItem="UuZ-qQ-xhp" secondAttribute="bottom" constant="32" id="WB4-cB-iAT"/>
+                            <constraint firstItem="cG2-RH-bno" firstAttribute="top" secondItem="aUY-Yj-h4v" secondAttribute="top" constant="106" id="VaC-RE-Gnb"/>
+                            <constraint firstItem="4pv-1W-EPL" firstAttribute="top" secondItem="UuZ-qQ-xhp" secondAttribute="bottom" constant="22.5" id="WB4-cB-iAT"/>
                             <constraint firstItem="QGv-HW-nud" firstAttribute="leading" secondItem="aUY-Yj-h4v" secondAttribute="leading" constant="28" id="XpU-tK-1Lg"/>
-                            <constraint firstItem="QGv-HW-nud" firstAttribute="top" secondItem="acQ-4l-mOc" secondAttribute="bottom" constant="57" id="Yy6-zW-HZh"/>
+                            <constraint firstItem="QGv-HW-nud" firstAttribute="top" secondItem="acQ-4l-mOc" secondAttribute="bottom" constant="37" id="Yy6-zW-HZh"/>
                             <constraint firstItem="4pv-1W-EPL" firstAttribute="leading" secondItem="aUY-Yj-h4v" secondAttribute="leading" constant="28" id="aYn-Y6-jPx"/>
-                            <constraint firstItem="8Dq-C7-TcZ" firstAttribute="top" secondItem="cG2-RH-bno" secondAttribute="bottom" constant="28" id="bP6-iX-YOM"/>
+                            <constraint firstItem="8Dq-C7-TcZ" firstAttribute="top" secondItem="cG2-RH-bno" secondAttribute="bottom" constant="8" id="bP6-iX-YOM"/>
                             <constraint firstItem="8Dq-C7-TcZ" firstAttribute="leading" secondItem="aUY-Yj-h4v" secondAttribute="leading" constant="100" id="eIr-2I-AgY"/>
                             <constraint firstItem="aUY-Yj-h4v" firstAttribute="trailing" secondItem="8Dq-C7-TcZ" secondAttribute="trailing" constant="20" id="eMV-FY-Jtf"/>
-                            <constraint firstItem="acQ-4l-mOc" firstAttribute="top" secondItem="4pv-1W-EPL" secondAttribute="bottom" constant="57" id="f1x-ns-Lw0"/>
-                            <constraint firstItem="4CH-xT-Xqf" firstAttribute="leading" secondItem="UuZ-qQ-xhp" secondAttribute="trailing" constant="19" id="i31-6f-bPf"/>
-                            <constraint firstItem="aPc-Ur-qLX" firstAttribute="centerX" secondItem="tjw-vN-5rt" secondAttribute="centerX" id="mMT-cz-i2E"/>
+                            <constraint firstItem="acQ-4l-mOc" firstAttribute="top" secondItem="4pv-1W-EPL" secondAttribute="bottom" constant="37" id="f1x-ns-Lw0"/>
+                            <constraint firstItem="4CH-xT-Xqf" firstAttribute="leading" secondItem="UuZ-qQ-xhp" secondAttribute="trailing" constant="35" id="i31-6f-bPf"/>
+                            <constraint firstItem="aPc-Ur-qLX" firstAttribute="centerX" secondItem="tjw-vN-5rt" secondAttribute="centerX" constant="-2" id="mMT-cz-i2E"/>
                             <constraint firstItem="UuZ-qQ-xhp" firstAttribute="leading" secondItem="aUY-Yj-h4v" secondAttribute="leading" constant="20" id="pQo-iQ-BGm"/>
-                            <constraint firstItem="aUY-Yj-h4v" firstAttribute="bottom" secondItem="aPc-Ur-qLX" secondAttribute="bottom" constant="23" id="pVP-23-3sU"/>
+                            <constraint firstItem="aUY-Yj-h4v" firstAttribute="bottom" secondItem="aPc-Ur-qLX" secondAttribute="bottom" constant="10" id="pVP-23-3sU"/>
                             <constraint firstItem="cG2-RH-bno" firstAttribute="leading" secondItem="aUY-Yj-h4v" secondAttribute="leading" constant="100" id="qRt-0t-nIJ"/>
                             <constraint firstItem="PTW-ab-BKu" firstAttribute="leading" secondItem="QGv-HW-nud" secondAttribute="trailing" constant="34" id="rVW-CC-wyT"/>
                             <constraint firstItem="aUY-Yj-h4v" firstAttribute="trailing" secondItem="cG2-RH-bno" secondAttribute="trailing" constant="20" id="sec-Vl-Y05"/>
@@ -372,7 +373,7 @@
                     <tabBarItem key="tabBarItem" title="Map" image="mappin.and.ellipse" catalog="system" selectedImage="mappin.circle" id="acW-dT-cKf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hAT-oi-94n">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
@@ -398,7 +399,7 @@
                     <tabBarItem key="tabBarItem" title="statistic" image="map" catalog="system" selectedImage="map" id="cPa-gy-q4n"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Vqh-Cu-HiP">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
@@ -419,7 +420,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="2jJ-Q4-DJc"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2We-vj-IUr">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -440,7 +441,7 @@
                     <tabBarItem key="tabBarItem" title="News" image="doc.text" catalog="system" selectedImage="doc.text" id="Nbs-3D-o0k" userLabel="Fourth"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1xg-5g-vQ4">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
@@ -458,11 +459,11 @@
             <objects>
                 <viewController id="YZj-kN-cNE" customClass="FullPostController" customModule="TT_CovidCity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OuC-6U-hd4">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="66s-J4-U7y">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="745"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="511"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="YZj-kN-cNE" id="i3H-SY-Ubg"/>
@@ -470,10 +471,10 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8j7-vC-nI8">
-                                <rect key="frame" x="0.0" y="745" width="414" height="63"/>
+                                <rect key="frame" x="0.0" y="555" width="375" height="63"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rI2-Dq-bco">
-                                        <rect key="frame" x="373" y="8" width="21" height="47"/>
+                                        <rect key="frame" x="334" y="8" width="21" height="47"/>
                                         <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <state key="normal" image="paperplane.fill" catalog="system"/>
                                         <connections>
@@ -481,7 +482,7 @@
                                         </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write a comment..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5ir-TA-odO">
-                                        <rect key="frame" x="46" y="14" width="319" height="34"/>
+                                        <rect key="frame" x="46" y="14" width="280" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="send"/>
                                         <connections>
@@ -534,11 +535,11 @@
             <objects>
                 <viewController id="StL-lD-6Vu" userLabel="Fourth" customClass="NewsViewController" customModule="TT_CovidCity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WvY-bB-4NB">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="589" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cY8-uG-D3s">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="574"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="StL-lD-6Vu" id="Phg-rm-2ei"/>
@@ -571,11 +572,11 @@
             <objects>
                 <viewController id="XbA-Uw-V10" customClass="DetailViewController" customModule="TT_CovidCity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ina-P0-HGn">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9Jb-Fb-2XP">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="574"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="XbA-Uw-V10" id="Zaz-I1-HWK"/>
@@ -607,11 +608,11 @@
             <objects>
                 <viewController id="41R-1w-tlZ" customClass="DetailInfoView" customModule="TT_CovidCity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RhQ-SH-gXT">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PEI-UN-sN3">
-                                <rect key="frame" x="0.0" y="214" width="414" height="628"/>
+                                <rect key="frame" x="0.0" y="214" width="375" height="433"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="41R-1w-tlZ" id="KQQ-AE-iUl"/>
@@ -619,7 +620,7 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="79X-iB-LrF" customClass="WhiteBackgroundView" customModule="TT_CovidCity" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="214"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="214"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EYy-lz-NkE" customClass="RedBackgroundView" customModule="TT_CovidCity" customModuleProvider="target">
                                         <rect key="frame" x="28" y="67" width="100" height="80"/>
@@ -680,7 +681,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h4T-hZ-07q" customClass="RedBackgroundView" customModule="TT_CovidCity" customModuleProvider="target">
-                                        <rect key="frame" x="157" y="67" width="100" height="80"/>
+                                        <rect key="frame" x="137.5" y="67" width="100" height="80"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="FLA-R2-ZzN">
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
@@ -735,7 +736,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rqn-mG-DgD" customClass="RedBackgroundView" customModule="TT_CovidCity" customModuleProvider="target">
-                                        <rect key="frame" x="286" y="67" width="100" height="80"/>
+                                        <rect key="frame" x="247" y="67" width="100" height="80"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="OlU-Eo-Hmj">
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
@@ -841,14 +842,14 @@
             <objects>
                 <viewController id="ejA-Lt-Glq" userLabel="Login" customClass="LoginViewController" customModule="TT_CovidCity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="V07-ee-Afw">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f5C-cL-UX3" customClass="LoginTextField" customModule="TT_CovidCity" customModuleProvider="target">
-                                <rect key="frame" x="60" y="80" width="294" height="70"/>
+                                <rect key="frame" x="60" y="124" width="255" height="70"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7v2-Qz-5pl">
-                                        <rect key="frame" x="10" y="0.0" width="274" height="70"/>
+                                        <rect key="frame" x="10" y="0.0" width="235" height="70"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -865,7 +866,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g9p-uc-Rs9">
-                                <rect key="frame" x="132" y="685" width="150" height="54"/>
+                                <rect key="frame" x="112.5" y="495" width="150" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="Yrs-Eg-rZh"/>
                                     <constraint firstAttribute="width" constant="150" id="yIU-hF-nDg"/>
@@ -879,10 +880,10 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xj7-oD-GVa" customClass="LoginTextField" customModule="TT_CovidCity" customModuleProvider="target">
-                                <rect key="frame" x="60" y="184" width="294" height="70"/>
+                                <rect key="frame" x="60" y="228" width="255" height="70"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dch-sX-dre">
-                                        <rect key="frame" x="10" y="0.0" width="274" height="70"/>
+                                        <rect key="frame" x="10" y="0.0" width="235" height="70"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -899,7 +900,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jRU-ya-8j5">
-                                <rect key="frame" x="165.5" y="312" width="83" height="48"/>
+                                <rect key="frame" x="146" y="356" width="83" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="rMD-s5-rl9"/>
                                 </constraints>
@@ -946,14 +947,14 @@
             <objects>
                 <viewController id="ixe-Qd-1B7" userLabel="Register" customClass="RegisterViewController" customModule="TT_CovidCity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="40n-mK-9VF">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="afP-zp-drJ" customClass="LoginTextField" customModule="TT_CovidCity" customModuleProvider="target">
-                                <rect key="frame" x="60" y="80" width="294" height="70"/>
+                                <rect key="frame" x="60" y="124" width="255" height="70"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jPe-kK-dES">
-                                        <rect key="frame" x="10" y="0.0" width="274" height="70"/>
+                                        <rect key="frame" x="10" y="0.0" width="235" height="70"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -969,10 +970,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qXe-KZ-wn7" customClass="LoginTextField" customModule="TT_CovidCity" customModuleProvider="target">
-                                <rect key="frame" x="60" y="184" width="294" height="70"/>
+                                <rect key="frame" x="60" y="228" width="255" height="70"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qw1-7C-IOt">
-                                        <rect key="frame" x="10" y="0.0" width="274" height="70"/>
+                                        <rect key="frame" x="10" y="0.0" width="235" height="70"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -988,10 +989,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qol-Ch-s38" customClass="LoginTextField" customModule="TT_CovidCity" customModuleProvider="target">
-                                <rect key="frame" x="60" y="288" width="294" height="70"/>
+                                <rect key="frame" x="60" y="332" width="255" height="70"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m56-c9-z4M">
-                                        <rect key="frame" x="10" y="0.0" width="274" height="70"/>
+                                        <rect key="frame" x="10" y="0.0" width="235" height="70"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -1007,7 +1008,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zy5-jE-oM9">
-                                <rect key="frame" x="150" y="559" width="114" height="48"/>
+                                <rect key="frame" x="130.5" y="471.5" width="114" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="B1B-zE-KYi"/>
                                     <constraint firstAttribute="width" constant="114" id="EvP-UO-q2F"/>
@@ -1054,14 +1055,14 @@
             <objects>
                 <viewController id="09u-YC-Fgs" customClass="AdminViewController" customModule="TT_CovidCity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="76m-YS-CXP">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BnM-Cl-p6C" customClass="LoginTextField" customModule="TT_CovidCity" customModuleProvider="target">
-                                <rect key="frame" x="100" y="99" width="294" height="50"/>
+                                <rect key="frame" x="100" y="143" width="255" height="50"/>
                                 <subviews>
                                     <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5J4-bT-dtn">
-                                        <rect key="frame" x="10" y="0.0" width="274" height="50"/>
+                                        <rect key="frame" x="10" y="0.0" width="235" height="50"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -1077,14 +1078,14 @@
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boyte" translatesAutoresizingMaskIntoConstraints="NO" id="f0a-WX-J6L">
-                                <rect key="frame" x="20" y="16" width="82" height="83.000000000000114"/>
+                                <rect key="frame" x="20" y="60" width="82" height="83"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="82" id="76q-ca-eZJ"/>
                                     <constraint firstAttribute="height" constant="82.999999999999886" id="izp-A9-Nv4"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JrI-hV-l2M">
-                                <rect key="frame" x="28" y="114" width="45" height="21"/>
+                                <rect key="frame" x="28" y="158" width="45" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="ixQ-yz-42b"/>
                                 </constraints>
@@ -1093,7 +1094,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U9K-66-yyE">
-                                <rect key="frame" x="156.5" y="734" width="101" height="48"/>
+                                <rect key="frame" x="137" y="544" width="101" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="16u-OV-KPx"/>
                                     <constraint firstAttribute="width" constant="101" id="VKy-OD-C8I"/>
@@ -1107,22 +1108,22 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="60v-Th-IqX">
-                                <rect key="frame" x="20" y="618" width="166" height="118"/>
+                                <rect key="frame" x="20" y="428" width="127" height="118"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="syP-PC-nef">
-                                <rect key="frame" x="236" y="667" width="133" height="30"/>
+                                <rect key="frame" x="197" y="477" width="133" height="30"/>
                                 <state key="normal" title="Choose Post Image"/>
                                 <connections>
                                     <action selector="selectImage:" destination="09u-YC-Fgs" eventType="touchUpInside" id="MFJ-es-9tN"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EQD-Rj-vGv" customClass="LoginTextField" customModule="TT_CovidCity" customModuleProvider="target">
-                                <rect key="frame" x="20" y="167" width="374" height="443"/>
+                                <rect key="frame" x="20" y="211" width="335" height="209"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nO3-8J-sLl">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="443"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="209"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                     </textView>
@@ -1180,19 +1181,19 @@
             <point key="canvasLocation" x="-1286.9565217391305" y="1045.9821428571429"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="boyte" width="400" height="394"/>
-        <image name="doc.text" catalog="system" width="56" height="64"/>
-        <image name="map" catalog="system" width="64" height="56"/>
-        <image name="mappin.and.ellipse" catalog="system" width="58" height="64"/>
-        <image name="mappin.circle" catalog="system" width="64" height="60"/>
-        <image name="paperplane.fill" catalog="system" width="64" height="60"/>
-        <image name="person" catalog="system" width="64" height="58"/>
-        <image name="person.crop.square.fill" catalog="system" width="64" height="56"/>
-    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="M1j-bb-eZa"/>
+        <segue reference="GeA-7X-ttu"/>
         <segue reference="fKU-Kj-Y6g"/>
         <segue reference="xzB-ci-bTX"/>
     </inferredMetricsTieBreakers>
+    <resources>
+        <image name="boyte" width="400" height="394"/>
+        <image name="doc.text" catalog="system" width="115" height="128"/>
+        <image name="map" catalog="system" width="128" height="113"/>
+        <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
+        <image name="mappin.circle" catalog="system" width="128" height="121"/>
+        <image name="paperplane.fill" catalog="system" width="128" height="121"/>
+        <image name="person" catalog="system" width="128" height="117"/>
+        <image name="person.crop.square.fill" catalog="system" width="128" height="114"/>
+    </resources>
 </document>

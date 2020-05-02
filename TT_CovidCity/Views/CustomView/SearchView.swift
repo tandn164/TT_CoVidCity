@@ -30,7 +30,7 @@ class SearchView: UIView {
         setStyle()
     }
     private func setStyle(){
-        backgroundColor = UIColor.systemBackground
+        backgroundColor = UIColor.white
         layer.cornerRadius = 8
     }
     private func setShadow(){

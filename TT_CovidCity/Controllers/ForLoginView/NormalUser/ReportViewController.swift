@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FirebaseFirestore
 import CoreLocation
+import SwipeCellKit
 //import FirebaseStorage
 
 class ReportViewController: UIViewController, UITextViewDelegate, CLLocationManagerDelegate {
@@ -47,7 +48,12 @@ class ReportViewController: UIViewController, UITextViewDelegate, CLLocationMana
         
     }
     override func viewWillAppear(_ animated: Bool) {
-        
+        setView()
+    }
+    func setView() {
+        addressField.attributedPlaceholder = NSAttributedString(string: "Address", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        typeField.attributedPlaceholder = NSAttributedString(string: "Type", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        tableView.backgroundColor = .white
     }
     func setViewData() {
         userManager = SingleUserManager((Auth.auth().currentUser?.email)!)
@@ -257,8 +263,9 @@ extension ReportViewController: UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "visitedLocationCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "visitedLocationCell", for: indexPath) as! SwipeTableViewCell
         cell.textLabel?.text = visitedLocation[indexPath.row].locationAddress
+        cell.delegate = self
         return cell
     }
 }
@@ -266,5 +273,24 @@ extension ReportViewController: VisitedLocationManagerDelegate{
     func dataDidUpdate(_ sender: VisitedLocationManager, _ data: [VisitedLocation]) {
         visitedLocation = data
         tableView.reloadData()
+    }
+}
+extension ReportViewController: SwipeTableViewCellDelegate{
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+        guard orientation == .right else { return nil }
+
+        let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
+            // handle action by updating model with deletion
+        }
+
+        // customize the action appearance
+//        deleteAction.image = UIImage(named: "delete")
+        return [deleteAction]
+    }
+    func collectionView(_ collectionView: UICollectionView, editActionsOptionsForItemAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeOptions {
+        var options = SwipeOptions()
+        options.expansionStyle = .destructive
+        options.transitionStyle = .border
+        return options
     }
 }

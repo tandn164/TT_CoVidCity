@@ -37,13 +37,14 @@ class FullPostController: UIViewController {
             userManager?.delegate = self
         }
         userManager?.loadData()
-      //  loadData()
         setTableCell()
         tableView.reloadData()
+//        setView()
     }
-    func loadData(){
-        
-    }
+//    func setView(){
+//        textField.backgroundColor = .white
+//        textField.textColor = .black
+//    }
     func setTableCell(){
         tableView.register(UINib(nibName: FullPostCell.FullPostCellID, bundle: nil), forCellReuseIdentifier: FullPostCell.FullPostCellID)
         tableView.register(UINib(nibName: CommentCell.CommentCellID, bundle: nil), forCellReuseIdentifier: CommentCell.CommentCellID)

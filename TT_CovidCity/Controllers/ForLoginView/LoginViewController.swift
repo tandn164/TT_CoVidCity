@@ -17,9 +17,12 @@ class LoginViewController: UIViewController {
     weak var parentview : UIViewController?
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setView()
     }
-    //Neu nguoi dung da dang nhap thi chuyen den report luon
+    func setView() {
+        usernameTextField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        passwordTextField.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+    }
     override func viewDidAppear(_ animated: Bool) {
         if let currentUser = Auth.auth().currentUser{
             if currentUser.email! == Authentication.admin
@@ -43,11 +46,9 @@ class LoginViewController: UIViewController {
                     alert.addAction(action)
                     self.present(alert, animated: true, completion: nil)
                 } else {
-                    // Neu login duoc goi tu new thi se return new khi bam login
                     if self.check == 1 {
                        self.comeFromNews()
                     } else {
-                        //Neu khong thi chuyen den report
                         if username == Authentication.admin
                         {
                             self.performSegue(withIdentifier: SegueIdentify.LogintoAdmin, sender: self)
