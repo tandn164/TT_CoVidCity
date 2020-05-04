@@ -109,9 +109,15 @@ class ReportViewController: UIViewController, UITextViewDelegate, CLLocationMana
                             Database.User.UserName: userName,
                             Database.User.Address: address,
                             Database.User.Type1: type,
-                            Database.User.ImageURL:self.photoURL!], merge: true)
+                            Database.User.ImageURL:self.photoURL!,
+                            Database.User.Lon: self.locationManager.location?.coordinate.longitude ?? 0.0 ,
+                            Database.User.Lat: self.locationManager.location?.coordinate.latitude ?? 0.0], merge: true)
                         self.currentuser = User(userName: userName, imageURL: self.photoURL, address: address, type: type)
-                        
+                        self.db.collection(Database.location).document(user!.email!).setData([
+                            Database.Location.locationName: "",
+                            Database.Location.lat:self.locationManager.location?.coordinate.latitude ?? 0.0 ,
+                            Database.Location.lon:self.locationManager.location?.coordinate.longitude ?? 0.0 ,
+                            Database.Location.userType: type], merge: true)
                         //Add visited table
                         for i in self.visitedLocation{
                             self.db.collection(Path.pathToVistedLocation(withID: user!.email!)).document(i.locationAddress!).setData([
@@ -122,7 +128,7 @@ class ReportViewController: UIViewController, UITextViewDelegate, CLLocationMana
                                 Database.Location.locationName: i.locationAddress!,
                                 Database.Location.lat: i.lat!,
                                 Database.Location.lon: i.lon!,
-                                Database.Location.userType: type
+                                Database.Location.userType: String("\(type) visited")
                             ], merge: true)
                         }
                         let alert = UIAlertController(title: "Submitted", message: "Thank you for the submition, ありがとうございます。", preferredStyle: .alert)
@@ -281,6 +287,7 @@ extension ReportViewController: SwipeTableViewCellDelegate{
 
         let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
             // handle action by updating model with deletion
+            
         }
 
         // customize the action appearance

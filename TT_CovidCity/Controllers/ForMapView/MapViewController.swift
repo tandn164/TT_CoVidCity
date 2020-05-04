@@ -15,7 +15,7 @@ import FirebaseFirestore
 class MapViewController: UIViewController,
     CLLocationManagerDelegate,
     GMUClusterManagerDelegate,
-GMSMapViewDelegate{
+GMSMapViewDelegate, GMUClusterRendererDelegate{
     @IBAction func searchPressed(_ sender: UIBarButtonItem) {
         let autocompleteController = GMSAutocompleteViewController()
         autocompleteController.delegate = self
@@ -83,10 +83,9 @@ GMSMapViewDelegate{
         let algorithm = GMUNonHierarchicalDistanceBasedAlgorithm()
         let renderer = GMUDefaultClusterRenderer(mapView: mapView,
                                                  clusterIconGenerator: iconGenerator)
+        renderer.delegate = self
         clusterManager = GMUClusterManager(map: mapView, algorithm: algorithm,
                                            renderer: renderer)
-        //    generateClusterItems()
-        
         // Call cluster() after items have been added to perform the clustering
         // and rendering on map.
         clusterManager.cluster()
@@ -95,21 +94,25 @@ GMSMapViewDelegate{
         
         
     }
-    // MARK: - Private
-    
-    /// Randomly generates cluster items within some extent of the camera and adds them to the
-    /// cluster manager.
+    func renderer(_ renderer: GMUClusterRenderer, markerFor object: Any) -> GMSMarker? {
+
+        let marker = GMSMarker()
+        if let model = object as? POIItem {
+            if !model.name.hasSuffix("visited")
+            {
+                marker.icon = GMSMarker.markerImage(with: .black)
+            }
+        }
+        return marker
+    }
     private func generateClusterItems(_ location: [Location]) {
         for i in location {
             let item = POIItem(position: CLLocationCoordinate2DMake(i.lat!, i.lon!), name: i.patientType!)
-          clusterManager.add(item)
+            
+            clusterManager.add(item)
         }
       }
     
-      /// Returns a random value between -1.0 and 1.0.
-//      private func randomScale() -> Double {
-//        return Double(arc4random()) / Double(UINT32_MAX) * 2.0 - 1.0
-//      }
     // Update the map once the user has made their selection.
     @IBAction func unwindToMain(segue: UIStoryboardSegue) {
         
@@ -175,7 +178,7 @@ extension MapViewController {
             mapView.animate(to: camera)
         }
         
-        listLikelyPlaces()
+        //listLikelyPlaces()
     }
     
     // Handle authorization for the location manager.

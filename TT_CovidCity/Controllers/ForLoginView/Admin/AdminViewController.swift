@@ -22,6 +22,7 @@ class AdminViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.postImage.image = UIImage(systemName: "photo.fill")
+        userManager = SingleUserManager((Auth.auth().currentUser?.email)!)
         userManager?.delegate = self
         userManager?.loadData()
         postTextView.delegate = self

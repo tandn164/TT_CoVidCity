@@ -812,14 +812,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = N2TUE3Q7K8;
+				DEVELOPMENT_TEAM = 62R3ZN8B42;
 				INFOPLIST_FILE = TT_CovidCity/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.home.TT-CovidCity";
+				PRODUCT_BUNDLE_IDENTIFIER = tan.nd.Covidcity1;
 				PRODUCT_NAME = TT_CovidCity;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
