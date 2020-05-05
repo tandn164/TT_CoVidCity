@@ -34,9 +34,7 @@ GMSMapViewDelegate, GMUClusterRendererDelegate{
         present(autocompleteController, animated: true, completion: nil)
     }
     
-    let kClusterItemCount = 10000
-    let kCameraLatitude = 20.98498
-    let kCameraLongitude = 105.841041
+   
     
     private var clusterManager: GMUClusterManager!
     var locationManager = CLLocationManager()
