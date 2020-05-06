@@ -58,13 +58,4 @@ extension DetailSearchPlaceController: GMSAutocompleteResultsViewControllerDeleg
         // TODO: handle the error.
         print("Error: ", error.localizedDescription)
     }
-    
-    // Turn the network activity indicator on and off again.
-    func didRequestAutocompletePredictions(forResultsController resultsController: GMSAutocompleteResultsViewController) {
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
-    }
-
-    func didUpdateAutocompletePredictions(forResultsController resultsController: GMSAutocompleteResultsViewController) {
-        UIApplication.shared.isNetworkActivityIndicatorVisible = false
-    }
 }

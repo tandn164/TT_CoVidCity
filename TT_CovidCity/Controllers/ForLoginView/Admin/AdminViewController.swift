@@ -84,7 +84,7 @@ class AdminViewController: UIViewController {
                 storageProfileRef.downloadURL { (url, err) in
                     self.photoURL = url?.absoluteString
                     if let post = self.postTextView.text{
-                        self.db.collection(Database.post).addDocument(data: [Database.Post.Image: self.photoURL,Database.Post.Caption:post,Database.Post.NumberOfComment:"0",Database.Post.NumberOfLike:"0",Database.Post.Time:Date().timeIntervalSince1970,Database.Post.User:[Database.Post.UserImage:self.currentUser?.imageURL,Database.Post.UserName:self.currentUser?.userName]]) { (error) in
+                      self.db.collection(Database.post).addDocument(data: [Database.Post.Image: self.photoURL as Any,Database.Post.Caption:post,Database.Post.NumberOfComment:"0",Database.Post.NumberOfLike:"0",Database.Post.Time:Date().timeIntervalSince1970,Database.Post.User:[Database.Post.UserImage:self.currentUser?.imageURL,Database.Post.UserName:self.currentUser?.userName]]) { (error) in
                             if let err = error{
                                 print(err)
                             }else

@@ -68,6 +68,18 @@ GMSMapViewDelegate, GMUClusterRendererDelegate{
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+      
+//      let blurEffect = UIBlurEffect(style: .systemMaterial) // here you can change blur style
+//      let blurView = UIVisualEffectView(effect: blurEffect)
+//      blurView.frame = (tabBarController?.tabBar.bounds)!
+//      blurView.autoresizingMask = .flexibleWidth
+//      tabBarController?.tabBar.insertSubview(blurView, at: 0)
+      
+      let blur = UIBlurEffect(style: UIBlurEffect.Style.regular)
+      let blurView = UIVisualEffectView(effect: blur)
+      blurView.frame = (tabBarController?.tabBar.bounds)!
+      blurView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+      tabBarController?.tabBar.insertSubview(blurView, at: 0)
         
         locationManager.requestAlwaysAuthorization()
         
@@ -251,15 +263,6 @@ extension MapViewController: GMSAutocompleteViewControllerDelegate {
     // User canceled the operation.
     func wasCancelled(_ viewController: GMSAutocompleteViewController) {
         dismiss(animated: true, completion: nil)
-    }
-    
-    // Turn the network activity indicator on and off again.
-    func didRequestAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
-    }
-    
-    func didUpdateAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
-        UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
     
 }

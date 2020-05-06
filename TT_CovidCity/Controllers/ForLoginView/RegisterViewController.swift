@@ -18,6 +18,19 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+  @IBOutlet weak var nextButton: UIButton!
+  
+  override func viewWillAppear(_ animated: Bool) {
+    nextButton.layer.cornerRadius = 7
+      let backgroundImage = UIImageView(frame: view.frame)
+      backgroundImage.image = UIImage(named: "registerBackground")
+      self.view.insertSubview(backgroundImage, at: 0)
+      navigationController?.navigationBar.barTintColor = #colorLiteral(red: 1, green: 0.6431372549, blue: 0, alpha: 1)
+      navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.isTranslucent = true
+        navigationController?.navigationBar.tintColor = .red
+  }
+  
     func setView() {
         usernameTextField.attributedPlaceholder = NSAttributedString(string: "Username", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
         passwordTextfield.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
