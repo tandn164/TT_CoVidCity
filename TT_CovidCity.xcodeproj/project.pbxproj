@@ -68,6 +68,8 @@
 		DC0F97242428542700E76CF9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0F97232428542700E76CF9 /* LoginViewController.swift */; };
 		DC0F97262428543400E76CF9 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0F97252428543400E76CF9 /* ReportViewController.swift */; };
 		DC0F972824286D9800E76CF9 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0F972724286D9800E76CF9 /* TabBarController.swift */; };
+		DC158B432462B70100028067 /* HexaColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC158B422462B70100028067 /* HexaColor.swift */; };
+		DC158B462462C74D00028067 /* ImageResize.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC158B452462C74D00028067 /* ImageResize.swift */; };
 		DC22FE9624299F9600AA5A8B /* PlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC22FE9524299F9600AA5A8B /* PlacesViewController.swift */; };
 		DCE6AB90242A34CB007F4BF8 /* MarkerCluster.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE6AB8F242A34CB007F4BF8 /* MarkerCluster.swift */; };
 /* End PBXBuildFile section */
@@ -136,6 +138,8 @@
 		DC0F97232428542700E76CF9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DC0F97252428543400E76CF9 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		DC0F972724286D9800E76CF9 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		DC158B422462B70100028067 /* HexaColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexaColor.swift; sourceTree = "<group>"; };
+		DC158B452462C74D00028067 /* ImageResize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResize.swift; sourceTree = "<group>"; };
 		DC22FE9524299F9600AA5A8B /* PlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesViewController.swift; sourceTree = "<group>"; };
 		DCE6AB8F242A34CB007F4BF8 /* MarkerCluster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerCluster.swift; sourceTree = "<group>"; };
 		E2C040D6C5AE01A044C2157D /* Pods-TT_CovidCity.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TT_CovidCity.release.xcconfig"; path = "Target Support Files/Pods-TT_CovidCity/Pods-TT_CovidCity.release.xcconfig"; sourceTree = "<group>"; };
@@ -443,12 +447,30 @@
 		DC0F972B2428914D00E76CF9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				DC158B442462C73800028067 /* ImageExtension */,
+				DC158B412462B6ED00028067 /* ColorExtension */,
 				91BD69CC244EDB1800D44FCB /* ForNewsView */,
 				91BD69CF244EDB9000D44FCB /* ForMapView */,
 				91BD69CD244EDB4800D44FCB /* ForLoginView */,
 				91BD69CB244EDAC400D44FCB /* ForDetailView */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		DC158B412462B6ED00028067 /* ColorExtension */ = {
+			isa = PBXGroup;
+			children = (
+				DC158B422462B70100028067 /* HexaColor.swift */,
+			);
+			path = ColorExtension;
+			sourceTree = "<group>";
+		};
+		DC158B442462C73800028067 /* ImageExtension */ = {
+			isa = PBXGroup;
+			children = (
+				DC158B452462C74D00028067 /* ImageResize.swift */,
+			);
+			path = ImageExtension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -594,6 +616,7 @@
 				DC02987224317C96007333B0 /* SubCell.swift in Sources */,
 				4D2CE677245B67F800AC7F51 /* OrangeButton.swift in Sources */,
 				DC02985B24317A02007333B0 /* Contact.swift in Sources */,
+				DC158B462462C74D00028067 /* ImageResize.swift in Sources */,
 				DC0E6909242EF625009372FC /* RegisterViewController.swift in Sources */,
 				91B2B4502450B51700F7F541 /* PostManager.swift in Sources */,
 				DC02987D24317CBD007333B0 /* RedButton.swift in Sources */,
@@ -622,6 +645,7 @@
 				DC02987E24317CBD007333B0 /* RedBackgroundView.swift in Sources */,
 				DC02987C24317CBD007333B0 /* WhiteBackgroundView.swift in Sources */,
 				DC02987024317C96007333B0 /* PostCell.swift in Sources */,
+				DC158B432462B70100028067 /* HexaColor.swift in Sources */,
 				91B2B4532450BC5300F7F541 /* CommentManager.swift in Sources */,
 				DC029855243179DD007333B0 /* WorldCovidData.swift in Sources */,
 				DC0F970B2427BE9700E76CF9 /* AppDelegate.swift in Sources */,

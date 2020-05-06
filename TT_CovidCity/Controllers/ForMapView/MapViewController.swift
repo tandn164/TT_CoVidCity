@@ -107,13 +107,17 @@ GMSMapViewDelegate, GMUClusterRendererDelegate{
         
     }
     func renderer(_ renderer: GMUClusterRenderer, markerFor object: Any) -> GMSMarker? {
-
         let marker = GMSMarker()
         if let model = object as? POIItem {
-            if !model.name.hasSuffix("visited")
+            if model.name.hasSuffix("visited")
             {
-                marker.icon = GMSMarker.markerImage(with: .black)
-            }
+              marker.icon = UIImage(named: "f")?.scaledDown(into: CGSize(width: 50, height: 50))
+            } else if model.name.hasSuffix("F0") {
+              marker.icon = UIImage(named: "f0")?.scaledDown(into: CGSize(width: 50, height: 50))
+            } else {
+              marker.icon = UIImage(named: "f1")?.scaledDown(into: CGSize(width: 50, height: 50))
+              
+          }
         }
         return marker
     }

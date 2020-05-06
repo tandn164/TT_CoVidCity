@@ -25,14 +25,14 @@ class LoginViewController: UIViewController {
   override func viewWillAppear(_ animated: Bool) {
     registerButton.layer.cornerRadius = 7
     loginButton.layer.cornerRadius = 7
-    
     let backgroundImage = UIImageView(frame: view.frame)
     backgroundImage.image = UIImage(named: "loginBackground")
     self.view.insertSubview(backgroundImage, at: 0)
-    navigationController?.navigationBar.barTintColor = #colorLiteral(red: 1, green: 0.6431372549, blue: 0, alpha: 1)
-    navigationController?.navigationBar.shadowImage = UIImage()
-      navigationController?.navigationBar.isTranslucent = true
-      navigationController?.navigationBar.tintColor = .red
+    self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+    self.navigationController?.navigationBar.shadowImage = UIImage()
+    self.navigationController?.navigationBar.isTranslucent = true
+    self.navigationController?.navigationBar.tintColor = .red
+    
   }
   override func viewDidAppear(_ animated: Bool) {
     

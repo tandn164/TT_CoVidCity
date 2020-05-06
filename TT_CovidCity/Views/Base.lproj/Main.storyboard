@@ -915,7 +915,7 @@
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginIcon" translatesAutoresizingMaskIntoConstraints="NO" id="nR0-Yw-4Tk">
-                                <rect key="frame" x="89" y="194" width="197" height="120"/>
+                                <rect key="frame" x="89" y="133" width="197" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="197" id="gEL-np-EG5"/>
                                     <constraint firstAttribute="height" constant="120" id="tVV-ec-3ak"/>
@@ -926,7 +926,7 @@
                         <constraints>
                             <constraint firstItem="nR0-Yw-4Tk" firstAttribute="centerX" secondItem="7bE-q1-Svo" secondAttribute="centerX" id="3R5-1Y-egT"/>
                             <constraint firstItem="jRU-ya-8j5" firstAttribute="centerX" secondItem="7bE-q1-Svo" secondAttribute="centerX" id="B0t-1e-mmY"/>
-                            <constraint firstItem="f5C-cL-UX3" firstAttribute="top" secondItem="nR0-Yw-4Tk" secondAttribute="bottom" constant="25" id="Gbc-E0-aO2"/>
+                            <constraint firstItem="f5C-cL-UX3" firstAttribute="top" secondItem="nR0-Yw-4Tk" secondAttribute="bottom" constant="86" id="Nte-QJ-cKi"/>
                             <constraint firstItem="7bE-q1-Svo" firstAttribute="bottom" secondItem="g9p-uc-Rs9" secondAttribute="bottom" constant="10" id="Rf2-7u-uI7"/>
                             <constraint firstItem="f5C-cL-UX3" firstAttribute="centerX" secondItem="7bE-q1-Svo" secondAttribute="centerX" id="Y3K-IH-ocF"/>
                             <constraint firstItem="jRU-ya-8j5" firstAttribute="top" secondItem="xj7-oD-GVa" secondAttribute="bottom" constant="25" id="kYa-sk-isB"/>
@@ -1093,7 +1093,7 @@
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boyte" translatesAutoresizingMaskIntoConstraints="NO" id="f0a-WX-J6L">
-                                <rect key="frame" x="20" y="60" width="82" height="83.000000000000114"/>
+                                <rect key="frame" x="20" y="60" width="82" height="83"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="82" id="76q-ca-eZJ"/>
                                     <constraint firstAttribute="height" constant="82.999999999999886" id="izp-A9-Nv4"/>
@@ -1212,6 +1212,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="GeA-7X-ttu"/>
         <segue reference="fKU-Kj-Y6g"/>
-        <segue reference="ciZ-f6-E5K"/>
+        <segue reference="xzB-ci-bTX"/>
     </inferredMetricsTieBreakers>
 </document>
