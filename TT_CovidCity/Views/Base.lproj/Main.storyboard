@@ -99,11 +99,11 @@
             <objects>
                 <viewController id="PhT-SY-qbr" customClass="ChoosePlaceController" customModule="TT_CovidCity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jci-lR-dDX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aNj-Hk-vGD">
-                                <rect key="frame" x="25" y="93" width="324" height="43"/>
+                                <rect key="frame" x="25" y="49" width="324" height="43"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RoD-bu-Dop">
                                         <rect key="frame" x="5" y="0.0" width="314" height="43"/>
@@ -145,7 +145,7 @@
             <objects>
                 <viewController id="Vuu-y7-DPc" customClass="ReportViewController" customModule="TT_CovidCity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tjw-vN-5rt">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PTW-ab-BKu" customClass="LoginTextField" customModule="TT_CovidCity" customModuleProvider="target">
@@ -209,7 +209,7 @@
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.crop.square.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="UuZ-qQ-xhp">
-                                <rect key="frame" x="41" y="117" width="92" height="84"/>
+                                <rect key="frame" x="41" y="73" width="92" height="84"/>
                                 <color key="tintColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="92" id="15x-Se-Ikz"/>
@@ -217,7 +217,7 @@
                                 </constraints>
                             </imageView>
                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4CH-xT-Xqf">
-                                <rect key="frame" x="44" y="119" width="89" height="81"/>
+                                <rect key="frame" x="44" y="75" width="89" height="81"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="89" id="B5g-hE-Bcc"/>
                                     <constraint firstAttribute="height" constant="81" id="ndr-tp-9og"/>
@@ -287,7 +287,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aPc-Ur-qLX">
-                                <rect key="frame" x="32" y="539" width="113" height="54"/>
+                                <rect key="frame" x="32" y="568" width="113" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="fzq-vX-tfW"/>
                                     <constraint firstAttribute="width" constant="113" id="xVd-dj-h5a"/>
@@ -422,6 +422,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1xg-5g-vQ4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -821,11 +822,11 @@
             <objects>
                 <viewController id="ejA-Lt-Glq" userLabel="Login" customClass="LoginViewController" customModule="TT_CovidCity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="V07-ee-Afw">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g9p-uc-Rs9">
-                                <rect key="frame" x="127.5" y="564" width="120" height="44"/>
+                                <rect key="frame" x="127.5" y="593" width="120" height="44"/>
                                 <color key="backgroundColor" red="1" green="0.36779832604017026" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="Feu-N1-3za"/>
@@ -839,7 +840,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xj7-oD-GVa" customClass="LoginTextField" customModule="TT_CovidCity" customModuleProvider="target">
-                                <rect key="frame" x="60" y="420" width="255" height="50"/>
+                                <rect key="frame" x="60" y="449" width="255" height="50"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dch-sX-dre">
                                         <rect key="frame" x="10" y="0.0" width="235" height="50"/>
@@ -859,7 +860,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jRU-ya-8j5">
-                                <rect key="frame" x="147.5" y="495" width="80" height="42"/>
+                                <rect key="frame" x="147.5" y="524" width="80" height="42"/>
                                 <color key="backgroundColor" red="1" green="0.36779832600000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="c0y-VD-hFP"/>
@@ -873,7 +874,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f5C-cL-UX3" customClass="LoginTextField" customModule="TT_CovidCity" customModuleProvider="target">
-                                <rect key="frame" x="60" y="339" width="255" height="50"/>
+                                <rect key="frame" x="60" y="368" width="255" height="50"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7v2-Qz-5pl">
                                         <rect key="frame" x="10" y="0.0" width="235" height="50"/>
@@ -893,7 +894,7 @@
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginIcon" translatesAutoresizingMaskIntoConstraints="NO" id="nR0-Yw-4Tk">
-                                <rect key="frame" x="89" y="133" width="197" height="120"/>
+                                <rect key="frame" x="89" y="162" width="197" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="197" id="gEL-np-EG5"/>
                                     <constraint firstAttribute="height" constant="120" id="tVV-ec-3ak"/>
@@ -934,11 +935,11 @@
             <objects>
                 <viewController id="ixe-Qd-1B7" userLabel="Register" customClass="RegisterViewController" customModule="TT_CovidCity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="40n-mK-9VF">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="afP-zp-drJ" customClass="LoginTextField" customModule="TT_CovidCity" customModuleProvider="target">
-                                <rect key="frame" x="60" y="329" width="255" height="50"/>
+                                <rect key="frame" x="60" y="358" width="255" height="50"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jPe-kK-dES">
                                         <rect key="frame" x="10" y="0.0" width="235" height="50"/>
@@ -958,7 +959,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qol-Ch-s38" customClass="LoginTextField" customModule="TT_CovidCity" customModuleProvider="target">
-                                <rect key="frame" x="60" y="486" width="255" height="50"/>
+                                <rect key="frame" x="60" y="515" width="255" height="50"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m56-c9-z4M">
                                         <rect key="frame" x="10" y="0.0" width="235" height="50"/>
@@ -978,7 +979,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zy5-jE-oM9">
-                                <rect key="frame" x="137.5" y="560" width="100" height="48"/>
+                                <rect key="frame" x="137.5" y="589" width="100" height="48"/>
                                 <color key="backgroundColor" red="1" green="0.36779832600000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="7Jc-w5-9tH"/>
@@ -993,7 +994,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qXe-KZ-wn7" customClass="LoginTextField" customModule="TT_CovidCity" customModuleProvider="target">
-                                <rect key="frame" x="60" y="406" width="255" height="50"/>
+                                <rect key="frame" x="60" y="435" width="255" height="50"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qw1-7C-IOt">
                                         <rect key="frame" x="10" y="0.0" width="235" height="50"/>
@@ -1043,54 +1044,26 @@
             </objects>
             <point key="canvasLocation" x="-530.39999999999998" y="1046.6266866566718"/>
         </scene>
-        <!--Admin-->
+        <!--Admin View Controller-->
         <scene sceneID="vEC-Ls-Pb2">
             <objects>
                 <viewController id="09u-YC-Fgs" customClass="AdminViewController" customModule="TT_CovidCity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="76m-YS-CXP">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BnM-Cl-p6C" customClass="LoginTextField" customModule="TT_CovidCity" customModuleProvider="target">
-                                <rect key="frame" x="100" y="143" width="255" height="50"/>
-                                <subviews>
-                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5J4-bT-dtn">
-                                        <rect key="frame" x="10" y="0.0" width="235" height="50"/>
-                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="B08-lS-38L"/>
-                                    <constraint firstItem="5J4-bT-dtn" firstAttribute="top" secondItem="BnM-Cl-p6C" secondAttribute="top" id="BDA-Od-PE8"/>
-                                    <constraint firstAttribute="trailing" secondItem="5J4-bT-dtn" secondAttribute="trailing" constant="10" id="Sky-T5-Os7"/>
-                                    <constraint firstAttribute="bottom" secondItem="5J4-bT-dtn" secondAttribute="bottom" id="YSH-XS-rvw"/>
-                                    <constraint firstItem="5J4-bT-dtn" firstAttribute="leading" secondItem="BnM-Cl-p6C" secondAttribute="leading" constant="10" id="gCH-oo-Iu8"/>
-                                </constraints>
-                            </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boyte" translatesAutoresizingMaskIntoConstraints="NO" id="f0a-WX-J6L">
-                                <rect key="frame" x="20" y="60" width="82" height="83.000000000000114"/>
+                                <rect key="frame" x="20" y="16" width="82" height="83.000000000000114"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="82" id="76q-ca-eZJ"/>
                                     <constraint firstAttribute="height" constant="82.999999999999886" id="izp-A9-Nv4"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JrI-hV-l2M">
-                                <rect key="frame" x="28" y="158" width="45" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U9K-66-yyE" customClass="OrangeButton" customModule="TT_CovidCity" customModuleProvider="target">
+                                <rect key="frame" x="213" y="506" width="101" height="48"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="ixQ-yz-42b"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U9K-66-yyE">
-                                <rect key="frame" x="137" y="544" width="101" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="16u-OV-KPx"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="101" id="VKy-OD-C8I"/>
+                                    <constraint firstAttribute="height" constant="48" id="5Ki-Yw-Pty"/>
+                                    <constraint firstAttribute="width" constant="101" id="N8V-NO-qxS"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                 <state key="normal" title="Post">
@@ -1100,63 +1073,77 @@
                                     <action selector="postPressed:" destination="09u-YC-Fgs" eventType="touchUpInside" id="ksx-pE-Q2E"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="60v-Th-IqX">
-                                <rect key="frame" x="20" y="428" width="127" height="118"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="60v-Th-IqX">
+                                <rect key="frame" x="16" y="469" width="127" height="118"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="127" id="KBU-hI-0Ea"/>
+                                    <constraint firstAttribute="height" constant="118" id="Rgx-xw-xgm"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="syP-PC-nef">
-                                <rect key="frame" x="197" y="477" width="133" height="30"/>
-                                <state key="normal" title="Choose Post Image"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EQD-Rj-vGv">
+                                <rect key="frame" x="0.0" y="115" width="375" height="261"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nO3-8J-sLl" customClass="IQTextView" customModule="IQKeyboardManagerSwift">
+                                        <rect key="frame" x="10" y="0.0" width="355" height="261"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="abcxyz"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </textView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="nO3-8J-sLl" firstAttribute="top" secondItem="EQD-Rj-vGv" secondAttribute="top" id="26S-zc-R2v"/>
+                                    <constraint firstAttribute="trailing" secondItem="nO3-8J-sLl" secondAttribute="trailing" constant="10" id="CpC-TN-t9Y"/>
+                                    <constraint firstAttribute="bottom" secondItem="nO3-8J-sLl" secondAttribute="bottom" id="Ko7-rG-1rc"/>
+                                    <constraint firstAttribute="height" constant="261" id="bbS-rB-u9W"/>
+                                    <constraint firstItem="nO3-8J-sLl" firstAttribute="leading" secondItem="EQD-Rj-vGv" secondAttribute="leading" constant="10" id="sUy-Oc-tFU"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bộ Y Tế ( MINISTRY OF HEATLTH )" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JrI-hV-l2M">
+                                <rect key="frame" x="110" y="28" width="237" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="237" id="66i-tc-qIW"/>
+                                    <constraint firstAttribute="height" constant="27" id="ZjB-yK-sJn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="syP-PC-nef">
+                                <rect key="frame" x="16" y="469" width="127" height="137"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="137" id="MeN-nB-NlN"/>
+                                    <constraint firstAttribute="width" constant="127" id="c1z-c2-n3R"/>
+                                </constraints>
+                                <state key="normal" title="Choose image">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
                                 <connections>
                                     <action selector="selectImage:" destination="09u-YC-Fgs" eventType="touchUpInside" id="MFJ-es-9tN"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EQD-Rj-vGv" customClass="LoginTextField" customModule="TT_CovidCity" customModuleProvider="target">
-                                <rect key="frame" x="20" y="211" width="335" height="209"/>
-                                <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nO3-8J-sLl">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="209"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
-                                    </textView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="nO3-8J-sLl" secondAttribute="trailing" id="3sc-3X-xLc"/>
-                                    <constraint firstAttribute="bottom" secondItem="nO3-8J-sLl" secondAttribute="bottom" id="BKG-wo-shL"/>
-                                    <constraint firstItem="nO3-8J-sLl" firstAttribute="leading" secondItem="EQD-Rj-vGv" secondAttribute="leading" id="hG7-wQ-zsQ"/>
-                                    <constraint firstItem="nO3-8J-sLl" firstAttribute="top" secondItem="EQD-Rj-vGv" secondAttribute="top" id="xii-dg-pkP"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.91945191579999996" blue="0.37396198120000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="S18-yp-j42" firstAttribute="trailing" secondItem="BnM-Cl-p6C" secondAttribute="trailing" constant="20" id="0dV-Dx-2Ip"/>
-                            <constraint firstItem="BnM-Cl-p6C" firstAttribute="leading" secondItem="JrI-hV-l2M" secondAttribute="trailing" constant="27" id="5db-ji-70n"/>
-                            <constraint firstItem="S18-yp-j42" firstAttribute="bottom" secondItem="EQD-Rj-vGv" secondAttribute="bottom" constant="198" id="5g9-Qc-ApS"/>
-                            <constraint firstItem="syP-PC-nef" firstAttribute="leading" secondItem="60v-Th-IqX" secondAttribute="trailing" constant="50" id="80j-0t-llB"/>
-                            <constraint firstItem="EQD-Rj-vGv" firstAttribute="leading" secondItem="S18-yp-j42" secondAttribute="leading" constant="20" id="8iv-TP-JyP"/>
-                            <constraint firstItem="60v-Th-IqX" firstAttribute="top" secondItem="nO3-8J-sLl" secondAttribute="bottom" constant="8" id="90h-Rh-bvD"/>
-                            <constraint firstItem="S18-yp-j42" firstAttribute="trailing" secondItem="syP-PC-nef" secondAttribute="trailing" constant="45" id="A25-NI-QTY"/>
-                            <constraint firstItem="syP-PC-nef" firstAttribute="top" secondItem="nO3-8J-sLl" secondAttribute="bottom" constant="57" id="C6c-iq-DGh"/>
-                            <constraint firstItem="U9K-66-yyE" firstAttribute="top" secondItem="60v-Th-IqX" secondAttribute="bottom" constant="-2" id="D61-oD-YwX"/>
-                            <constraint firstItem="BnM-Cl-p6C" firstAttribute="top" secondItem="S18-yp-j42" secondAttribute="top" constant="99" id="KFf-Yl-uZo"/>
-                            <constraint firstItem="EQD-Rj-vGv" firstAttribute="top" secondItem="BnM-Cl-p6C" secondAttribute="bottom" constant="18" id="LpG-W4-2tJ"/>
-                            <constraint firstItem="S18-yp-j42" firstAttribute="trailing" secondItem="60v-Th-IqX" secondAttribute="trailing" constant="228" id="M12-9l-MMi"/>
-                            <constraint firstItem="60v-Th-IqX" firstAttribute="leading" secondItem="S18-yp-j42" secondAttribute="leading" constant="20" id="OBy-ur-Vpy"/>
+                            <constraint firstItem="S18-yp-j42" firstAttribute="bottom" secondItem="U9K-66-yyE" secondAttribute="bottom" constant="93" id="KnP-ON-rSU"/>
+                            <constraint firstItem="S18-yp-j42" firstAttribute="bottom" secondItem="syP-PC-nef" secondAttribute="bottom" constant="41" id="LS3-pH-Yek"/>
+                            <constraint firstItem="S18-yp-j42" firstAttribute="trailing" secondItem="U9K-66-yyE" secondAttribute="trailing" constant="61" id="OaH-lK-U8W"/>
+                            <constraint firstItem="EQD-Rj-vGv" firstAttribute="top" secondItem="f0a-WX-J6L" secondAttribute="bottom" constant="16" id="PnT-cm-YIs"/>
                             <constraint firstItem="f0a-WX-J6L" firstAttribute="top" secondItem="S18-yp-j42" secondAttribute="top" constant="16" id="Pqm-Ui-og3"/>
-                            <constraint firstItem="JrI-hV-l2M" firstAttribute="leading" secondItem="S18-yp-j42" secondAttribute="leading" constant="28" id="SxB-R5-gWs"/>
-                            <constraint firstItem="BnM-Cl-p6C" firstAttribute="leading" secondItem="S18-yp-j42" secondAttribute="leading" constant="100" id="UQq-7f-VrW"/>
-                            <constraint firstItem="JrI-hV-l2M" firstAttribute="top" secondItem="f0a-WX-J6L" secondAttribute="bottom" constant="15.000000000000114" id="XJK-fs-SLO"/>
-                            <constraint firstItem="S18-yp-j42" firstAttribute="bottom" secondItem="60v-Th-IqX" secondAttribute="bottom" constant="72" id="bk5-GZ-kmI"/>
-                            <constraint firstItem="S18-yp-j42" firstAttribute="trailing" secondItem="EQD-Rj-vGv" secondAttribute="trailing" constant="20" id="rUG-8n-Lf8"/>
-                            <constraint firstItem="U9K-66-yyE" firstAttribute="centerX" secondItem="76m-YS-CXP" secondAttribute="centerX" id="t9j-c2-2Hy"/>
+                            <constraint firstItem="syP-PC-nef" firstAttribute="leading" secondItem="S18-yp-j42" secondAttribute="leading" constant="16" id="QOL-tM-4jQ"/>
+                            <constraint firstItem="EQD-Rj-vGv" firstAttribute="leading" secondItem="S18-yp-j42" secondAttribute="leading" id="T7k-MN-POs"/>
+                            <constraint firstItem="EQD-Rj-vGv" firstAttribute="trailing" secondItem="S18-yp-j42" secondAttribute="trailing" id="g6O-ma-aub"/>
+                            <constraint firstItem="JrI-hV-l2M" firstAttribute="top" secondItem="S18-yp-j42" secondAttribute="top" constant="28" id="k5O-7d-evb"/>
+                            <constraint firstItem="60v-Th-IqX" firstAttribute="leading" secondItem="S18-yp-j42" secondAttribute="leading" constant="16" id="mjq-Wz-OuC"/>
+                            <constraint firstItem="S18-yp-j42" firstAttribute="bottom" secondItem="60v-Th-IqX" secondAttribute="bottom" constant="60" id="rXL-ix-QU3"/>
+                            <constraint firstItem="JrI-hV-l2M" firstAttribute="leading" secondItem="f0a-WX-J6L" secondAttribute="trailing" constant="8" id="sKv-8A-5hx"/>
                             <constraint firstItem="f0a-WX-J6L" firstAttribute="leading" secondItem="S18-yp-j42" secondAttribute="leading" constant="20" id="xdR-Lr-lCM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="S18-yp-j42"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Admin" id="7W1-bM-66l">
+                    <navigationItem key="navigationItem" id="7W1-bM-66l">
                         <barButtonItem key="rightBarButtonItem" title="Log out" id="CQl-Qj-nhB">
                             <connections>
                                 <action selector="logoutPressed:" destination="09u-YC-Fgs" id="YFi-iB-HyJ"/>
@@ -1164,15 +1151,17 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="nameField" destination="5J4-bT-dtn" id="HCR-Rx-J5F"/>
+                        <outlet property="nameField" destination="JrI-hV-l2M" id="tSt-h2-pSD"/>
                         <outlet property="postImage" destination="60v-Th-IqX" id="ym5-jz-DZv"/>
+                        <outlet property="postTextField" destination="EQD-Rj-vGv" id="4oG-K5-WnO"/>
                         <outlet property="postTextView" destination="nO3-8J-sLl" id="WK2-V5-1Ut"/>
+                        <outlet property="profileImage" destination="f0a-WX-J6L" id="7e5-K6-6vD"/>
                         <segue destination="StL-lD-6Vu" kind="show" identifier="NewPost" id="fKU-Kj-Y6g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eTc-FO-DZh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1286.9565217391305" y="1045.9821428571429"/>
+            <point key="canvasLocation" x="-1287.2" y="1045.7271364317842"/>
         </scene>
     </scenes>
     <resources>
@@ -1189,8 +1178,8 @@
         <image name="registerIcon" width="324" height="197"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="GeA-7X-ttu"/>
-        <segue reference="fKU-Kj-Y6g"/>
+        <segue reference="M1j-bb-eZa"/>
+        <segue reference="Prf-pN-3M1"/>
         <segue reference="xzB-ci-bTX"/>
     </inferredMetricsTieBreakers>
 </document>
