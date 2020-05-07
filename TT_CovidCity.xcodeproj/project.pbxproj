@@ -58,7 +58,6 @@
 		DC02987E24317CBD007333B0 /* RedBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC02987B24317CBD007333B0 /* RedBackgroundView.swift */; };
 		DC0298CD24317D1B007333B0 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0298CC24317D1B007333B0 /* NewsViewController.swift */; };
 		DC0E6909242EF625009372FC /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0E6908242EF625009372FC /* RegisterViewController.swift */; };
-		DC0E690D242F3053009372FC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC0E690C242F3053009372FC /* GoogleService-Info.plist */; };
 		DC0F970B2427BE9700E76CF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0F970A2427BE9700E76CF9 /* AppDelegate.swift */; };
 		DC0F970D2427BE9700E76CF9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0F970C2427BE9700E76CF9 /* SceneDelegate.swift */; };
 		DC0F970F2427BE9700E76CF9 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0F970E2427BE9700E76CF9 /* MapViewController.swift */; };
@@ -70,6 +69,7 @@
 		DC0F972824286D9800E76CF9 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0F972724286D9800E76CF9 /* TabBarController.swift */; };
 		DC158B432462B70100028067 /* HexaColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC158B422462B70100028067 /* HexaColor.swift */; };
 		DC158B462462C74D00028067 /* ImageResize.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC158B452462C74D00028067 /* ImageResize.swift */; };
+		DC16AAF72463DBBB00CBA0BC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC16AAF62463DBBB00CBA0BC /* GoogleService-Info.plist */; };
 		DC22FE9624299F9600AA5A8B /* PlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC22FE9524299F9600AA5A8B /* PlacesViewController.swift */; };
 		DCE6AB90242A34CB007F4BF8 /* MarkerCluster.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE6AB8F242A34CB007F4BF8 /* MarkerCluster.swift */; };
 /* End PBXBuildFile section */
@@ -126,7 +126,6 @@
 		DC02987B24317CBD007333B0 /* RedBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedBackgroundView.swift; sourceTree = "<group>"; };
 		DC0298CC24317D1B007333B0 /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		DC0E6908242EF625009372FC /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		DC0E690C242F3053009372FC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		DC0F97072427BE9700E76CF9 /* TT_CovidCity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TT_CovidCity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC0F970A2427BE9700E76CF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC0F970C2427BE9700E76CF9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -140,6 +139,7 @@
 		DC0F972724286D9800E76CF9 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		DC158B422462B70100028067 /* HexaColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexaColor.swift; sourceTree = "<group>"; };
 		DC158B452462C74D00028067 /* ImageResize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResize.swift; sourceTree = "<group>"; };
+		DC16AAF62463DBBB00CBA0BC /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = "GoogleService-Info.plist"; path = "Thong_GGplist/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		DC22FE9524299F9600AA5A8B /* PlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesViewController.swift; sourceTree = "<group>"; };
 		DCE6AB8F242A34CB007F4BF8 /* MarkerCluster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerCluster.swift; sourceTree = "<group>"; };
 		E2C040D6C5AE01A044C2157D /* Pods-TT_CovidCity.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TT_CovidCity.release.xcconfig"; path = "Target Support Files/Pods-TT_CovidCity/Pods-TT_CovidCity.release.xcconfig"; sourceTree = "<group>"; };
@@ -413,7 +413,7 @@
 				DC0F97292428912500E76CF9 /* Controllers */,
 				DC0F972A2428913F00E76CF9 /* Views */,
 				DC0F97152427BE9900E76CF9 /* Assets.xcassets */,
-				DC0E690C242F3053009372FC /* GoogleService-Info.plist */,
+				DC16AAF62463DBBB00CBA0BC /* GoogleService-Info.plist */,
 				DC0F971A2427BE9900E76CF9 /* Info.plist */,
 			);
 			path = TT_CovidCity;
@@ -536,12 +536,12 @@
 			files = (
 				4DFA41E0244015DF00BE9832 /* PostCell.xib in Resources */,
 				DC0F97192427BE9900E76CF9 /* LaunchScreen.storyboard in Resources */,
-				DC0E690D242F3053009372FC /* GoogleService-Info.plist in Resources */,
 				DC02987624317C96007333B0 /* ContactCell.xib in Resources */,
 				DC0F97162427BE9900E76CF9 /* Assets.xcassets in Resources */,
 				4DB2E8ED2442BB2500AFE9F2 /* CommentCell.xib in Resources */,
 				DC02986F24317C96007333B0 /* StartCell.xib in Resources */,
 				4D1CF1B3244056C400265377 /* FullPostCell.xib in Resources */,
+				DC16AAF72463DBBB00CBA0BC /* GoogleService-Info.plist in Resources */,
 				DC0F97142427BE9700E76CF9 /* Main.storyboard in Resources */,
 				DC02987424317C96007333B0 /* SubCell.xib in Resources */,
 			);
@@ -819,7 +819,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.home.ttcovid;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.home.TT-CovidCity";
 				PRODUCT_NAME = TT_CovidCity;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -839,7 +839,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.home.ttcovid;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.home.TT-CovidCity";
 				PRODUCT_NAME = TT_CovidCity;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

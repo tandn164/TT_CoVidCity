@@ -21,7 +21,8 @@ class ReportViewController: UIViewController, UITextViewDelegate, CLLocationMana
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     
-    
+  @IBOutlet weak var editButton: UIButton!
+  
     var image : UIImage?
     var child = ChoosePlaceController()
     var locationManager = CLLocationManager()
@@ -49,6 +50,16 @@ class ReportViewController: UIViewController, UITextViewDelegate, CLLocationMana
     }
     override func viewWillAppear(_ animated: Bool) {
         setView()
+      //tableView.backgroundColor = UIColor.clear
+      tableView.layer.cornerRadius = 7
+      tableView.layer.shadowColor = UIColor.darkGray.cgColor
+      tableView.layer.shadowOffset = CGSize(width: 2.0, height: 2.0 )
+      tableView.layer.shadowOpacity = 1.0
+      tableView.layer.shadowRadius = 2
+      
+      let backgroundImage = UIImageView(frame: view.frame)
+      backgroundImage.image = UIImage(named: "reportBackground")
+      self.view.insertSubview(backgroundImage, at: 0)
     }
     func setView() {
         addressField.attributedPlaceholder = NSAttributedString(string: "Address", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
