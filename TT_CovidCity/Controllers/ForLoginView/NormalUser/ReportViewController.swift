@@ -60,6 +60,7 @@ class ReportViewController: UIViewController, UITextViewDelegate, CLLocationMana
       let backgroundImage = UIImageView(frame: view.frame)
       backgroundImage.image = UIImage(named: "reportBackground")
       self.view.insertSubview(backgroundImage, at: 0)
+      profileImage.layer.cornerRadius = 7
     }
     func setView() {
         addressField.attributedPlaceholder = NSAttributedString(string: "Address", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
