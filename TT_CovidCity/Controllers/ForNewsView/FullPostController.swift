@@ -127,7 +127,7 @@ extension FullPostController: UITextFieldDelegate{
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
         if let comment = textField.text{
-            db.collection(Path.pathToComment(withID: post!.id!)).addDocument(data: [Database.Post.comment.UserName:currentUser?.userName!, Database.Post.comment.Comment:comment,Database.Post.comment.Time: Date().timeIntervalSince1970, Database.Post.comment.UserProfileImage: currentUser?.imageURL]){(error) in
+          db.collection(Path.pathToComment(withID: post!.id!)).addDocument(data: [Database.Post.comment.UserName:currentUser?.userName! as Any, Database.Post.comment.Comment:comment,Database.Post.comment.Time: Date().timeIntervalSince1970, Database.Post.comment.UserProfileImage: currentUser?.imageURL as Any]){(error) in
                      if let err = error {
                          print(err)
                      } else {

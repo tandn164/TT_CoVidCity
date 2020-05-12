@@ -13,27 +13,44 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    var check = 0;
+  
+  @IBOutlet weak var registerButton: UIButton!
+  @IBOutlet weak var loginButton: UIButton!
+  var check = 0;
     weak var parentview : UIViewController?
     override func viewDidLoad() {
         super.viewDidLoad()
         setView()
     }
+  override func viewWillAppear(_ animated: Bool) {
+    registerButton.layer.cornerRadius = 7
+    loginButton.layer.cornerRadius = 7
+    let backgroundImage = UIImageView(frame: view.frame)
+    backgroundImage.image = UIImage(named: "loginBackground")
+    self.view.insertSubview(backgroundImage, at: 0)
+    self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+    self.navigationController?.navigationBar.shadowImage = UIImage()
+    self.navigationController?.navigationBar.isTranslucent = true
+    self.navigationController?.navigationBar.tintColor = .red
+    
+  }
+  override func viewDidAppear(_ animated: Bool) {
+    
+    
+    if let currentUser = Auth.auth().currentUser{
+        if currentUser.email! == Authentication.admin
+        {
+            self.performSegue(withIdentifier: SegueIdentify.LogintoAdmin, sender: self)
+        }else
+        {
+            self.performSegue(withIdentifier: SegueIdentify.LogintoReport, sender: self)
+        }
+    }
+  }
+  
     func setView() {
         usernameTextField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
         passwordTextField.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
-    }
-    override func viewDidAppear(_ animated: Bool) {
-        if let currentUser = Auth.auth().currentUser{
-            if currentUser.email! == Authentication.admin
-            {
-                self.performSegue(withIdentifier: SegueIdentify.LogintoAdmin, sender: self)
-            }else
-            {
-                self.performSegue(withIdentifier: SegueIdentify.LogintoReport, sender: self)
-            }
-        }
-        
     }
     
     @IBAction func loginPressed(_ sender: UIButton) {

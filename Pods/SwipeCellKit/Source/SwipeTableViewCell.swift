@@ -75,6 +75,12 @@ open class SwipeTableViewCell: UITableViewCell {
         
         swipeController = SwipeController(swipeable: self, actionsContainerView: self)
         swipeController.delegate = self
+      layer.cornerRadius = 8
+      layer.masksToBounds = false
+      layer.shadowOffset = CGSize(width: 0, height: 0)
+      layer.shadowColor = UIColor.black.cgColor
+      layer.shadowOpacity = 0.23
+      layer.shadowRadius = 4
     }
     
     /// :nodoc:

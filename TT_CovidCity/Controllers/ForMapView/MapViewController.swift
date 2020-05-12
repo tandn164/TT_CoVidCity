@@ -34,11 +34,8 @@ GMSMapViewDelegate, GMUClusterRendererDelegate{
         present(autocompleteController, animated: true, completion: nil)
     }
     
-   
-    
     private var clusterManager: GMUClusterManager!
     var locationManager = CLLocationManager()
-    var currentLocation: CLLocation?
     var mapView: GMSMapView!
     var placesClient: GMSPlacesClient!
     var zoomLevel: Float = 15.0
@@ -56,10 +53,8 @@ GMSMapViewDelegate, GMUClusterRendererDelegate{
 
     override func loadView() {
         
-        let location: CLLocation = [CLLocation()].last!        
-        let camera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude,
-                                              longitude: location.coordinate.longitude,
-                                              zoom: zoomLevel)
+        let camera = GMSCameraPosition.camera(withLatitude: 21.0294498,
+                                              longitude: 105.8544441, zoom: 12)
         mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
         self.view = mapView
         mapView.settings.myLocationButton = true
@@ -68,6 +63,18 @@ GMSMapViewDelegate, GMUClusterRendererDelegate{
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+      
+//      let blurEffect = UIBlurEffect(style: .systemMaterial) // here you can change blur style
+//      let blurView = UIVisualEffectView(effect: blurEffect)
+//      blurView.frame = (tabBarController?.tabBar.bounds)!
+//      blurView.autoresizingMask = .flexibleWidth
+//      tabBarController?.tabBar.insertSubview(blurView, at: 0)
+      
+      let blur = UIBlurEffect(style: UIBlurEffect.Style.regular)
+      let blurView = UIVisualEffectView(effect: blur)
+      blurView.frame = (tabBarController?.tabBar.bounds)!
+      blurView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+      tabBarController?.tabBar.insertSubview(blurView, at: 0)
         
         locationManager.requestAlwaysAuthorization()
         
@@ -95,13 +102,17 @@ GMSMapViewDelegate, GMUClusterRendererDelegate{
         
     }
     func renderer(_ renderer: GMUClusterRenderer, markerFor object: Any) -> GMSMarker? {
-
         let marker = GMSMarker()
         if let model = object as? POIItem {
-            if !model.name.hasSuffix("visited")
+            if model.name.hasSuffix("visited")
             {
-                marker.icon = GMSMarker.markerImage(with: .black)
-            }
+              marker.icon = UIImage(named: "f")?.scaledDown(into: CGSize(width: 50, height: 50))
+            } else if model.name.hasSuffix("F0") {
+              marker.icon = UIImage(named: "f0")?.scaledDown(into: CGSize(width: 50, height: 50))
+            } else {
+              marker.icon = UIImage(named: "f1")?.scaledDown(into: CGSize(width: 50, height: 50))
+              
+          }
         }
         return marker
     }
@@ -251,15 +262,6 @@ extension MapViewController: GMSAutocompleteViewControllerDelegate {
     // User canceled the operation.
     func wasCancelled(_ viewController: GMSAutocompleteViewController) {
         dismiss(animated: true, completion: nil)
-    }
-    
-    // Turn the network activity indicator on and off again.
-    func didRequestAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
-    }
-    
-    func didUpdateAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
-        UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
     
 }

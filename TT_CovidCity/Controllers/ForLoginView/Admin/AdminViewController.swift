@@ -9,10 +9,12 @@
 import UIKit
 import Firebase
 class AdminViewController: UIViewController {
-    @IBOutlet weak var nameField: UITextField!
-    @IBOutlet weak var postTextView: UITextView!
+  @IBOutlet weak var nameField: UILabel!
+  @IBOutlet weak var postTextField: UITextField!
+  @IBOutlet weak var postTextView: UITextView!
     @IBOutlet weak var postImage: UIImageView!
-    
+  @IBOutlet weak var profileImage: UIImageView!
+  
     let user = Auth.auth().currentUser!
     var db = Firestore.firestore()
     var userManager : SingleUserManager?
@@ -30,6 +32,9 @@ class AdminViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         setView()
+      profileImage.layer.cornerRadius = profileImage.frame.height/2
+      postTextView.layer.cornerRadius = 7
+      postTextView.layer.backgroundColor = #colorLiteral(red: 1, green: 0.9176470588, blue: 0.6957510744, alpha: 1)
     }
     func setView() {
         postTextView.backgroundColor = .white
@@ -84,7 +89,7 @@ class AdminViewController: UIViewController {
                 storageProfileRef.downloadURL { (url, err) in
                     self.photoURL = url?.absoluteString
                     if let post = self.postTextView.text{
-                        self.db.collection(Database.post).addDocument(data: [Database.Post.Image: self.photoURL,Database.Post.Caption:post,Database.Post.NumberOfComment:"0",Database.Post.NumberOfLike:"0",Database.Post.Time:Date().timeIntervalSince1970,Database.Post.User:[Database.Post.UserImage:self.currentUser?.imageURL,Database.Post.UserName:self.currentUser?.userName]]) { (error) in
+                      self.db.collection(Database.post).addDocument(data: [Database.Post.Image: self.photoURL as Any,Database.Post.Caption:post,Database.Post.NumberOfComment:"0",Database.Post.NumberOfLike:"0",Database.Post.Time:Date().timeIntervalSince1970,Database.Post.User:[Database.Post.UserImage:self.currentUser?.imageURL,Database.Post.UserName:self.currentUser?.userName]]) { (error) in
                             if let err = error{
                                 print(err)
                             }else
@@ -112,7 +117,7 @@ extension AdminViewController : SingleUserManagerDelegate{
     func dataDidUpdate(_ sender: SingleUserManager, _ data: User) {
         print(data)
         currentUser = data
-        nameField.text = currentUser?.userName
+        //nameField.text = currentUser?.userName
         
     }
 }

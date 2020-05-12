@@ -43,10 +43,7 @@ class ChoosePlaceController: UIViewController,CLLocationManagerDelegate,GMUClust
         }
     }
     func setSubView() {
-        let location: CLLocation = [CLLocation()].last!
-        let camera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude,
-                                              longitude: location.coordinate.longitude,
-                                              zoom: zoomLevel)
+        let camera = GMSCameraPosition.camera(withLatitude: 21.0294498, longitude: 105.8544441, zoom: 12)
         mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
         searchField = UITextField(frame: CGRect(x: 0, y: 0, width: self.view.frame.width-20, height: 45.0))
         searchField.addTarget(self, action: #selector(myTargetFunction(textField:)), for: .touchDown)
@@ -91,7 +88,19 @@ class ChoosePlaceController: UIViewController,CLLocationManagerDelegate,GMUClust
 extension ChoosePlaceController {
     // Handle incoming location events.
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        //let location: CLLocation = locations.last!
+        let location: CLLocation = locations.last!
+        print("Location: \(location)")
+        
+        let camera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude,
+                                              longitude: location.coordinate.longitude,
+                                              zoom: zoomLevel)
+        
+        if mapView.isHidden == true {
+            mapView.isHidden = false
+            mapView.camera = camera
+        } else {
+            mapView.animate(to: camera)
+        }
     }
     // Handle authorization for the location manager.
     func locationManager(_ manager: CLLocationManager,

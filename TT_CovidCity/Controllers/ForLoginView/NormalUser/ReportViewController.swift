@@ -21,7 +21,8 @@ class ReportViewController: UIViewController, UITextViewDelegate, CLLocationMana
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     
-    
+  @IBOutlet weak var editButton: UIButton!
+  
     var image : UIImage?
     var child = ChoosePlaceController()
     var locationManager = CLLocationManager()
@@ -49,6 +50,17 @@ class ReportViewController: UIViewController, UITextViewDelegate, CLLocationMana
     }
     override func viewWillAppear(_ animated: Bool) {
         setView()
+      //tableView.backgroundColor = UIColor.clear
+      tableView.layer.cornerRadius = 7
+      tableView.layer.shadowColor = UIColor.darkGray.cgColor
+      tableView.layer.shadowOffset = CGSize(width: 2.0, height: 2.0 )
+      tableView.layer.shadowOpacity = 1.0
+      tableView.layer.shadowRadius = 2
+      
+      let backgroundImage = UIImageView(frame: view.frame)
+      backgroundImage.image = UIImage(named: "reportBackground")
+      self.view.insertSubview(backgroundImage, at: 0)
+      profileImage.layer.cornerRadius = 7
     }
     func setView() {
         addressField.attributedPlaceholder = NSAttributedString(string: "Address", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
@@ -284,10 +296,14 @@ extension ReportViewController: VisitedLocationManagerDelegate{
 extension ReportViewController: SwipeTableViewCellDelegate{
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
         guard orientation == .right else { return nil }
-
+        let user = Auth.auth().currentUser
         let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
             // handle action by updating model with deletion
-            
+            DispatchQueue.main.async{
+                self.db.collection(Path.pathToVistedLocation(withID: user!.email!)).document(self.visitedLocation[indexPath.row].locationAddress!).delete()
+                self.visitedLocation.remove(at: indexPath.row)
+                self.tableView.reloadData()
+            }
         }
 
         // customize the action appearance
