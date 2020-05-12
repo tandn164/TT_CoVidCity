@@ -56,8 +56,10 @@ GMSMapViewDelegate, GMUClusterRendererDelegate{
 
     override func loadView() {
         
-        let camera = GMSCameraPosition.camera(withLatitude: 21.0294498,
-                                              longitude: 105.8544441, zoom: 12)
+        let location: CLLocation = [CLLocation()].last!        
+        let camera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude,
+                                              longitude: location.coordinate.longitude,
+                                              zoom: zoomLevel)
         mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
         self.view = mapView
         mapView.settings.myLocationButton = true

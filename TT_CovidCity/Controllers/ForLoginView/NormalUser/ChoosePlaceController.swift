@@ -14,9 +14,6 @@ protocol ChoosePlaceControllerDelegate: class {
     func didGetvisitedLocation(from sender: ChoosePlaceController, _ data: [VisitedLocation])
 }
 class ChoosePlaceController: UIViewController,CLLocationManagerDelegate,GMUClusterManagerDelegate,GMSMapViewDelegate{
-    let kClusterItemCount = 10000
-    let kCameraLatitude = 20.98498
-    let kCameraLongitude = 105.841041
     private var clusterManager: GMUClusterManager!
     var locationManager = CLLocationManager()
     var child = DetailSearchPlaceController()
@@ -46,7 +43,10 @@ class ChoosePlaceController: UIViewController,CLLocationManagerDelegate,GMUClust
         }
     }
     func setSubView() {
-        let camera = GMSCameraPosition.camera(withLatitude: 21.0294498, longitude: 105.8544441, zoom: 12)
+        let location: CLLocation = [CLLocation()].last!
+        let camera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude,
+                                              longitude: location.coordinate.longitude,
+                                              zoom: zoomLevel)
         mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
         searchField = UITextField(frame: CGRect(x: 0, y: 0, width: self.view.frame.width-20, height: 45.0))
         searchField.addTarget(self, action: #selector(myTargetFunction(textField:)), for: .touchDown)
