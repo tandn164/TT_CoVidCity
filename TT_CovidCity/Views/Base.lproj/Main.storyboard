@@ -345,11 +345,11 @@
             </objects>
             <point key="canvasLocation" x="-1285.5999999999999" y="359.37031484257875"/>
         </scene>
-        <!--Map-->
+        <!--Bản đồ-->
         <scene sceneID="zFw-Gw-l9a">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XB9-kQ-aLw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Map" image="mappin.and.ellipse" catalog="system" selectedImage="mappin.circle" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Bản đồ" image="mappin.and.ellipse" catalog="system" selectedImage="mappin.circle" id="acW-dT-cKf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hAT-oi-94n">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -371,11 +371,11 @@
             </objects>
             <point key="canvasLocation" x="1659.4202898550725" y="-320.08928571428572"/>
         </scene>
-        <!--statistic-->
+        <!--Số liệu-->
         <scene sceneID="ZT2-02-0QV">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ygb-T8-Zg3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="statistic" image="map" catalog="system" selectedImage="map" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Số liệu" image="map" catalog="system" selectedImage="map" id="cPa-gy-q4n"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Vqh-Cu-HiP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -391,11 +391,11 @@
             </objects>
             <point key="canvasLocation" x="1659.4202898550725" y="359.59821428571428"/>
         </scene>
-        <!--Login-->
+        <!--Đăng nhập-->
         <scene sceneID="Z7a-Fh-6us">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SWq-YP-4ao" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Login" image="person" catalog="system" selectedImage="person" id="osh-eN-r2s" userLabel="Third"/>
+                    <tabBarItem key="tabBarItem" title="Đăng nhập" image="person" catalog="system" selectedImage="person" id="osh-eN-r2s" userLabel="Third"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="2jJ-Q4-DJc"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2We-vj-IUr">
@@ -413,11 +413,11 @@
             </objects>
             <point key="canvasLocation" x="225" y="360"/>
         </scene>
-        <!--News-->
+        <!--Tin tức-->
         <scene sceneID="0BU-TY-BE5">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cq4-bl-Ytk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="News" image="doc.text" catalog="system" selectedImage="doc.text" id="Nbs-3D-o0k" userLabel="Fourth"/>
+                    <tabBarItem key="tabBarItem" title="Tin tức" image="doc.text" catalog="system" selectedImage="doc.text" id="Nbs-3D-o0k" userLabel="Fourth"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1xg-5g-vQ4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -1175,7 +1175,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="GeA-7X-ttu"/>
-        <segue reference="fKU-Kj-Y6g"/>
+        <segue reference="Prf-pN-3M1"/>
         <segue reference="ciZ-f6-E5K"/>
     </inferredMetricsTieBreakers>
     <resources>

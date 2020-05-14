@@ -27,6 +27,8 @@ class RegisterViewController: UIViewController {
     nextButton.layer.shadowColor = UIColor.clear.cgColor
     
     let backgroundImage = UIImageView(frame: view.frame)
+    backgroundImage.contentMode = .scaleAspectFill
+    backgroundImage.clipsToBounds = true
     backgroundImage.image = UIImage(named: "registerBackground")
     self.view.insertSubview(backgroundImage, at: 0)
     self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
@@ -42,9 +44,9 @@ class RegisterViewController: UIViewController {
   }
   
   func setView() {
-    usernameTextField.attributedPlaceholder = NSAttributedString(string: "Tên Người Dùng", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
-    passwordTextfield.attributedPlaceholder = NSAttributedString(string: "Mật Khẩu", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
-    emailTextfield.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+    usernameTextField.attributedPlaceholder = NSAttributedString(string: "Tên Người Dùng", attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray])
+    passwordTextfield.attributedPlaceholder = NSAttributedString(string: "Mật Khẩu", attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray])
+    emailTextfield.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray])
   }
   @IBAction func registerButtonPressed (_ sender: UIButton) {
     if let email = emailTextfield.text, let password = passwordTextfield.text, let username = usernameTextField.text
