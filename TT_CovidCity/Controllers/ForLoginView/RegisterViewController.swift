@@ -22,19 +22,28 @@ class RegisterViewController: UIViewController {
   @IBOutlet weak var nextButton: UIButton!
   
   override func viewWillAppear(_ animated: Bool) {
-    nextButton.layer.cornerRadius = 7
+    
+    nextButton.backgroundColor = #colorLiteral(red: 0.1040239726, green: 0.2039215686, blue: 0.2039215686, alpha: 1)
+    nextButton.layer.shadowColor = UIColor.clear.cgColor
+    
     let backgroundImage = UIImageView(frame: view.frame)
     backgroundImage.image = UIImage(named: "registerBackground")
     self.view.insertSubview(backgroundImage, at: 0)
     self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
     self.navigationController?.navigationBar.shadowImage = UIImage()
     self.navigationController?.navigationBar.isTranslucent = true
-    self.navigationController?.navigationBar.tintColor = .red
+    self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.1058823529, green: 0.2039215686, blue: 0.2039215686, alpha: 1)
+    
+    let yourBackImage = UIImage(named: "backButton")
+    let scaledBackImage = yourBackImage?.scaledDown(into: CGSize(width: 25, height: 25), centered: true)
+    self.navigationController?.navigationBar.backIndicatorImage = scaledBackImage
+    self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = scaledBackImage
+    
   }
   
   func setView() {
-    usernameTextField.attributedPlaceholder = NSAttributedString(string: "Username", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
-    passwordTextfield.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+    usernameTextField.attributedPlaceholder = NSAttributedString(string: "Tên Người Dùng", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+    passwordTextfield.attributedPlaceholder = NSAttributedString(string: "Mật Khẩu", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
     emailTextfield.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
   }
   @IBAction func registerButtonPressed (_ sender: UIButton) {

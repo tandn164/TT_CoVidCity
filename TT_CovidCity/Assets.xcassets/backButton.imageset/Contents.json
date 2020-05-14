@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "registerBackground.png",
+      "filename" : "backButton.png",
       "idiom" : "universal",
       "scale" : "1x"
     },

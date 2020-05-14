@@ -23,9 +23,14 @@ class LoginViewController: UIViewController {
         setView()
     }
   override func viewWillAppear(_ animated: Bool) {
-    registerButton.layer.cornerRadius = 7
-    loginButton.layer.cornerRadius = 7
+    
+    loginButton.backgroundColor = #colorLiteral(red: 0.1040239726, green: 0.2039215686, blue: 0.2039215686, alpha: 1)
+    loginButton.layer.shadowColor = UIColor.clear.cgColor
+    
+    
     let backgroundImage = UIImageView(frame: view.frame)
+    backgroundImage.contentMode = .scaleAspectFill
+    backgroundImage.clipsToBounds = true
     backgroundImage.image = UIImage(named: "loginBackground")
     self.view.insertSubview(backgroundImage, at: 0)
     self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
@@ -49,8 +54,8 @@ class LoginViewController: UIViewController {
   }
   
     func setView() {
-        usernameTextField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
-        passwordTextField.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        usernameTextField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray])
+        passwordTextField.attributedPlaceholder = NSAttributedString(string: "Mật Khẩu", attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray])
     }
     
     @IBAction func loginPressed(_ sender: UIButton) {

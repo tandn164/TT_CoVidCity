@@ -28,10 +28,11 @@ class LoginTextField: UIView {
     func setupView() {
         setStyle()
         setShadow()
+      setBorder()
     }
     private func setStyle(){
-        backgroundColor = UIColor.white
-        layer.cornerRadius = layer.frame.height/2
+        backgroundColor = UIColor.clear
+        layer.cornerRadius = 10
     }
     private func setShadow(){
         layer.shadowColor = UIColor.black.cgColor
@@ -41,5 +42,10 @@ class LoginTextField: UIView {
         clipsToBounds = true
         layer.masksToBounds = false
     }
+  
+  private func setBorder(){
+    layer.borderWidth = 1
+    layer.borderColor = UIColor.black.cgColor
+  }
     
 }
